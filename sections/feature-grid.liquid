@@ -1,0 +1,186 @@
+<style>
+  .feature-grid p {
+    margin: 0;
+  }
+  .feature-grid-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .feature-row.padding {
+    padding: 20px;
+  }
+  .feature-row-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  p.feature-title {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  p.feature-text {
+    font-size: 16px;
+    line-height: 18px;
+    font-size: 400;
+  }
+  @media screen and (max-width: 768px) {
+    .feature-row-two {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<div class="feature-grid regular-width-padding">
+  <div class="feature-grid-wrapper regular-width">
+    <div class="feature-grid-content">
+      {% comment %} 第一行 {% endcomment %}
+      <div class="feature-row padding">
+        <div class="feature-content-block">
+          <p class="feature-title">{{ section.settings.row1_heading }}</p>
+          <p class="feature-text">{{ section.settings.row1_text }}</p>
+        </div>
+        <div class="feature-image-block">
+          <img src="{{ section.row1_img | image_url: width: master }}" alt="">
+        </div>
+      </div>
+      {% comment %} 第二行 {% endcomment %}
+      <div class="feature-row-two">
+        <div class="feature-row-two-block">
+          <div class="feature-row padding">
+            <div class="feature-content-block">
+              <p class="feature-title">{{ section.settings.row2_item1_heading }}</p>
+              <p class="feature-text">{{ section.settings.row2_item1_text }}</p>
+            </div>
+            <div class="feature-image-block">
+              <img src="{{ section.row2_item1_img | image_url: width: master }}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="feature-row-two-block">
+          <div class="feature-row padding">
+            <div class="feature-content-block">
+              <p class="feature-title">{{ section.settings.row2_item2_heading }}</p>
+              <p class="feature-text">{{ section.settings.row2_item2_text }}</p>
+            </div>
+            <div class="feature-image-block">
+              <img src="{{ section.row2_item2_img | image_url: width: master }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} 第三行 {% endcomment %}
+      <div class="feature-row padding">
+        <div class="feature-content-block">
+          <p class="feature-title">{{ section.settings.row3_heading }}</p>
+          <p class="feature-text">{{ section.settings.row3_text }}</p>
+        </div>
+        <div class="feature-image-block">
+          <img src="{{ section.row3_img | image_url: width: master }}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Feature Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Row 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "row1_img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "row1_heading",
+      "label": "Heading",
+      "default": "Photograph"
+    },
+    {
+      "type": "richtext",
+      "id": "row1_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Row 2"
+    },
+    {
+      "type": "text",
+      "id": "row2_item1_heading",
+      "label": "Item 1 Heading",
+      "default": "Placement"
+    },
+    {
+      "type": "richtext",
+      "id": "row2_item1_text",
+      "label": "Item 1 Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "row2_item1_img",
+      "label": "Item 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "row2_item2_heading",
+      "label": "Item 2 Heading",
+      "default": "storage"
+    },
+    {
+      "type": "richtext",
+      "id": "row2_item2_text",
+      "label": "Item 2 Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "row2_item2_img",
+      "label": "Item 2 Image"
+    },
+    {
+      "type": "header",
+      "content": "Row 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "row3_img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "row3_heading",
+      "label": "Heading",
+      "default": "Portable"
+    },
+    {
+      "type": "richtext",
+      "id": "row3_text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Grid"
+    }
+  ]
+}
+{% endschema %}
