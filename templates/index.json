@@ -9,216 +9,68 @@
  */
 {
   "sections": {
-    "hero_iLBwPd": {
-      "type": "hero",
-      "blocks": {
-        "group_mATTUY": {
-          "type": "group",
-          "name": "t:names.group",
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "group_U86Qji": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 0,
-                "width": "custom",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_nptTQe": {
-                  "type": "text",
-                  "name": "Heading",
-                  "settings": {
-                    "text": "<h2><em>Introducing</em></h2>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "1.5rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_m9AcWC": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h1>Our Newest Arrivals </h1>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h2",
-                    "font": "var(--font-primary--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_nptTQe",
-                "text_m9AcWC"
-              ]
-            },
-            "text_ebNxhf": {
-              "type": "text",
-              "name": "Text",
-              "settings": {
-                "text": "<p>Bring order to the chaos. When all your tech essentials have a dedicated spot on your desk, you don’t have to waste any time searching for them. </p>",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-primary--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "group_U86Qji",
-            "text_ebNxhf"
-          ]
-        }
-      },
-      "block_order": [
-        "group_mATTUY"
-      ],
-      "name": "t:names.hero",
+    "hero_banner_FWtQCx": {
+      "type": "hero-banner",
+      "name": "Hero Banner",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 16,
-        "section_width": "page-width",
-        "section_height": "large",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-5",
-        "toggle_overlay": true,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 0,
-        "padding-block-end": 31
+        "image_desktop": "shopify://shop_images/01.png",
+        "image_mobile": "shopify://shop_images/01_3bf33e56-2b6b-40f5-9b82-4012879cf588.png",
+        "subtitle": "Better Selfies, More Space",
+        "title": "The Ultimate Selfie Case for iPhone",
+        "text_color": "#000000"
+      }
+    },
+    "text_with_video_MA9j6H": {
+      "type": "text-with-video",
+      "name": "Text With Video",
+      "settings": {
+        "heading": "Your Style, Your Hue.",
+        "subheading": "For iPhone 17 Pro Series",
+        "video": "shopify://files/videos/02.mp4"
+      }
+    },
+    "text_with_image_q4PihG": {
+      "type": "text-with-image",
+      "name": "Text With Image",
+      "settings": {
+        "heading": "The Rear Screen. Your Window to Pro-Level Selfies.",
+        "subheading": "Zero Lag, Full Control. Command the powerful lenses of your iPhone 17 Pro Max from the palm of your hand. See your composition with stunning HD clarity and tap to focus with precision",
+        "img_pc": "shopify://shop_images/04.png",
+        "img_mb": "shopify://shop_images/04_4e4c76c5-c63a-4f39-8c3c-5045599e1dba.png"
+      }
+    },
+    "text_with_video_kgMQGb": {
+      "type": "text-with-video",
+      "name": "Text With Video",
+      "settings": {
+        "heading": "Snap",
+        "subheading": "Snap on your case. No apps, no setup. It just works.",
+        "video": "shopify://files/videos/07.mp4"
+      }
+    },
+    "feature_grid_FxNyYJ": {
+      "type": "feature-grid",
+      "name": "Feature Grid",
+      "settings": {
+        "row1_img": "shopify://shop_images/07-2.png",
+        "row1_heading": "Shoot",
+        "row1_text": "<ul><li><strong>Shoot </strong>in stunning 48MP clarity. Your best selfies are now behind you.</li></ul>",
+        "row2_item1_heading": "Store",
+        "row2_item1_text": "<ul><li><strong>Store</strong> endlessly. Pop in a microSD card and capture without limits.</li></ul>",
+        "row2_item1_img": "shopify://shop_images/07-3.png",
+        "row2_item2_heading": "",
+        "row2_item2_text": "<ul><li></li></ul>",
+        "row3_img": "shopify://shop_images/07-4.png",
+        "row3_heading": "Carry",
+        "row3_text": "<p><strong>Carry </strong>the ultimate all-in-one tool. Sleek, light, always ready.</p>"
       }
     }
   },
   "order": [
-    "hero_iLBwPd"
+    "hero_banner_FWtQCx",
+    "text_with_video_MA9j6H",
+    "text_with_image_q4PihG",
+    "text_with_video_kgMQGb",
+    "feature_grid_FxNyYJ"
   ]
 }
