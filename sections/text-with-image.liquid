@@ -1,4 +1,7 @@
 <style>
+  .text-with-image p {
+    margin: 0;
+  }
   .text-with-image {
     background-color: #fafafc;
     padding: 50px 0 0;
@@ -16,6 +19,59 @@
   }
   .text-with-image-wrapper {
     margin: 60px 0 0;
+  }
+
+  .image-with-swiper .swiper-slide {
+    width: 80%;
+  }
+
+  .image-with-swiper .swiper-slide {
+    /* 添加过渡效果，使缩放更平滑 */
+    transition: transform 300ms ease, opacity 300ms ease;
+    /* 默认状态：非激活的 Slide 缩小 */
+    transform: scale(0.85); /* 将其缩小到 85% */
+    opacity: 0.7; /* 可以适当降低透明度，增强未激活的感觉 */
+  }
+
+  .image-with-swiper .swiper-slide-active {
+    /* 激活状态：保持正常大小 */
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .iws-pagination {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    margin: 40px 0 0;
+  }
+  .image-with-swiper .swiper-pagination-bullet {
+    width: 25px;
+    height: 6px;
+    background: #000;
+    border-radius: 6px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+  .image-with-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .image-with-swiper {
+    margin: 40px 0 0;
+  }
+  .iws-slide-img {
+    margin: 0 0 40px 0;
+  }
+  .iws-slide-info {
+    margin: 0 auto;
+    max-width: 60%;
+  }
+  p.iws-title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
   }
 </style>
 <div class="text-with-image">
@@ -36,7 +92,43 @@
       </div>
     </div>
   </div>
+  <div class="image-with-swiper-wrapper">
+    <p class="image-with-swiper-info regular-text text-center">{{ section.settings.swiper_info }}</p>
+    <div class="swiper image-with-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="iws-slide">
+              <div class="iws-slide-img">
+                <img src="{{ block.settings.img | image_url: width: master }}" alt="">
+              </div>
+              <div class="iws-slide-info text-center">
+                <p class="iws-title">{{ block.settings.title }}</p>
+                <div class="iws-text regular-text">{{ block.settings.text }}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination iws-pagination"></div>
+    </div>
+  </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.image-with-swiper', {
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 40,
+      loop: true,
+      pagination: {
+        el: '.iws-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -62,6 +154,38 @@
       "type": "image_picker",
       "id": "img_mb",
       "label": "Image 移动端"
+    },
+    {
+      "type": "header",
+      "content": "轮播相关内容"
+    },
+    {
+      "type": "text",
+      "id": "swiper_info",
+      "label": "轮播信息"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_slide",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
     }
   ],
   "presets": [

@@ -1,0 +1,370 @@
+{% comment %} ----------------------------------------- {% endcomment %}
+{% comment %} 2. Style (CSS) Section - 纯 CSS 样式 {% endcomment %}
+{% comment %} ----------------------------------------- {% endcomment %}
+<style>
+  /* 基础容器 */
+  .section-custom-apple-tabs {
+    padding: 60px 40px;
+  }
+  .product-feature-tabs {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* 导航条样式 */
+  .tab-navigation {
+    display: inline-flex;
+    position: relative;
+    padding: 5px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+  }
+
+  /* ------------------------------------------------ */
+  /* 移动背景（Indicator）动效 */
+  /* ------------------------------------------------ */
+  .moving-background {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: calc(100% - 10px);
+    width: 0;
+    background-color: #000;
+    border-radius: 8px;
+    z-index: 1;
+    /* 关键：使用 transform 实现平滑、高性能的移动动效 */
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), width 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: none;
+  }
+
+  /* ------------------------------------------------ */
+  /* Tab 标题样式与颜色切换 */
+  /* ------------------------------------------------ */
+  .tab-title {
+    position: relative;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 120px;
+    white-space: nowrap;
+    /* 文本和图标颜色过渡，而不是背景色过渡 */
+    transition: color 0.35s ease;
+  }
+
+  .tab-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: color 0.35s ease;
+  }
+
+  .tab-icon {
+    max-width: 30px;
+  }
+
+  .tab-text {
+    margin: 15px 0 0;
+  }
+
+  /* 激活状态：文本和图标变为白色 */
+  .tab-title.is-active .tab-content-wrapper {
+    color: #fff;
+    fill: #fff;
+  }
+
+  .tab-content-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .placeholder-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #f0f0f0;
+    min-height: 400px;
+  }
+
+  .tab-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .tab-content.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .text-with-tab-text p.title {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+  }
+  .text-with-tab-text p.subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+  }
+  .text-with-tab-text.text1 {
+    margin: 0 0 40px 0;
+  }
+  .text-with-tab-text.text2 {
+    margin: 40px 0 0;
+  }
+</style>
+
+<div class="section-custom-apple-tabs">
+  <div class="text-with-tab-text text1 text-center">
+    <p class="title">{{ section.settings.title_1 }}</p>
+    <p class="subtitle">{{ section.settings.text_1 }}</p>
+  </div>
+  <div class="product-feature-tabs">
+    <div class="tab-content-container">
+      {% for block in section.blocks %}
+        <div
+          id="tab-{{ section.id }}-{{ block.id }}"
+          class="tab-content {% if forloop.first %}is-active{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | image_url: width: master }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              loading="lazy"
+              class="tab-image"
+            >
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="tab-navigation">
+      <div class="moving-background"></div>
+
+      {% for block in section.blocks %}
+        {% assign block_title = block.settings.title | default: 'Feature' %}
+
+        <div
+          class="tab-title {% if forloop.first %}is-active{% endif %}"
+          data-tab-target="#tab-{{ section.id }}-{{ block.id }}"
+        >
+          {% comment %} Tab 内部内容容器，用于图标和文本颜色切换 {% endcomment %}
+          <div class="tab-content-wrapper">
+            <div class="tab-icon">
+              {{ block.settings.icon_svg }}
+            </div>
+            <p class="tab-text">{{ block_title }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="text-with-tab-text text2 text-center">
+    <p class="title">{{ section.settings.title_2 }}</p>
+    <p class="subtitle">{{ section.settings.text_2 }}</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const sectionEl = document.getElementById('shopify-section-{{ section.id }}');
+    if (!sectionEl) return;
+
+    const tabNav = sectionEl.querySelector('.tab-navigation');
+    const tabTitles = tabNav.querySelectorAll('.tab-title');
+    const tabContainer = sectionEl.querySelector('.tab-content-container');
+    const movingBackground = tabNav.querySelector('.moving-background');
+    const initialActiveTab = tabNav.querySelector('.tab-title.is-active');
+    const initialActiveContent = tabContainer.querySelector('.tab-content.is-active');
+
+    if (!movingBackground || tabTitles.length === 0) return;
+
+    // 从 Schema 获取默认占位符高度，以防无图
+    const placeholderMinHeight = 400;
+
+    /**
+     * 初始化 Tab 容器的最小高度 (只需执行一次)
+     * 逻辑: 获取第一个激活的图片加载后的高度，作为容器的 min-height。
+     */
+    const initializeMinHeight = (contentElement) => {
+      const image = contentElement.querySelector('.tab-image');
+      const placeholder = contentElement.querySelector('.placeholder-content');
+
+      const setHeight = (height) => {
+        // 确保高度不小于占位符高度，以防图片太小
+        tabContainer.style.minHeight = `${Math.max(height, placeholderMinHeight)}px`;
+      };
+
+      if (image) {
+        if (image.complete) {
+          // 如果图片已加载，直接设置高度
+          setHeight(image.offsetHeight);
+        } else {
+          // 如果图片正在加载，等待加载完成后设置高度
+          image.onload = () => {
+            setHeight(image.offsetHeight);
+          };
+          // 在图片加载前，先设置占位符高度，避免容器瞬间塌陷
+          setHeight(placeholderMinHeight);
+        }
+      } else if (placeholder) {
+        // 如果是占位符，使用占位符高度
+        setHeight(placeholderMinHeight);
+      }
+    };
+
+    /**
+     * 更新移动背景的位置和宽度
+     */
+    const updateMovingBackground = (activeTab) => {
+      const rect = activeTab.getBoundingClientRect();
+      const navRect = tabNav.getBoundingClientRect();
+      const PADDING_OFFSET = 5;
+      // 修正：确保在计算相对位置时，如果 tabNav 本身有滚动，也计算在内 (尽管 nav 通常不会滚动)
+      const leftPosition = rect.left - navRect.left + tabNav.scrollLeft - PADDING_OFFSET;
+      const width = rect.width;
+
+      movingBackground.style.width = `${width}px`;
+      movingBackground.style.transform = `translateX(${leftPosition}px)`;
+    };
+
+    /**
+     * 切换 Tab 的激活状态 (简化，因为 min-height 固定了)
+     */
+    const switchTab = (targetId, clickedTab) => {
+      // 1. 移除旧的激活状态
+      const activeTitle = tabNav.querySelector('.tab-title.is-active');
+      const activeContent = tabContainer.querySelector('.tab-content.is-active');
+
+      if (activeTitle) activeTitle.classList.remove('is-active');
+      if (activeContent) activeContent.classList.remove('is-active');
+
+      // 2. 添加新的激活状态
+      clickedTab.classList.add('is-active');
+      const targetContent = sectionEl.querySelector(targetId);
+      if (targetContent) {
+        targetContent.classList.add('is-active');
+      }
+
+      // 3. 移动背景
+      updateMovingBackground(clickedTab);
+    };
+
+    // --- 页面初始化和事件绑定 ---
+
+    // 1. 初始化：定位移动背景和设置初始最小高度
+    if (initialActiveTab) {
+      window.requestAnimationFrame(() => updateMovingBackground(initialActiveTab));
+    }
+    if (initialActiveContent) {
+      initializeMinHeight(initialActiveContent);
+    }
+
+    // 2. 绑定点击事件
+    tabTitles.forEach((tab) => {
+      tab.addEventListener('click', (event) => {
+        if (tab.classList.contains('is-active')) return;
+
+        const targetId = tab.dataset.tabTarget;
+        switchTab(targetId, tab);
+      });
+    });
+
+    // 3. 窗口大小变化时重新计算位置和高度
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const activeTab = tabNav.querySelector('.tab-title.is-active');
+        const activeContent = tabContainer.querySelector('.tab-content.is-active');
+
+        if (activeTab) {
+          updateMovingBackground(activeTab);
+        }
+        // 窗口大小改变后，图片高度也会改变，所以需要重新计算 min-height
+        if (activeContent) {
+          initializeMinHeight(activeContent);
+        }
+      }, 100);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Text With Tab",
+  "tag": "section",
+  "class": "text-with-tab",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "标题1",
+      "default": "Your Best Shot, In Any Shot."
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "文案1",
+      "default": "Your Best Shot, In Any Shot."
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "标题2",
+      "default": "Your Best Shot, In Any Shot."
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "文案2",
+      "default": "Your Best Shot, In Any Shot."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_item",
+      "name": "Tab 项",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab 标题文本",
+          "default": "产品特性"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "图标 SVG 代码"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "对应特性图片",
+          "info": "图片将实现淡入淡出动效"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text With Tab",
+      "category": "图像和媒体",
+      "blocks": [{ "type": "tab_item" }, { "type": "tab_item" }, { "type": "tab_item" }]
+    }
+  ]
+}
+{% endschema %}
