@@ -11,4 +11,19 @@
     padding: 50px 40px;
 }
 
+/* 首页通用css */
+.title-h1 {
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.regular-text {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
 @media screen and (max-width: 767px) {}
