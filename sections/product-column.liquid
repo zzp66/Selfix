@@ -30,6 +30,7 @@
     margin: 0 auto;
     background-color: #fff;
     border-radius: 10px;
+    padding: 80px 0;
   }
   /* 确保这里只渲染必要的 CSS */
   ul.product-chose,
@@ -45,6 +46,10 @@
   .product-info-item {
     flex-basis: 50%; /* 确保两列等宽 */
     padding: 0 10px;
+  }
+
+  li.product {
+    flex-basis: 50%;
   }
 
   /* ** 核心 Grid 容器：应用于 product-info-list ** */
@@ -73,9 +78,15 @@
     box-sizing: border-box;
   }
 
+  .product-title {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
   /* Icon 样式：限制高度，宽度自适应 */
   .info-icon {
-    height: 40px;
+    height: 60px;
     width: auto;
     max-width: 100%;
     margin-bottom: 20px;
@@ -85,11 +96,22 @@
     font-size: 16px;
     line-height: 20px;
   }
-
-  /* Swiper 基础样式 */
-  .swiper {
+  .product-1-swiper .swiper-slide {
     width: 100%;
-    height: auto;
+  }
+
+  .product-1-swiper-thumbs .swiper-slide {
+    max-width: 50px;
+    cursor: pointer;
+  }
+
+  .product-1-swiper-thumbs .swiper-wrapper {
+    justify-content: center;
+  }
+
+  .product-media-slide {
+    display: flex;
+    width: 100%;
   }
 </style>
 
@@ -101,14 +123,29 @@
   <div class="product-column-wrapper">
     <ul class="product-chose">
       <li class="product">
-        <div class="product-media">
-          <div class="swiper product-1-swiper">
+        <div class="column-product-media">
+          <div class="swiper product-1-swiper-{{ section.id }}">
             <div class="swiper-wrapper">
               {% for media in product_1.media %}
                 {% if media.media_type == 'image' %}
                   <div class="swiper-slide">
                     <div class="product-media-slide">
-                      <img src="{{ media | image_url: width: 800 }}" alt="{{ media.alt | escape }}">
+                      <img src="{{ media | image_url: width: master }}" alt="{{ media.alt | escape }}">
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          {% comment %} 缩略图 {% endcomment %}
+          <div class="swiper product-1-swiper-thumbs product-1-swiper-thumbs-{{ section.id }}">
+            <div class="swiper-wrapper">
+              {% for media in product_1.media %}
+                {% if media.media_type == 'image' %}
+                  <div class="swiper-slide">
+                    <div class="product-media-slide">
+                      <img src="{{ media | image_url: width: master }}" alt="{{ media.alt | escape }}">
                     </div>
                   </div>
                 {% endif %}
@@ -119,20 +156,14 @@
       </li>
 
       <li class="product">
-        <div class="product-media">
-          <div class="swiper product-2-swiper">
-            <div class="swiper-wrapper">
-              {% for media in product_2.media %}
-                {% if media.media_type == 'image' %}
-                  <div class="swiper-slide">
-                    <div class="product-media-slide">
-                      <img src="{{ media | image_url: width: 800 }}" alt="{{ media.alt | escape }}">
-                    </div>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
+        <div class="column-product-media">
+          {% for media in product_2.media %}
+            {% if media.media_type == 'image' %}
+              <div class="product-media-slide">
+                <img src="{{ media | image_url: width: 800 }}" alt="{{ media.alt | escape }}">
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </li>
     </ul>
@@ -209,6 +240,23 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var thumbsSwiper = new Swiper('.product-1-swiper-thumbs-{{ section.id }}', {
+      slidesPerView: 'auto',
+      spaceBetween: 15,
+    });
+    var mySwiper = new Swiper('.product-1-swiper-{{ section.id }}', {
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      loop: true,
+      thumbs: {
+        swiper: thumbsSwiper,
+      },
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Product Column",
