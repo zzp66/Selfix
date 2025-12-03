@@ -39,30 +39,20 @@
         "img_mb": "shopify://shop_images/04_4e4c76c5-c63a-4f39-8c3c-5045599e1dba.png"
       }
     },
-    "text_with_video_kgMQGb": {
-      "type": "text-with-video-1",
-      "name": "Text With Video",
+    "video_with_grid_mdUeQT": {
+      "type": "video-with-grid",
+      "name": "Video With Grid",
       "settings": {
         "heading": "Snap",
         "subheading": "Snap on your case. No apps, no setup. It just works.",
-        "video": "shopify://files/videos/07.mp4"
-      }
-    },
-    "feature_grid_FxNyYJ": {
-      "type": "feature-grid",
-      "name": "Feature Grid",
-      "settings": {
+        "video": "shopify://files/videos/07.mp4",
         "row1_img": "shopify://shop_images/07-2.png",
         "row1_heading": "Shoot",
-        "row1_text": "<ul><li><strong>Shoot </strong>in stunning 48MP clarity. Your best selfies are now behind you.</li></ul>",
-        "row2_item1_heading": "Store",
-        "row2_item1_text": "<ul><li><strong>Store</strong> endlessly. Pop in a microSD card and capture without limits.</li></ul>",
-        "row2_item1_img": "shopify://shop_images/07-3.png",
-        "row2_item2_heading": "",
-        "row2_item2_text": "<ul><li></li></ul>",
-        "row3_img": "shopify://shop_images/07-4.png",
-        "row3_heading": "Carry",
-        "row3_text": "<p><strong>Carry </strong>the ultimate all-in-one tool. Sleek, light, always ready.</p>"
+        "row1_text": "<p>Shoot<strong> </strong>in stunning 48MP clarity. Your best selfies are now behind you.</p>",
+        "row2_heading": "Placement",
+        "row2_text": "",
+        "row3_heading": "Portable",
+        "row3_text": ""
       }
     }
   },
@@ -70,7 +60,6 @@
     "hero_banner_FWtQCx",
     "text_with_video_MA9j6H",
     "text_with_image_q4PihG",
-    "text_with_video_kgMQGb",
-    "feature_grid_FxNyYJ"
+    "video_with_grid_mdUeQT"
   ]
 }

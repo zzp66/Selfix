@@ -1,21 +1,35 @@
 <style>
   .text-with-video-title {
-    max-width: 1440px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
+  }
+  .text-with-video-title p.title {
+    margin: 0 0 30px 0;
+  }
+
+  .text-with-video-title p.subtitle {
+    margin: 0;
+  }
+  .video-box video {
+    width: 100%;
+    height: auto;
   }
 </style>
 <div class="text-with-video regular-padding">
   <div class="text-with-video-title">
-    <p class="title">{{ section.settings.heading }}</p>
+    <p class="title title-h1 fw-600">{{ section.settings.heading }}</p>
     {% if section.settings.subheading != blank %}
-      <p class="subtitle">{{ section.settings.subheading }}</p>
+      <p class="subtitle regular-text">{{ section.settings.subheading }}</p>
     {% endif %}
   </div>
   <div class="text-with-video-wrapper regular-width">
     <div class="text-with-video-content">
       <div class="video-box">
-        {{ section.settings.video | video_tag: class: 'twv-video', playsinline: true, muted: true, loop: true }}
+        {{
+          section.settings.video
+          | video_tag: class: 'twv-video', playsinline: true, muted: true, loop: true, autoplay: true
+        }}
       </div>
     </div>
   </div>
