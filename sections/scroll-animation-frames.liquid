@@ -1,0 +1,198 @@
+<style>
+  .scroll-sequence-section {
+    background-color: #f3f3f3;
+    padding: 150px 0 20px;
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.scroll_length }}vh;
+  }
+
+  .scroll-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scroll-sequence-canvas {
+    width: 100%;
+    height: auto;
+    max-height: {{ section.settings.canvas_height }}px;
+    object-fit: contain;
+  }
+
+  .scroll-sequence-title{
+    margin: 0 auto;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+  .scroll-sequence-title p.title{
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+  }
+  .scroll-sequence-title p.subtitle{
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="scroll-sequence-section" id="scroll-sequence-{{ section.id }}">
+  <div class="scroll-sequence-title text-center">
+    <p class="title">{{ section.settings.heading }}</p>
+    <p class="subtitle">{{ section.settings.subheading }}</p>
+  </div>
+  <div class="scroll-sticky-wrapper">
+    <canvas class="scroll-sequence-canvas" id="canvas-{{ section.id }}"></canvas>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const frameCount = {{ section.settings.frame_count }};
+  const baseUrl = "{{ section.settings.base_url }}";
+  const extension = "{{ section.settings.extension }}";
+
+  const sectionEl = document.getElementById("scroll-sequence-{{ section.id }}");
+  const canvas = document.getElementById("canvas-{{ section.id }}");
+  const context = canvas.getContext("2d");
+
+  const images = [];
+  let imagesLoaded = 0;
+
+  /** --------------- 1. 预加载所有图片 --------------- **/
+  function preloadImages() {
+    return new Promise(resolve => {
+      for (let i = 1; i <= frameCount; i++) {
+        const img = new Image();
+        img.src = `${baseUrl}${i}.${extension}`;
+        img.onload = () => {
+          imagesLoaded++;
+          if (imagesLoaded === frameCount) resolve();
+        };
+        images.push(img);
+      }
+    });
+  }
+
+  /** --------------- 2. 绘制帧（使用缓存图片，零延迟） --------------- **/
+  function renderFrame(index) {
+  const img = images[index - 1];
+
+  const maxH = {{ section.settings.canvas_height }}; // 最大高度
+  const scale = maxH / img.height;
+  const scaledWidth = img.width * scale;
+  const scaledHeight = img.height * scale;
+
+  // 调整 canvas 尺寸为缩放后的大小
+  canvas.width = scaledWidth;
+  canvas.height = scaledHeight;
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+}
+
+
+  /** --------------- 3. 滚动驱动动画（顺滑） --------------- **/
+  let ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateAnimation);
+      ticking = true;
+    }
+  }
+
+  function updateAnimation() {
+    const rect = sectionEl.getBoundingClientRect();
+    const sectionHeight = sectionEl.offsetHeight;
+
+    // 滚动进度：0 ~ 1
+    let progress = (-rect.top) / (sectionHeight - window.innerHeight);
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    // 当前帧
+    const frameIndex = Math.floor(progress * (frameCount - 1)) + 1;
+    renderFrame(frameIndex);
+
+    ticking = false;
+  }
+
+  /** --------------- 4. 初始化流程 --------------- **/
+  preloadImages().then(() => {
+    // 设置 canvas 尺寸
+    canvas.width = images[0].width;
+    canvas.height = images[0].height;
+
+    // 初始显示第一帧
+    renderFrame(1);
+
+    window.addEventListener("scroll", onScroll);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Scroll Animation Frames",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "标题"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "文案"
+    },
+    {
+      "type": "number",
+      "id": "frame_count",
+      "label": "图片总帧数",
+      "default": 60
+    },
+    {
+      "type": "text",
+      "id": "base_url",
+      "label": "图片基础链接（不含数字和扩展名）",
+      "default": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun"
+    },
+    {
+      "type": "select",
+      "id": "extension",
+      "label": "图片格式",
+      "default": "jpg",
+      "options": [
+        { "value": "jpg", "label": "JPG" },
+        { "value": "png", "label": "PNG" }
+      ]
+    },
+    {
+      "type": "number",
+      "id": "scroll_length",
+      "label": "滚动区高度（vh）",
+      "default": 200
+    },
+    {
+      "type": "number",
+      "id": "canvas_height",
+      "label": "Canvas 最大高度(px)",
+      "default": 900
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll Animation Frames"
+    }
+  ]
+}
+{% endschema %}

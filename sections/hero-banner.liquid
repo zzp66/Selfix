@@ -5,12 +5,10 @@
     min-height: 100vh;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 60px;
     box-sizing: border-box;
   }
-
-  /* 统一的图片样式 */
   .selfie-case-hero__image-wrapper {
     position: absolute;
     top: 0;
@@ -18,30 +16,27 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-position: center;
-    background-size: cover; /* 保证图片覆盖容器并自适应 */
+    object-fit: cover;
+    object-position: center;
   }
-
-  /* PC端默认显示 */
   .selfie-case-hero__image--desktop {
-    display: block; /* PC端默认显示 */
+    display: block;
   }
-
-  /* 移动端默认隐藏 */
   .selfie-case-hero__image--mobile {
     display: none;
   }
-
-  /* --- 媒体查询：切换到移动端视图 --- */
   @media screen and (max-width: 768px) {
     .selfie-case-hero {
       padding: 30px;
     }
-    .selfie-case-hero__title {
+    .selfie-case-hero__title p {
       font-size: 32px;
+      line-height: 40px;
     }
-
-    /* 移动端：隐藏桌面图，显示移动图 */
+    .selfie-case-hero__bottom-left {
+      left: 30px;
+      bottom: 30px;
+    }
     .selfie-case-hero__image--desktop {
       display: none;
     }
@@ -50,7 +45,7 @@
     }
   }
 
-  /* 文案样式保持不变 */
+  /* 居中文案容器 */
   .selfie-case-hero__content {
     position: relative;
     z-index: 10;
@@ -58,15 +53,26 @@
   }
 
   .selfie-case-hero__subtitle {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 400;
-    margin-bottom: 8px;
+    margin: 0 0 20px 0;
   }
 
-  .selfie-case-hero__title {
+  .selfie-case-hero__title p {
+    margin: 0;
     font-size: 48px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 56px;
+  }
+  .selfie-case-hero__bottom-left {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    z-index: 10;
+    text-align: left;
+    font-size: 20px;
+    line-height: 24px;
   }
 </style>
 
@@ -97,17 +103,23 @@
     }}
   {%- endif -%}
 
-  {% comment %} 如果两张图都没设置，则显示占位背景色（可选） {% endcomment %}
+  {% comment %} 如果两张图都没设置，则显示占位背景色 {% endcomment %}
   {%- unless section.settings.image_desktop != blank or section.settings.image_mobile != blank -%}
     <div class="selfie-case-hero__image-wrapper" style="background-color: #f2f2f2;"></div>
   {%- endunless -%}
 
   <div class="selfie-case-hero__content" style="color: {{ section.settings.text_color }}">
     {%- if section.settings.subtitle != blank -%}
-      <p class="selfie-case-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
+      <p class="selfie-case-hero__subtitle">{{ section.settings.subtitle }}</p>
     {%- endif -%}
     {%- if section.settings.title != blank -%}
-      <h1 class="selfie-case-hero__title">{{ section.settings.title | escape }}</h1>
+      <div class="selfie-case-hero__title">{{ section.settings.title }}</div>
+    {%- endif -%}
+  </div>
+
+  <div class="selfie-case-hero__bottom-left" style="color: {{ section.settings.text_color_bottom_left }}">
+    {%- if section.settings.subtitle_bottom_left != blank -%}
+      <p class="selfie-case-hero__subtitle">{{ section.settings.subtitle_bottom_left }}</p>
     {%- endif -%}
   </div>
 </div>
@@ -119,14 +131,22 @@
   "class": "section-hero-selfie",
   "settings": [
     {
+      "type": "header",
+      "content": "背景图片设置"
+    },
+    {
       "type": "image_picker",
       "id": "image_desktop",
-      "label": "PC端背景图片 (桌面端)"
+      "label": "PC端背景图片"
     },
     {
       "type": "image_picker",
       "id": "image_mobile",
-      "label": "移动端背景图片 (手机端)"
+      "label": "移动端背景图片"
+    },
+    {
+      "type": "header",
+      "content": "左侧居中文案设置"
     },
     {
       "type": "text",
@@ -135,9 +155,8 @@
       "label": "副标题"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "title",
-      "default": "The Ultimate Selfie Case for iPhone",
       "label": "主标题"
     },
     {
@@ -145,6 +164,22 @@
       "id": "text_color",
       "default": "#000000",
       "label": "文案颜色"
+    },
+    {
+      "type": "header",
+      "content": "右下角文案设置"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_bottom_left",
+      "default": "Coming Soon on Kickstarter",
+      "label": "右下角文案"
+    },
+    {
+      "type": "color",
+      "id": "text_color_bottom_left",
+      "default": "#000000",
+      "label": "右下角文案颜色"
     }
   ],
   "presets": [
