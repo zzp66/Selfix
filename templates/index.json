@@ -16,8 +16,10 @@
         "image_desktop": "shopify://shop_images/01.png",
         "image_mobile": "shopify://shop_images/01_3bf33e56-2b6b-40f5-9b82-4012879cf588.png",
         "subtitle": "Better Selfies, More Space",
-        "title": "The Ultimate Selfie Case for iPhone",
-        "text_color": "#000000"
+        "title": "<p>The Ultimate</p><p>Selfie Case for iPhone</p>",
+        "text_color": "#000000",
+        "subtitle_bottom_left": "Coming Soon on Kickstarter",
+        "text_color_bottom_left": "#000000"
       }
     },
     "text_with_video_qXwe8g": {
@@ -27,6 +29,15 @@
         "heading": "Your Style, Your Hue.",
         "subheading": "- Oat Milk, - Orchid Haze, - Midnight",
         "video": "shopify://files/videos/02.mp4"
+      }
+    },
+    "index_newsletter_KTrL7L": {
+      "type": "index-newsletter",
+      "name": "Index Newsletter",
+      "settings": {
+        "heading": "Get An Exclusive Discount!",
+        "subheading": "We're Launching Soon. Get an exclusive discount by signing up now!",
+        "bg_color": "#ffffff"
       }
     },
     "text_with_image_jEeYyp": {
@@ -69,6 +80,19 @@
         "img_pc": "shopify://shop_images/04_3f39541f-dfec-420e-94dd-6f196f818cd8.png",
         "img_mb": "shopify://shop_images/04_98e7610d-e9b3-4170-9b1f-f4ba2e17f725.png",
         "swiper_info": "Tap (the button) to transform. See the difference in real-time."
+      }
+    },
+    "scroll_animation_frames_UDmVrw": {
+      "type": "scroll-animation-frames",
+      "name": "Scroll Animation Frames",
+      "settings": {
+        "heading": "Expandable Storage. Beyond Limits.",
+        "subheading": "Seamless expansion, removale convenience, and the freedom to capture life without limits.",
+        "frame_count": 186,
+        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-a-",
+        "extension": "jpg",
+        "scroll_length": 200,
+        "canvas_height": 900
       }
     },
     "text_with_tab_U36rHh": {
@@ -137,6 +161,15 @@
         "row3_img": "shopify://shop_images/07-4.png",
         "row3_heading": "Carry",
         "row3_text": "Carry the ultimate all-in-one tool. Sleek, light, always ready."
+      }
+    },
+    "index_newsletter_9bQB4h": {
+      "type": "index-newsletter",
+      "name": "Index Newsletter",
+      "settings": {
+        "heading": "Get An Exclusive Discount!",
+        "subheading": "We're Launching Soon. Get an exclusive discount by signing up now!",
+        "bg_color": "#ffffff"
       }
     },
     "product_column_FWAfDV": {
@@ -292,9 +325,12 @@
   "order": [
     "hero_banner_eLX9KN",
     "text_with_video_qXwe8g",
+    "index_newsletter_KTrL7L",
     "text_with_image_jEeYyp",
+    "scroll_animation_frames_UDmVrw",
     "text_with_tab_U36rHh",
     "video_with_grid_GbQUgD",
+    "index_newsletter_9bQB4h",
     "product_column_FWAfDV",
     "product_column_KpPnAF",
     "product_specification_J9wpHL"
