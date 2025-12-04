@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "hero_banner_FWtQCx": {
+    "hero_banner_eLX9KN": {
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
@@ -20,26 +20,108 @@
         "text_color": "#000000"
       }
     },
-    "text_with_video_MA9j6H": {
-      "type": "text-with-video-1",
+    "text_with_video_qXwe8g": {
+      "type": "text-with-video",
       "name": "Text With Video",
       "settings": {
         "heading": "Your Style, Your Hue.",
-        "subheading": "For iPhone 17 Pro Series",
+        "subheading": "- Oat Milk, - Orchid Haze, - Midnight",
         "video": "shopify://files/videos/02.mp4"
       }
     },
-    "text_with_image_q4PihG": {
+    "text_with_image_jEeYyp": {
       "type": "text-with-image",
+      "blocks": {
+        "image_slide_fHzicL": {
+          "type": "image_slide",
+          "settings": {
+            "img": "shopify://shop_images/Front.png",
+            "title": "The Prefect Frame, Every Time.",
+            "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
+          }
+        },
+        "image_slide_r49jmm": {
+          "type": "image_slide",
+          "settings": {
+            "img": "shopify://shop_images/Front.png",
+            "title": "The Prefect Frame, Every Time.",
+            "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
+          }
+        },
+        "image_slide_6dADAk": {
+          "type": "image_slide",
+          "settings": {
+            "img": "shopify://shop_images/Front.png",
+            "title": "The Prefect Frame, Every Time.",
+            "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_fHzicL",
+        "image_slide_r49jmm",
+        "image_slide_6dADAk"
+      ],
       "name": "Text With Image",
       "settings": {
         "heading": "The Rear Screen. Your Window to Pro-Level Selfies.",
-        "subheading": "Zero Lag, Full Control. Command the powerful lenses of your iPhone 17 Pro Max from the palm of your hand. See your composition with stunning HD clarity and tap to focus with precision",
-        "img_pc": "shopify://shop_images/04.png",
-        "img_mb": "shopify://shop_images/04_4e4c76c5-c63a-4f39-8c3c-5045599e1dba.png"
+        "subheading": "Zero Lag, Full Control. Command the powerful lenses of your iPhone 17 Pro Max from the palm of your hand. See your composition with stunning HD clarity and tap to focus with precision.",
+        "img_pc": "shopify://shop_images/04_3f39541f-dfec-420e-94dd-6f196f818cd8.png",
+        "img_mb": "shopify://shop_images/04_98e7610d-e9b3-4170-9b1f-f4ba2e17f725.png",
+        "swiper_info": "Tap (the button) to transform. See the difference in real-time."
       }
     },
-    "video_with_grid_mdUeQT": {
+    "text_with_tab_U36rHh": {
+      "type": "text-with-tab",
+      "blocks": {
+        "tab_item_c4HzeG": {
+          "type": "tab_item",
+          "settings": {
+            "title": "Shine Bright.",
+            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "image": "shopify://shop_images/Four_shooting_modes01.png"
+          }
+        },
+        "tab_item_kVQ8B9": {
+          "type": "tab_item",
+          "settings": {
+            "title": "Shine Bright.",
+            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "image": "shopify://shop_images/Four_shooting_modes02.png"
+          }
+        },
+        "tab_item_wTKbfd": {
+          "type": "tab_item",
+          "settings": {
+            "title": "Shine Bright.",
+            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "image": "shopify://shop_images/Four_shooting_modes03.png"
+          }
+        },
+        "tab_item_TLiYz9": {
+          "type": "tab_item",
+          "settings": {
+            "title": "Shine Bright.",
+            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "image": "shopify://shop_images/Four_shooting_modes04.png"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_c4HzeG",
+        "tab_item_kVQ8B9",
+        "tab_item_wTKbfd",
+        "tab_item_TLiYz9"
+      ],
+      "name": "Text With Tab",
+      "settings": {
+        "title_1": "Your Best Shot, In Any Shot.",
+        "text_1": "Confidence in every condition, freedom in every frame.",
+        "title_2": "All In, One Shot.",
+        "text_2": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
+      }
+    },
+    "video_with_grid_GbQUgD": {
       "type": "video-with-grid",
       "name": "Video With Grid",
       "settings": {
@@ -48,18 +130,173 @@
         "video": "shopify://files/videos/07.mp4",
         "row1_img": "shopify://shop_images/07-2.png",
         "row1_heading": "Shoot",
-        "row1_text": "<p>Shoot<strong> </strong>in stunning 48MP clarity. Your best selfies are now behind you.</p>",
-        "row2_heading": "Placement",
-        "row2_text": "",
-        "row3_heading": "Portable",
-        "row3_text": ""
+        "row1_text": "Shoot in stunning 48MP clarity. Your best selfies are now behind you.",
+        "row2_heading": "Store",
+        "row2_text": "Store endlessly. Pop in a microSD card and capture without limits.",
+        "row2_img": "shopify://shop_images/07-3.png",
+        "row3_img": "shopify://shop_images/07-4.png",
+        "row3_heading": "Carry",
+        "row3_text": "Carry the ultimate all-in-one tool. Sleek, light, always ready."
+      }
+    },
+    "product_column_FWAfDV": {
+      "type": "product-column",
+      "blocks": {
+        "item_WTVtxP": {
+          "type": "item",
+          "settings": {
+            "p1_info_1_img": "shopify://shop_images/Memory_Comparison_1.svg",
+            "p1_info_1_text": "Pro Studio",
+            "p1_info_2_img": "shopify://shop_images/Memory_Comparison_6.svg",
+            "p1_info_2_text": "Permanent",
+            "p1_info_3_text": "",
+            "p2_info_1_img": "shopify://shop_images/Memory_Comparison_5.svg",
+            "p2_info_1_text": "Pro Studio 1",
+            "p2_info_2_img": "shopify://shop_images/Memory_Comparison_2.svg",
+            "p2_info_2_text": "Permanent 1",
+            "p2_info_3_text": ""
+          }
+        },
+        "item_6knzib": {
+          "type": "item",
+          "settings": {
+            "p1_info_1_text": "",
+            "p1_info_2_text": "",
+            "p1_info_3_text": "",
+            "p2_info_1_text": "",
+            "p2_info_2_text": "",
+            "p2_info_3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_WTVtxP",
+        "item_6knzib"
+      ],
+      "name": "Product Column",
+      "settings": {
+        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces",
+        "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
+        "product_1_handle": "with-selfix-using-rear-camera",
+        "product_2_handle": "standard-iphone-selfie-front-camera-1"
+      }
+    },
+    "product_column_KpPnAF": {
+      "type": "product-column",
+      "blocks": {
+        "item_DtDnrH": {
+          "type": "item",
+          "settings": {
+            "p1_info_1_img": "shopify://shop_images/Memory_Comparison_1.svg",
+            "p1_info_1_text": "Extremely Low",
+            "p1_info_2_text": "",
+            "p1_info_3_text": "",
+            "p2_info_1_img": "shopify://shop_images/Memory_Comparison_5.svg",
+            "p2_info_1_text": "Extremely High",
+            "p2_info_2_text": "",
+            "p2_info_3_text": ""
+          }
+        },
+        "item_9xJGgD": {
+          "type": "item",
+          "settings": {
+            "p1_info_1_img": "shopify://shop_images/Memory_Comparison_2.svg",
+            "p1_info_1_text": "Fully Removable &",
+            "p1_info_2_text": "",
+            "p1_info_3_text": "",
+            "p2_info_1_img": "shopify://shop_images/Memory_Comparison_6.svg",
+            "p2_info_1_text": "Permanent &",
+            "p2_info_2_text": "",
+            "p2_info_3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_DtDnrH",
+        "item_9xJGgD"
+      ],
+      "name": "Product Column",
+      "settings": {
+        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces.",
+        "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
+        "product_1_handle": "with-selfix-using-rear-camera",
+        "product_2_handle": "standard-iphone-selfie-front-camera"
+      }
+    },
+    "product_specification_J9wpHL": {
+      "type": "product-specification",
+      "blocks": {
+        "spec_44CfHq": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification01.svg",
+            "info_title": "1.60-inch AMOLED Touchscreen",
+            "info_text": "<p>Resolution: <strong>480 x 480</strong> pixels</p>"
+          }
+        },
+        "spec_6ayrL7": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification02.svg",
+            "info_title": "Slot:",
+            "info_text": "<p>Micro SD (TF) Card</p><p>Max. Supported Capacity: 2TB</p><p>Transfer Speeds: Supports UHS-I, up to 5 Gbps</p>"
+          }
+        },
+        "spec_DfhmrG": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification03.svg",
+            "info_title": "Power Delivery:",
+            "info_text": "<p>PD 2.0, up to <strong>100W</strong> input</p><p>Max. Power Consumption:</p><p>&lt; 2.2W ( with all features active)</p>"
+          }
+        },
+        "spec_ti4TN8": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification04.svg",
+            "info_title": "Power Button:",
+            "info_text": "<p>Dedicated mechanical</p><p>button for system on/off</p>"
+          }
+        },
+        "spec_MXMX9G": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification05.svg",
+            "info_title": "Available Colors:",
+            "info_text": "<p>- Oat White</p><p>- Blush Pink</p><p>- Midnight Black</p><p>Material:</p><p>Hight-quality TPU</p>"
+          }
+        },
+        "spec_zQRHtB": {
+          "type": "spec",
+          "settings": {
+            "icon": "shopify://shop_images/Specification06.svg",
+            "info_title": "For iPhone 17 Pro",
+            "info_text": "<p>156mm (H) x 76 mm (W) x</p><p>16mm (D)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "spec_44CfHq",
+        "spec_6ayrL7",
+        "spec_DfhmrG",
+        "spec_ti4TN8",
+        "spec_MXMX9G",
+        "spec_zQRHtB"
+      ],
+      "name": "Product Specification",
+      "settings": {
+        "heading": "Specification"
       }
     }
   },
   "order": [
-    "hero_banner_FWtQCx",
-    "text_with_video_MA9j6H",
-    "text_with_image_q4PihG",
-    "video_with_grid_mdUeQT"
+    "hero_banner_eLX9KN",
+    "text_with_video_qXwe8g",
+    "text_with_image_jEeYyp",
+    "text_with_tab_U36rHh",
+    "video_with_grid_GbQUgD",
+    "product_column_FWAfDV",
+    "product_column_KpPnAF",
+    "product_specification_J9wpHL"
   ]
 }
