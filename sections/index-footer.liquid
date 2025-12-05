@@ -1,0 +1,259 @@
+<style>
+  .index-footer {
+    background-color: #fff;
+    padding: 60px 40px;
+  }
+  .index-footer-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .index-footer-content {
+    width: 100%;
+  }
+  .index-footer-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .index-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 0 0;
+  }
+
+  .index-footer-newsletter {
+    max-width: 400px;
+  }
+
+  .index-footer-newsletter p.index-footer-newsletter-text {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .index-footer-logo {
+    display: flex;
+  }
+
+  .index-footer-logo img {
+    max-width: 150px;
+  }
+
+  .social-media-icon svg {
+    width: 24px;
+    height: auto;
+    max-width: 24px;
+  }
+  .index-footer-socialmedia {
+    display: flex;
+    gap: 15px;
+  }
+
+  .index-footer-copyright {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .index-footer {
+      padding: 30px 15px;
+    }
+  }
+</style>
+<div class="index-footer">
+  <div class="index-footer-wrapper">
+    <div class="index-footer-content">
+      <div class="index-footer-top">
+        <div class="index-footer-newsletter">
+          <p class="index-footer-newsletter-text">{{ section.settings.text }}</p>
+          <div class="index-footer-newsletter-form">
+            {%- form 'customer', class: 'index-email-signup__form' %}
+              <div
+                class="index-email-signup__input-group"
+              >
+                <label
+                  for="EmailInput-{{ section.id }}"
+                  class="visually-hidden"
+                >
+                  {{ 'blocks.email_signup.label' | t }}
+                </label>
+                <input
+                  id="EmailInput-{{ section.id }}"
+                  class="index-email-signup__input"
+                  type="email"
+                  name="contact[email]"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  placeholder=""
+                  required
+                  {% if form.errors %}
+                    autofocus
+                    aria-invalid="true"
+                    aria-describedby="Email-signup__message-error-{{ section.id }}"
+                  {% elsif form.posted_successfully? %}
+                    aria-describedby="Email-signup__message-success-{{ section.id }}"
+                  {% endif %}
+                >
+                <button
+                  class="index-email-signup__button"
+                  aria-label="{{ 'actions.sign_up' | t }}"
+                >
+                  Reserve launch invite
+                </button>
+              </div>
+
+              {%- if form.errors -%}
+                <div
+                  id="Email-signup__message-error-{{ section.id }}"
+                  class="email-signup__message email-signup__message--error"
+                  tabindex="-1"
+                >
+                  <svg
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    focusable="false"
+                    aria-hidden="true"
+                    class="icon-error"
+                  >
+                    {%- render 'icon', icon: 'error'  -%}
+                  </svg>
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </div>
+              {%- endif -%}
+
+              {%- if form.posted_successfully? -%}
+                <div
+                  id="Email-signup__message-success-{{ section.id }}"
+                  class="email-signup__message email-signup__message--success"
+                  tabindex="-1"
+                >
+                  <span class="svg-wrapper icon-success">
+                    {{ 'icon-checkmark.svg' | inline_asset_content }}
+                  </span>
+                  <p class="email-signup__message-text">{{ 'blocks.email_signup.success' | t }}</p>
+                </div>
+              {%- endif -%}
+            {% endform %}
+          </div>
+        </div>
+        <div class="index-footer-logo">
+          <img src="{{ section.settings.logo | image_url: width: master }}" alt="">
+        </div>
+      </div>
+      <div class="index-footer-bottom">
+        <div class="index-footer-copyright">{{ section.settings.copyright }}</div>
+        <div class="index-footer-socialmedia">
+          {% if section.settings.fb != blank %}
+            <a href="{{ section.settings.fb }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'fb' %}
+              </div>
+            </a>
+          {% endif %}
+          {% if section.settings.x != blank %}
+            <a href="{{ section.settings.x }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'x' %}
+              </div>
+            </a>
+          {% endif %}
+          {% if section.settings.ins != blank %}
+            <a href="{{ section.settings.ins }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'ins' %}
+              </div>
+            </a>
+          {% endif %}
+          {% if section.settings.pinterest != blank %}
+            <a href="{{ section.settings.pinterest }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'pinterest' %}
+              </div>
+            </a>
+          {% endif %}
+          {% if section.settings.youtube != blank %}
+            <a href="{{ section.settings.youtube }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'youtube' %}
+              </div>
+            </a>
+          {% endif %}
+          {% if section.settings.tk != blank %}
+            <a href="{{ section.settings.tk }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'tk' %}
+              </div>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Index Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "订阅文案"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "版权信息"
+    },
+    {
+      "type": "header",
+      "content": "社媒设置"
+    },
+    {
+      "type": "url",
+      "id": "fb",
+      "label": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "x",
+      "label": "X"
+    },
+    {
+      "type": "url",
+      "id": "ins",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "pinterest",
+      "label": "Pinterest"
+    },
+    {
+      "type": "url",
+      "id": "tk",
+      "label": "TikTok"
+    },
+    {
+      "type": "url",
+      "id": "youtube",
+      "label": "YouTube"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Footer"
+    }
+  ]
+}
+{% endschema %}
