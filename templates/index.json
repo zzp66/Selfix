@@ -13,7 +13,7 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/01.png",
+        "image_desktop": "shopify://shop_images/01_ab337424-c98b-4f97-8dda-4ccb52d2eba7.png",
         "image_mobile": "shopify://shop_images/01_3bf33e56-2b6b-40f5-9b82-4012879cf588.png",
         "subtitle": "Better Selfies, More Space",
         "title": "<p>The Ultimate</p><p>Selfie Case for iPhone</p>",
@@ -252,7 +252,7 @@
       "settings": {
         "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces.",
         "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
-        "product_1_handle": "with-selfix-using-rear-camera",
+        "product_1_handle": "with-selfix-using-rear-camera-1",
         "product_2_handle": "standard-iphone-selfie-front-camera"
       }
     },
