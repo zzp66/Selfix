@@ -28,15 +28,8 @@
 
   .scroll-sequence-title{
     margin: 0 auto;
-    position: absolute;
-    top: 5vh; /* 稍微调整位置 */
-    left: 50%;
-    z-index: 2;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    padding: 0 20px;
-    pointer-events: none; /* 防止遮挡画布滚动交互 */
+    background: #f3f3f3;
+    padding: 60px 0 0;
   }
   .scroll-sequence-title p.title{
     font-size: 48px;
@@ -54,6 +47,9 @@
   }
 
   @media screen and (max-width: 767px) {
+    .scroll-sequence-title{
+      padding: 30px 0 0;
+    }
     .scroll-sequence-title p.title{
       font-size: 28px;
     }
@@ -63,15 +59,15 @@
   }
 </style>
 
+<div class="scroll-sequence-title text-center">
+  {% if section.settings.heading != blank %}
+    <p class="title">{{ section.settings.heading }}</p>
+  {% endif %}
+  {% if section.settings.subheading != blank %}
+    <p class="subtitle">{{ section.settings.subheading }}</p>
+  {% endif %}
+</div>
 <div class="scroll-sequence-section" id="scroll-sequence-{{ section.id }}">
-  <div class="scroll-sequence-title text-center">
-    {% if section.settings.heading != blank %}
-      <p class="title">{{ section.settings.heading }}</p>
-    {% endif %}
-    {% if section.settings.subheading != blank %}
-      <p class="subtitle">{{ section.settings.subheading }}</p>
-    {% endif %}
-  </div>
   <div class="scroll-sticky-wrapper">
     <canvas class="scroll-sequence-canvas" id="canvas-{{ section.id }}"></canvas>
   </div>

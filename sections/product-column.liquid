@@ -32,19 +32,18 @@
     border-radius: 10px;
     padding: 80px 0;
   }
-  /* 确保这里只渲染必要的 CSS */
+
   ul.product-chose,
   ul.product-info {
     max-width: 880px;
     margin: 0 auto;
-    display: flex; /* 使用 Flexbox 保持两列并列 */
+    display: flex;
     list-style: none;
     padding: 0;
   }
 
-  /* 产品列 li 样式 */
   .product-info-item {
-    flex-basis: 50%; /* 确保两列等宽 */
+    flex-basis: 50%;
     padding: 0 10px;
   }
 
@@ -53,21 +52,20 @@
   }
 
   /* ** 核心 Grid 容器：应用于 product-info-list ** */
+  /* 修改：增加了 [info-x-4] 的定义 */
   .product-grid-container {
     display: grid;
-    /* 命名行定义，保持足够多的行以应对所有 Blocks */
     grid-template-rows:
       [title] auto
-      [info-1-1] auto [info-1-2] auto [info-1-3] auto
-      [info-2-1] auto [info-2-2] auto [info-2-3] auto
-      [info-3-1] auto [info-3-2] auto [info-3-3] auto
-      [info-4-1] auto [info-4-2] auto [info-4-3] auto
-      [info-5-1] auto [info-5-2] auto [info-5-3] auto; /* 预设最多 5 个 Blocks */
+      [info-1-1] auto [info-1-2] auto [info-1-3] auto [info-1-4] auto
+      [info-2-1] auto [info-2-2] auto [info-2-3] auto [info-2-4] auto
+      [info-3-1] auto [info-3-2] auto [info-3-3] auto [info-3-4] auto
+      [info-4-1] auto [info-4-2] auto [info-4-3] auto [info-4-4] auto
+      [info-5-1] auto [info-5-2] auto [info-5-3] auto [info-5-4] auto;
 
     height: 100%;
   }
 
-  /* Grid Item 基础样式 */
   .grid-item {
     padding: 20px 0;
     text-align: center;
@@ -85,7 +83,6 @@
     height: 100px;
   }
 
-  /* Icon 样式：限制高度，宽度自适应 */
   .info-icon {
     height: 60px;
     width: auto;
@@ -169,7 +166,6 @@
             </div>
           </div>
 
-          {% comment %} 缩略图 {% endcomment %}
           <div class="swiper product-1-swiper-thumbs product-1-swiper-thumbs-{{ section.id }}">
             <div class="swiper-wrapper">
               {% for media in product_1.media %}
@@ -230,6 +226,14 @@
               {% endif %}
               <p class="info_text">{{ block.settings.p1_info_3_text }}</p>
             </div>
+
+            {% comment %} 新增第 4 行 {% endcomment %}
+            <div class="info-4 grid-item" style="grid-row: info-{{ row_index }}-4;">
+              {% if block.settings.p1_info_4_img != blank %}
+                <img src="{{ block.settings.p1_info_4_img | image_url: width: master }}" alt="" class="info-icon">
+              {% endif %}
+              <p class="info_text">{{ block.settings.p1_info_4_text }}</p>
+            </div>
           {% endfor %}
         </div>
       </li>
@@ -264,6 +268,14 @@
               {% endif %}
               <p class="info_text">{{ block.settings.p2_info_3_text }}</p>
             </div>
+
+            {% comment %} 新增第 4 行 {% endcomment %}
+            <div class="info-4 grid-item" style="grid-row: info-{{ row_index }}-4;">
+              {% if block.settings.p2_info_4_img != blank %}
+                <img src="{{ block.settings.p2_info_4_img | image_url: width: master }}" alt="" class="info-icon">
+              {% endif %}
+              <p class="info_text">{{ block.settings.p2_info_4_text }}</p>
+            </div>
           {% endfor %}
         </div>
       </li>
@@ -291,6 +303,7 @@
 {% schema %}
 {
   "name": "Product Column",
+  "max_blocks": 2,
   "settings": [
     {
       "type": "text",
@@ -317,7 +330,7 @@
   "blocks": [
     {
       "type": "item",
-      "name": "参数行",
+      "name": "参数行 (包含4个数据点)",
       "settings": [
         { "type": "header", "content": "--- Product 1 (左侧) ---" },
         { "type": "image_picker", "id": "p1_info_1_img", "label": "P1 Info 1 Icon" },
@@ -329,6 +342,9 @@
         { "type": "image_picker", "id": "p1_info_3_img", "label": "P1 Info 3 Icon" },
         { "type": "textarea", "id": "p1_info_3_text", "label": "P1 Info 3 Text" },
 
+        { "type": "image_picker", "id": "p1_info_4_img", "label": "P1 Info 4 Icon" },
+        { "type": "textarea", "id": "p1_info_4_text", "label": "P1 Info 4 Text" },
+
         { "type": "header", "content": "--- Product 2 (右侧) ---" },
         { "type": "image_picker", "id": "p2_info_1_img", "label": "P2 Info 1 Icon" },
         { "type": "textarea", "id": "p2_info_1_text", "label": "P2 Info 1 Text" },
@@ -337,7 +353,10 @@
         { "type": "textarea", "id": "p2_info_2_text", "label": "P2 Info 2 Text" },
 
         { "type": "image_picker", "id": "p2_info_3_img", "label": "P2 Info 3 Icon" },
-        { "type": "textarea", "id": "p2_info_3_text", "label": "P2 Info 3 Text" }
+        { "type": "textarea", "id": "p2_info_3_text", "label": "P2 Info 3 Text" },
+
+        { "type": "image_picker", "id": "p2_info_4_img", "label": "P2 Info 4 Icon" },
+        { "type": "textarea", "id": "p2_info_4_text", "label": "P2 Info 4 Text" }
       ]
     }
   ],
