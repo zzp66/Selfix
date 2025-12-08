@@ -16,7 +16,7 @@
         "image_desktop": "shopify://shop_images/01_ab337424-c98b-4f97-8dda-4ccb52d2eba7.png",
         "image_mobile": "shopify://shop_images/01_3bf33e56-2b6b-40f5-9b82-4012879cf588.png",
         "subtitle": "Better Selfies, More Space",
-        "title": "<p>The Ultimate</p><p>Selfie Case for iPhone</p>",
+        "title": "<p>Selfix: The Ultimate Selfie </p><p>Case for iPhone<br/><br/></p>",
         "text_color": "#000000",
         "subtitle_bottom_left": "Coming Soon on Kickstarter",
         "text_color_bottom_left": "#000000"
@@ -27,16 +27,16 @@
       "name": "Text With Video",
       "settings": {
         "heading": "Your Style, Your Hue.",
-        "subheading": "- Oat Milk, - Orchid Haze, - Midnight",
-        "video": "shopify://files/videos/02.mp4"
+        "subheading": "For iPhone 17 Pro Series",
+        "video": "shopify://files/videos/02-2_398ca696-bc80-4d6b-b57a-d2cfff05686f.mp4"
       }
     },
     "index_newsletter_KTrL7L": {
       "type": "index-newsletter",
       "name": "Index Newsletter",
       "settings": {
-        "heading": "Get An Exclusive Discount!",
-        "subheading": "We're Launching Soon. Get an exclusive discount by signing up now!",
+        "heading": "Unlock Exclusive Offers!",
+        "subheading": "We're launching soon on Kickstarter. Subscribe now to receive launch updates and secure your best possible price.",
         "bg_color": "#ffffff"
       }
     },
@@ -46,7 +46,8 @@
         "image_slide_fHzicL": {
           "type": "image_slide",
           "settings": {
-            "img": "shopify://shop_images/Front.png",
+            "img_1": "shopify://shop_images/PC05-1-1.png",
+            "img_2": "shopify://shop_images/PC05-1-2.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -54,7 +55,8 @@
         "image_slide_r49jmm": {
           "type": "image_slide",
           "settings": {
-            "img": "shopify://shop_images/Front.png",
+            "img_1": "shopify://shop_images/PC05-2-1.png",
+            "img_2": "shopify://shop_images/PC05-2-2.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -62,7 +64,8 @@
         "image_slide_6dADAk": {
           "type": "image_slide",
           "settings": {
-            "img": "shopify://shop_images/Front.png",
+            "img_1": "shopify://shop_images/PC05-3-1.png",
+            "img_2": "shopify://shop_images/PC05-3-2.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -79,15 +82,15 @@
         "subheading": "Zero Lag, Full Control. Command the powerful lenses of your iPhone 17 Pro Max from the palm of your hand. See your composition with stunning HD clarity and tap to focus with precision.",
         "img_pc": "shopify://shop_images/04_3f39541f-dfec-420e-94dd-6f196f818cd8.png",
         "img_mb": "shopify://shop_images/04_98e7610d-e9b3-4170-9b1f-f4ba2e17f725.png",
-        "swiper_info": "Tap (the button) to transform. See the difference in real-time."
+        "swiper_info": "Tap the button to transform. See the difference in real-time."
       }
     },
     "scroll_animation_frames_UDmVrw": {
       "type": "scroll-animation-frames",
       "name": "Scroll Animation Frames",
       "settings": {
-        "heading": "Expandable Storage. Beyond Limits.",
-        "subheading": "Seamless expansion, removale convenience, and the freedom to capture life without limits.",
+        "heading": "Expandable Storage",
+        "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
         "frame_count": 186,
         "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-a-",
         "extension": "jpg",
@@ -141,8 +144,8 @@
       "settings": {
         "title_1": "Your Best Shot, In Any Shot.",
         "text_1": "Confidence in every condition, freedom in every frame.",
-        "title_2": "All In, One Shot.",
-        "text_2": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
+        "title_2": "Low Light? Right Light!",
+        "text_2": "Turn any glow into your spotlight. With enhanced Night Mode and a powerful rear camera, you're always the brightest part of the scene."
       }
     },
     "video_with_grid_GbQUgD": {
@@ -151,8 +154,8 @@
       "settings": {
         "heading": "Snap",
         "subheading": "Snap on your case. No apps, no setup. It just works.",
-        "video": "shopify://files/videos/07.mp4",
-        "row1_img": "shopify://shop_images/07-2.png",
+        "video": "shopify://files/videos/07-2 (1).mp4",
+        "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
         "row1_heading": "Shoot",
         "row1_text": "Shoot in stunning 48MP clarity. Your best selfies are now behind you.",
         "row2_heading": "Store",
@@ -167,8 +170,8 @@
       "type": "index-newsletter",
       "name": "Index Newsletter",
       "settings": {
-        "heading": "Get An Exclusive Discount!",
-        "subheading": "We're Launching Soon. Get an exclusive discount by signing up now!",
+        "heading": "Unlock Exclusive Offers!",
+        "subheading": "We're launching soon on Kickstarter. Subscribe now to receive launch updates and secure your best possible price.",
         "bg_color": "#ffffff"
       }
     },
@@ -208,7 +211,7 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces",
+        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces.",
         "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
         "product_1_handle": "with-selfix-using-rear-camera",
         "product_2_handle": "standard-iphone-selfie-front-camera-1"
@@ -250,8 +253,8 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces.",
-        "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
+        "heading": "Your Storage, Your Rules. Ditch the Upgrade Tax.",
+        "subheading": "A Smarter, More Flexible Way to Never Run Out of Space.",
         "product_1_handle": "with-selfix-using-rear-camera-1",
         "product_2_handle": "standard-iphone-selfie-front-camera"
       }
