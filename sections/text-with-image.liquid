@@ -85,11 +85,9 @@
   }
 
   .iws-slide-btn img {
+    max-width: 70px;
     animation: spin-btn 3s linear infinite;
     transform-origin: center center;
-  }
-  .iws-slide-btn img {
-    max-width: 70px;
   }
   .iws-slide-img {
     margin: 0 0 40px 0;
@@ -107,6 +105,45 @@
     line-height: 28px;
     font-weight: 600;
     margin: 0 0 10px 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .text-with-image {
+      padding: 30px 15px;
+    }
+    .text-with-image-wrapper {
+      margin: 20px 0 0;
+      padding: 0;
+    }
+    .text-with-image-title {
+      max-width: 100%;
+    }
+    .image-with-swiper-wrapper {
+      margin: 20px 0 0;
+      padding: 0;
+    }
+    .image-with-swiper {
+      margin: 30px 0 0;
+    }
+    .iws-slide-info {
+      max-width: 100%;
+    }
+    .iws-slide-btn img {
+      max-width: 30px;
+    }
+    .iws-slide-btn {
+      right: 3%;
+    }
+    .iws-slide-img {
+      margin: 0 0 20px 0;
+    }
+    p.iws-title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .iws-pagination {
+      margin: 20px 0 0;
+    }
   }
 </style>
 <div class="text-with-image">
@@ -164,13 +201,17 @@
     new Swiper('.image-with-swiper', {
       initialSlide: 0,
       centeredSlides: true,
-      slidesPerView: 'auto',
-      // spaceBetween: 40,
+      slidesPerView: 1,
       loop: true,
       grabCursor: true,
       pagination: {
         el: '.iws-pagination',
         clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+        },
       },
     });
 

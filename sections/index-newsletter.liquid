@@ -68,6 +68,18 @@
     font-size: 18px;
     line-height: 20px;
   }
+
+  @media screen and (max-width: 767px) {
+    .index-newsletter{
+      padding: 30px 15px;
+    }
+    .index-newsletter-content{
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+  }
 </style>
 <div class="index-newsletter newsletter-{{ section.id }}">
   <div class="index-newsletter-wrapper">

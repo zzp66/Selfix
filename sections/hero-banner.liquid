@@ -25,26 +25,6 @@
   .selfie-case-hero__image--mobile {
     display: none;
   }
-  @media screen and (max-width: 768px) {
-    .selfie-case-hero {
-      padding: 30px;
-    }
-    .selfie-case-hero__title p {
-      font-size: 32px;
-      line-height: 40px;
-    }
-    .selfie-case-hero__bottom-left {
-      left: 30px;
-      bottom: 30px;
-    }
-    .selfie-case-hero__image--desktop {
-      display: none;
-    }
-    .selfie-case-hero__image--mobile {
-      display: block;
-    }
-  }
-
   /* 居中文案容器 */
   .selfie-case-hero__content {
     position: relative;
@@ -62,8 +42,8 @@
   .selfie-case-hero__title p {
     margin: 0;
     font-size: 48px;
-    font-weight: 600;
     line-height: 56px;
+    font-weight: 600;
   }
   .selfie-case-hero__bottom-left {
     position: absolute;
@@ -73,6 +53,30 @@
     text-align: left;
     font-size: 20px;
     line-height: 24px;
+  }
+  @media screen and (max-width: 767px) {
+    .selfie-case-hero {
+      padding: 15px 15px 60px;
+    }
+    .selfie-case-hero__subtitle {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .selfie-case-hero__title p {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .selfie-case-hero__bottom-left {
+      left: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .selfie-case-hero__image--desktop {
+      display: none;
+    }
+    .selfie-case-hero__image--mobile {
+      display: block;
+    }
   }
 </style>
 

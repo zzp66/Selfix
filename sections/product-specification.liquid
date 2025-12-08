@@ -53,6 +53,35 @@
     line-height: 22px;
     margin: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    .product-specification {
+      padding: 30px 15px;
+    }
+    .product-specification-title p.title {
+      font-size: 28px;
+      line-height: 34px;
+    }
+    .product-specification-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .spec-item {
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .spec-item-icon img {
+      height: 30px;
+    }
+    .spec-item-info p.info-title {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .spec-item-info p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
 </style>
 <div class="product-specification">
   <div class="product-specification-wrapper">
