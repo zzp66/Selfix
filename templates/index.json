@@ -22,6 +22,79 @@
         "text_color_bottom_left": "#000000"
       }
     },
+    "sticky_nav_D49NVf": {
+      "type": "sticky-nav",
+      "blocks": {
+        "nav_item_TEeTAY": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Home",
+            "target_id": "shopify-section-template--26322796118310__hero_banner_eLX9KN"
+          }
+        },
+        "nav_item_ALt4tE": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Colors",
+            "target_id": "shopify-section-template--26322796118310__sticky_nav_D49NVf"
+          }
+        },
+        "nav_item_EFV99Y": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Rear Screen",
+            "target_id": "shopify-section-template--26322796118310__text_with_image_jEeYyp"
+          }
+        },
+        "nav_item_M6tiRD": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Expandable Storage",
+            "target_id": "shopify-section-template--26322796118310__scroll_animation_frames_UDmVrw"
+          }
+        },
+        "nav_item_jLLPNq": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Scenes",
+            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+          }
+        },
+        "nav_item_UWqaXM": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Experience",
+            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+          }
+        },
+        "nav_item_aJwTLK": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Why Selfix",
+            "target_id": "shopify-section-template--26322796118310__product_column_FWAfDV"
+          }
+        },
+        "nav_item_CdAHRL": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Specs",
+            "target_id": "shopify-section-template--26322796118310__product_specification_J9wpHL"
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_TEeTAY",
+        "nav_item_ALt4tE",
+        "nav_item_EFV99Y",
+        "nav_item_M6tiRD",
+        "nav_item_jLLPNq",
+        "nav_item_UWqaXM",
+        "nav_item_aJwTLK",
+        "nav_item_CdAHRL"
+      ],
+      "name": "Sticky Navigation",
+      "settings": {}
+    },
     "text_with_video_qXwe8g": {
       "type": "text-with-video",
       "name": "Text With Video",
@@ -46,8 +119,10 @@
         "image_slide_fHzicL": {
           "type": "image_slide",
           "settings": {
-            "img_1": "shopify://shop_images/PC05-1-1.png",
-            "img_2": "shopify://shop_images/PC05-1-2.png",
+            "img_1_pc": "shopify://shop_images/PC05-1-1_f7ebb6fa-681e-4616-927a-75c1cb373c27.png",
+            "img_1_mb": "shopify://shop_images/M05-1-1_ac0a5876-4e45-4ad4-8c05-64567d7d0a5c.png",
+            "img_2_pc": "shopify://shop_images/PC05-1-2_0f2011cd-28aa-444f-9be3-f882baf65e4e.png",
+            "img_2_mb": "shopify://shop_images/M05-1-2_c4e79e71-af27-491d-8289-21b4ae706dfb.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -55,8 +130,10 @@
         "image_slide_r49jmm": {
           "type": "image_slide",
           "settings": {
-            "img_1": "shopify://shop_images/PC05-2-1.png",
-            "img_2": "shopify://shop_images/PC05-2-2.png",
+            "img_1_pc": "shopify://shop_images/PC05-2-1.png",
+            "img_1_mb": "shopify://shop_images/M05-2-1.png",
+            "img_2_pc": "shopify://shop_images/PC05-2-2.png",
+            "img_2_mb": "shopify://shop_images/M05-2-2.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -64,8 +141,10 @@
         "image_slide_6dADAk": {
           "type": "image_slide",
           "settings": {
-            "img_1": "shopify://shop_images/PC05-3-1.png",
-            "img_2": "shopify://shop_images/PC05-3-2.png",
+            "img_1_pc": "shopify://shop_images/PC05-3-1.png",
+            "img_1_mb": "shopify://shop_images/M05-3-1.png",
+            "img_2_pc": "shopify://shop_images/PC05-3-2.png",
+            "img_2_mb": "shopify://shop_images/M05-3-2.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -91,11 +170,14 @@
       "settings": {
         "heading": "Expandable Storage",
         "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
-        "frame_count": 186,
-        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-a-",
         "extension": "jpg",
         "scroll_length": 200,
-        "canvas_height": 900
+        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-a-",
+        "frame_count": 186,
+        "canvas_height": 900,
+        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-m1208-",
+        "frame_count_mobile": 198,
+        "canvas_height_mobile": 500
       }
     },
     "text_with_tab_U36rHh": {
@@ -105,7 +187,8 @@
           "type": "tab_item",
           "settings": {
             "title": "Shine Bright.",
-            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "icon_image_normal": "shopify://shop_images/01-Low_Light_Right_Light_-02.png",
+            "icon_image_active": "shopify://shop_images/01-Low_Light_Right_Light_-01.png",
             "image": "shopify://shop_images/Four_shooting_modes01.png"
           }
         },
@@ -113,7 +196,8 @@
           "type": "tab_item",
           "settings": {
             "title": "Shine Bright.",
-            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02.png",
+            "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01.png",
             "image": "shopify://shop_images/Four_shooting_modes02.png"
           }
         },
@@ -121,7 +205,8 @@
           "type": "tab_item",
           "settings": {
             "title": "Shine Bright.",
-            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "icon_image_normal": "shopify://shop_images/03-All_In_One_Shot.-02.png",
+            "icon_image_active": "shopify://shop_images/03-All_In_One_Shot.-01.png",
             "image": "shopify://shop_images/Four_shooting_modes03.png"
           }
         },
@@ -129,7 +214,8 @@
           "type": "tab_item",
           "settings": {
             "title": "Shine Bright.",
-            "icon_svg": "<svg height=\"25\" viewbox=\"0 0 21 25\" width=\"21\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m12.7949 11.204c0 1.4036-1.0092 2.5032-2.2974 2.5032-1.2638 0-2.2919-1.1201-2.2924-2.4972-.0029-.6798.2525-1.3123.7191-1.7809.4296-.4314.9883-.6691 1.5734-.6691 1.2668 0 2.2974 1.0964 2.2974 2.444zm5.2051-1.704v6c0 1.3807-1.1193 2.5-2.5 2.5h-10c-1.3807 0-2.5-1.1193-2.5-2.5v-6c0-1.3807 1.1193-2.5 2.5-2.5h10c1.3807 0 2.5 1.1193 2.5 2.5zm-1 0c0-.8271-.6729-1.5-1.5-1.5h-10c-.8271 0-1.5.6729-1.5 1.5v6c0 .8271.6729 1.5 1.5 1.5h.5123c.6129-1.5259 2.363-2.6667 4.4272-2.6667 2.062 0 3.8119 1.1408 4.4279 2.6667h.6326c.8271 0 1.5-.6729 1.5-1.5zm-11.3272 9.9927c-.2661-.2158-.6729-.0338-.6728.301l.0002 1.0062h-1.2064c-1.4199 0-2.5771-1.1553-2.5801-2.5742l-.0044-2.168c-.0005-.2754-.2241-.499-.5-.499-.2778.0283-.5005.2236-.5.501l.0044 2.168c.0039 1.9697 1.6099 3.5723 3.5801 3.5723h1.2065v.8195c.0002.3347.4069.5166.6729.3008l1.7417-1.4126c.1939-.1572.1939-.4446 0-.6018l-1.7421-1.413zm15.1137-12.7202c-.0044-1.9697-1.6104-3.5723-3.5801-3.5723h-1.2068v-.8195c-.0002-.3347-.4069-.5165-.6729-.3008l-1.7417 1.4126c-.1939.1573-.1939.4446 0 .6019l1.7421 1.413c.2661.2158.6729.0338.6728-.301l-.0002-1.0061h1.2066c1.4194 0 2.5767 1.1553 2.5801 2.5742l.0044 2.168c.0005.2754.2241.499.5.499h.001c.2764-.001.4995-.2246.499-.501l-.0044-2.168z\"></path></svg>",
+            "icon_image_normal": "shopify://shop_images/04-Shoot_Now._Store_Now.-02.png",
+            "icon_image_active": "shopify://shop_images/04-Shoot_Now._Store_Now.-01.png",
             "image": "shopify://shop_images/Four_shooting_modes04.png"
           }
         }
@@ -327,6 +413,7 @@
   },
   "order": [
     "hero_banner_eLX9KN",
+    "sticky_nav_D49NVf",
     "text_with_video_qXwe8g",
     "index_newsletter_KTrL7L",
     "text_with_image_jEeYyp",
