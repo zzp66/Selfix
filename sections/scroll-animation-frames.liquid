@@ -1,9 +1,10 @@
 <style>
   .scroll-sequence-section {
     background-color: #f3f3f3;
-    padding: 150px 0 20px;
+    padding: 0; /* 移除顶部padding，由sticky处理 */
     position: relative;
     width: 100%;
+    /* 动态设置高度，用于产生滚动空间 */
     height: {{ section.settings.scroll_length }}vh;
   }
 
@@ -11,55 +12,65 @@
     position: sticky;
     top: 0;
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .scroll-sequence-canvas {
-    width: 100%;
-    height: auto;
-    max-height: {{ section.settings.canvas_height }}px;
-    object-fit: contain;
+    display: block;
+    /* 初始样式，JS会控制具体尺寸 */
+    max-width: 100%;
+    max-height: 100vh;
   }
 
   .scroll-sequence-title{
     margin: 0 auto;
     position: absolute;
-    top: 25px;
+    top: 5vh; /* 稍微调整位置 */
     left: 50%;
     z-index: 2;
     transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    pointer-events: none; /* 防止遮挡画布滚动交互 */
   }
   .scroll-sequence-title p.title{
     font-size: 48px;
-    line-height: 56px;
+    line-height: 1.2;
     font-weight: 600;
     margin: 0 0 20px 0;
+    color: #333;
   }
   .scroll-sequence-title p.subtitle{
     max-width: 600px;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 1.4;
     margin: 0 auto;
+    color: #666;
   }
 
   @media screen and (max-width: 767px) {
-    .scroll-sequence-title{
-      width: 100%;
-      padding: 0 15px;
-    }
     .scroll-sequence-title p.title{
       font-size: 28px;
-      line-height: 34px;
+    }
+    .scroll-sequence-title p.subtitle{
+      font-size: 16px;
     }
   }
 </style>
 
 <div class="scroll-sequence-section" id="scroll-sequence-{{ section.id }}">
   <div class="scroll-sequence-title text-center">
-    <p class="title">{{ section.settings.heading }}</p>
-    <p class="subtitle">{{ section.settings.subheading }}</p>
+    {% if section.settings.heading != blank %}
+      <p class="title">{{ section.settings.heading }}</p>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="subtitle">{{ section.settings.subheading }}</p>
+    {% endif %}
   </div>
   <div class="scroll-sticky-wrapper">
     <canvas class="scroll-sequence-canvas" id="canvas-{{ section.id }}"></canvas>
@@ -68,55 +79,94 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const frameCount = {{ section.settings.frame_count }};
-  const baseUrl = "{{ section.settings.base_url }}";
-  const extension = "{{ section.settings.extension }}";
-
   const sectionEl = document.getElementById("scroll-sequence-{{ section.id }}");
   const canvas = document.getElementById("canvas-{{ section.id }}");
   const context = canvas.getContext("2d");
 
-  const images = [];
-  let imagesLoaded = 0;
+  // --- 配置对象：从 Liquid 获取 PC 和 Mobile 的不同设置 ---
+  const config = {
+    extension: "{{ section.settings.extension }}",
+    desktop: {
+      frameCount: {{ section.settings.frame_count }},
+      baseUrl: "{{ section.settings.base_url }}",
+      maxHeight: {{ section.settings.canvas_height }}
+    },
+    mobile: {
+      frameCount: {{ section.settings.frame_count_mobile }}, // 移动端帧数
+      baseUrl: "{{ section.settings.base_url_mobile }}",     // 移动端链接
+      maxHeight: {{ section.settings.canvas_height_mobile }} // 移动端最大高度
+    }
+  };
 
-  /** --------------- 1. 预加载所有图片 --------------- **/
-  function preloadImages() {
+  let images = [];
+  let currentConfig = null; // 当前正在使用的配置 (PC 或 Mobile)
+  let isLoading = false;    // 防止重复加载
+
+  /** 1. 判断是否为移动端 **/
+  function isMobileDevice() {
+    return window.innerWidth < 768;
+  }
+
+  /** 2. 预加载图片 (核心修改：接收参数) **/
+  function preloadImages(settings) {
     return new Promise(resolve => {
-      for (let i = 1; i <= frameCount; i++) {
+      images = []; // 清空旧数组
+      let loadedCount = 0;
+      
+      // 如果没有配置图片链接，直接返回
+      if(!settings.baseUrl) {
+        resolve();
+        return;
+      }
+
+      for (let i = 1; i <= settings.frameCount; i++) {
         const img = new Image();
-        img.src = `${baseUrl}${i}.${extension}`;
+        img.src = `${settings.baseUrl}${i}.${config.extension}`;
         img.onload = () => {
-          imagesLoaded++;
-          if (imagesLoaded === frameCount) resolve();
+          loadedCount++;
+          if (loadedCount === settings.frameCount) resolve();
         };
+        img.onerror = () => {
+           // 容错处理：即使某张图挂了也继续，防止卡死
+           loadedCount++;
+           if (loadedCount === settings.frameCount) resolve();
+        }
         images.push(img);
       }
     });
   }
 
-  /** --------------- 2. 绘制帧（使用缓存图片，零延迟） --------------- **/
+  /** 3. 绘制帧 **/
   function renderFrame(index) {
-  const img = images[index - 1];
+    if (images.length === 0 || index < 1 || index > images.length) return;
+    
+    const img = images[index - 1];
+    
+    // 使用当前配置的最大高度
+    const maxH = currentConfig.maxHeight; 
+    
+    // 计算比例：保持图片比例，且高度不超过 maxH
+    // 同时可以添加逻辑：宽度不超过屏幕宽度 (object-fit: contain 效果)
+    const scaleH = maxH / img.height;
+    const scaleW = window.innerWidth / img.width;
+    
+    // 取较小的缩放比例，确保图片完全显示在屏幕内
+    const scale = Math.min(scaleH, scaleW, 1.5); // 1.5防止过分放大
 
-  const maxH = {{ section.settings.canvas_height }}; // 最大高度
-  const scale = maxH / img.height;
-  const scaledWidth = img.width * scale;
-  const scaledHeight = img.height * scale;
+    const scaledWidth = img.width * scale;
+    const scaledHeight = img.height * scale;
 
-  // 调整 canvas 尺寸为缩放后的大小
-  canvas.width = scaledWidth;
-  canvas.height = scaledHeight;
+    canvas.width = scaledWidth;
+    canvas.height = scaledHeight;
 
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(img, 0, 0, scaledWidth, scaledHeight);
-}
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+  }
 
-
-  /** --------------- 3. 滚动驱动动画（顺滑） --------------- **/
+  /** 4. 滚动逻辑 **/
   let ticking = false;
-
   function onScroll() {
-    if (!ticking) {
+    if (!ticking && images.length > 0) {
       requestAnimationFrame(updateAnimation);
       ticking = true;
     }
@@ -125,28 +175,59 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateAnimation() {
     const rect = sectionEl.getBoundingClientRect();
     const sectionHeight = sectionEl.offsetHeight;
+    const windowHeight = window.innerHeight;
 
-    // 滚动进度：0 ~ 1
-    let progress = (-rect.top) / (sectionHeight - window.innerHeight);
+    // 滚动进度 calculation
+    let progress = (-rect.top) / (sectionHeight - windowHeight);
     progress = Math.min(Math.max(progress, 0), 1);
 
-    // 当前帧
-    const frameIndex = Math.floor(progress * (frameCount - 1)) + 1;
+    const frameIndex = Math.floor(progress * (currentConfig.frameCount - 1)) + 1;
     renderFrame(frameIndex);
 
     ticking = false;
   }
 
-  /** --------------- 4. 初始化流程 --------------- **/
-  preloadImages().then(() => {
-    // 设置 canvas 尺寸
-    canvas.width = images[0].width;
-    canvas.height = images[0].height;
+  /** 5. 初始化与切换逻辑 **/
+  async function init() {
+    if (isLoading) return;
+    isLoading = true;
 
-    // 初始显示第一帧
-    renderFrame(1);
+    // 确定当前应该用哪套配置
+    const isMobile = isMobileDevice();
+    const targetConfig = isMobile ? config.mobile : config.desktop;
 
-    window.addEventListener("scroll", onScroll);
+    // 只有当配置发生变化（比如从PC变手机）或者首次加载时才运行
+    if (currentConfig !== targetConfig) {
+      currentConfig = targetConfig;
+      
+      // 清除画布，显示加载状态或空白
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 加载新图片组
+      await preloadImages(currentConfig);
+      
+      // 加载完成，渲染第一帧
+      if (images.length > 0) {
+        renderFrame(1);
+        // 强制运行一次 scroll update 以防页面刷新时已经在中间位置
+        updateAnimation();
+      }
+    }
+    isLoading = false;
+  }
+
+  // 启动
+  init();
+  window.addEventListener("scroll", onScroll);
+
+  // 监听窗口调整 (防抖)
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      init(); // 重新检查设备并加载
+      if(images.length > 0) renderFrame(1); // 重新适配尺寸
+    }, 250);
   });
 });
 </script>
@@ -156,6 +237,10 @@ document.addEventListener("DOMContentLoaded", () => {
   "name": "Scroll Animation Frames",
   "settings": [
     {
+      "type": "header",
+      "content": "文本内容"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "标题"
@@ -163,19 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       "type": "text",
       "id": "subheading",
-      "label": "文案"
+      "label": "副标题"
     },
     {
-      "type": "number",
-      "id": "frame_count",
-      "label": "图片总帧数",
-      "default": 60
-    },
-    {
-      "type": "text",
-      "id": "base_url",
-      "label": "图片基础链接（不含数字和扩展名）",
-      "default": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun"
+      "type": "header",
+      "content": "通用设置"
     },
     {
       "type": "select",
@@ -184,20 +261,60 @@ document.addEventListener("DOMContentLoaded", () => {
       "default": "jpg",
       "options": [
         { "value": "jpg", "label": "JPG" },
-        { "value": "png", "label": "PNG" }
+        { "value": "png", "label": "PNG" },
+        { "value": "webp", "label": "WEBP" }
       ]
     },
     {
       "type": "number",
       "id": "scroll_length",
-      "label": "滚动区高度（vh）",
-      "default": 200
+      "label": "滚动区总高度 (vh)",
+      "default": 300,
+      "info": "数值越大，滚动完动画需要的距离越长"
+    },
+    {
+      "type": "header",
+      "content": "桌面端 (PC) 设置"
+    },
+    {
+      "type": "text",
+      "id": "base_url",
+      "label": "PC 图片基础链接",
+      "info": "不含数字和扩展名，例如 https://.../pc-frame-"
+    },
+    {
+      "type": "number",
+      "id": "frame_count",
+      "label": "PC 图片总帧数",
+      "default": 60
     },
     {
       "type": "number",
       "id": "canvas_height",
-      "label": "Canvas 最大高度(px)",
+      "label": "PC 最大显示高度 (px)",
       "default": 900
+    },
+    {
+      "type": "header",
+      "content": "移动端 (Mobile) 设置"
+    },
+    {
+      "type": "text",
+      "id": "base_url_mobile",
+      "label": "Mobile 图片基础链接",
+      "info": "不含数字和扩展名，例如 https://.../mb-frame-"
+    },
+    {
+      "type": "number",
+      "id": "frame_count_mobile",
+      "label": "Mobile 图片总帧数",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "canvas_height_mobile",
+      "label": "Mobile 最大显示高度 (px)",
+      "default": 500
     }
   ],
   "presets": [

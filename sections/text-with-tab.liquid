@@ -40,7 +40,7 @@
   }
 
   /* ------------------------------------------------ */
-  /* Tab 标题样式与颜色切换 */
+  /* Tab 标题样式与图片图标切换 */
   /* ------------------------------------------------ */
   .tab-title {
     position: relative;
@@ -53,7 +53,7 @@
     font-weight: 500;
     min-width: 120px;
     white-space: nowrap;
-    /* 文本和图标颜色过渡，而不是背景色过渡 */
+    /* 文本颜色过渡 */
     transition: color 0.35s ease;
   }
 
@@ -66,18 +66,50 @@
     transition: color 0.35s ease;
   }
 
+  /* 图标容器 */
   .tab-icon {
     max-width: 30px;
+    height: 30px; /* 确保高度固定，避免图标切换时抖动 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tab-icon img {
+    max-width: 30px;
+    /* 确保图片切换时的平滑过渡 */
+    transition: opacity 0.35s ease;
+  }
+
+  /* 默认状态：显示正常图标，隐藏激活图标 */
+  .tab-icon .normal-icon {
+    display: block;
+    opacity: 1;
+    position: absolute; /* 使两个图标定位在一起 */
+  }
+
+  .tab-icon .active-icon {
+    display: block;
+    opacity: 0;
+    position: absolute;
+  }
+
+  /* 激活状态：隐藏正常图标，显示激活图标 */
+  .tab-title.is-active .tab-icon .normal-icon {
+    opacity: 0;
+  }
+
+  .tab-title.is-active .tab-icon .active-icon {
+    opacity: 1;
+  }
+
+  /* 激活状态：文本变为白色 */
+  .tab-title.is-active .tab-content-wrapper {
+    color: #fff;
   }
 
   .tab-text {
     margin: 15px 0 0;
-  }
-
-  /* 激活状态：文本和图标变为白色 */
-  .tab-title.is-active .tab-content-wrapper {
-    color: #fff;
-    fill: #fff;
   }
 
   .tab-content-container {
@@ -176,6 +208,8 @@
               loading="lazy"
               class="tab-image"
             >
+          {% else %}
+            <div class="placeholder-content">Tab Content Placeholder</div>
           {% endif %}
         </div>
       {% endfor %}
@@ -190,10 +224,30 @@
           class="tab-title {% if forloop.first %}is-active{% endif %}"
           data-tab-target="#tab-{{ section.id }}-{{ block.id }}"
         >
-          {% comment %} Tab 内部内容容器，用于图标和文本颜色切换 {% endcomment %}
+          {% comment %} Tab 内部内容容器，用于文本颜色切换 {% endcomment %}
           <div class="tab-content-wrapper">
             <div class="tab-icon">
-              {{ block.settings.icon_svg }}
+              {% comment %} 正常状态图标 {% endcomment %}
+              {% if block.settings.icon_image_normal != blank %}
+                <img
+                  src="{{ block.settings.icon_image_normal | image_url: width: 60 }}"
+                  alt="{{ block_title }} icon normal"
+                  class="normal-icon"
+                >
+              {% else %}
+                <div class="normal-icon">?</div>
+              {% endif %}
+
+              {% comment %} 激活状态图标 {% endcomment %}
+              {% if block.settings.icon_image_active != blank %}
+                <img
+                  src="{{ block.settings.icon_image_active | image_url: width: 60 }}"
+                  alt="{{ block_title }} icon active"
+                  class="active-icon"
+                >
+              {% else %}
+                <div class="active-icon">!</div>
+              {% endif %}
             </div>
             <p class="tab-text">{{ block_title }}</p>
           </div>
@@ -307,6 +361,7 @@
       tab.addEventListener('click', (event) => {
         if (tab.classList.contains('is-active')) return;
 
+        // 🚀 修复点: 使用 tab.dataset.tabTarget 正确获取 data-tab-target 属性
         const targetId = tab.dataset.tabTarget;
         switchTab(targetId, tab);
       });
@@ -375,9 +430,16 @@
           "default": "产品特性"
         },
         {
-          "type": "textarea",
-          "id": "icon_svg",
-          "label": "图标 SVG 代码"
+          "type": "image_picker",
+          "id": "icon_image_normal",
+          "label": "图标：正常状态",
+          "info": "非激活状态下的图标图片"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image_active",
+          "label": "图标：激活状态",
+          "info": "激活状态下的图标图片 (通常为白色或深色)"
         },
         {
           "type": "image_picker",

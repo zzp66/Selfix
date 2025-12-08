@@ -1,0 +1,225 @@
+<style>
+  .shopify-section.sticky-subnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #f5f5f7;
+  }
+
+  .sticky-subnav-box {
+    box-shadow: 0 3px 3px #0000000f;
+  }
+
+  .sticky-subnav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  .sticky-subnav-item {
+    padding: 8px 20px;
+    cursor: pointer;
+    color: #000;
+    font-size: 16px;
+    line-height: 20px;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    border-radius: 50px;
+  }
+
+  .sticky-subnav-item:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .sticky-subnav-item.active {
+    color: #fff;
+    background-color: #000;
+    position: relative;
+  }
+
+  @media screen and (max-width: 767px) {
+    .sticky-subnav-container {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow-x: auto;
+      padding: 5px 10px;
+    }
+    .shopify-section.sticky-subnav {
+      top: 0;
+    }
+  }
+</style>
+<div class="sticky-subnav-box" id="sticky-subnav-{{ section.id }}">
+  <div class="sticky-subnav-container regular-width-1600">
+    {% for block in section.blocks %}
+      <div
+        class="sticky-subnav-item"
+        data-target="{{ block.settings.target_id | escape }}"
+      >
+        {{ block.settings.title }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const subnavInner = document.querySelector('#sticky-subnav-{{ section.id }}');
+    if (!subnavInner) return;
+
+    const stickyElement = subnavInner.closest('.sticky-subnav') || subnavInner;
+    const subnav = subnavInner;
+    const items = Array.from(subnav.querySelectorAll('.sticky-subnav-item'));
+
+    function getStickyHeight() {
+      return stickyElement && stickyElement.offsetHeight ? stickyElement.offsetHeight : 75;
+    }
+
+    // 规范 target id
+    const targetIds = items
+      .map((i) => {
+        const t = i.dataset && i.dataset.target ? String(i.dataset.target).trim() : '';
+        return t.startsWith('#') ? t.slice(1) : t;
+      })
+      .filter(Boolean);
+
+    const targetEls = targetIds
+      .map((id) => {
+        const el = document.getElementById(id);
+        if (!el) console.warn('Sticky Subnav: 未找到 id 为', id, '的元素。请确认页面存在该 id。');
+        return el || null;
+      })
+      .filter(Boolean);
+
+    if (targetEls.length === 0) {
+      console.warn('Sticky Subnav: 没有找到任何目标 section 元素，检查 block 的 target_id 设置。');
+    }
+
+    // 点击滚动（保留）
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        const rawTarget = item.dataset && item.dataset.target ? String(item.dataset.target).trim() : '';
+        const targetId = rawTarget.startsWith('#') ? rawTarget.slice(1) : rawTarget;
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) {
+          console.warn('Sticky Subnav 点击：未找到目标元素 id=', targetId);
+          return;
+        }
+        const stickyHeight = getStickyHeight();
+        const top = targetEl.getBoundingClientRect().top + window.scrollY - stickyHeight - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // 设置高亮函数
+    function setActive(id) {
+      items.forEach((i) => i.classList.remove('active'));
+      if (!id) return;
+      const match = items.find((i) => {
+        const t = i.dataset && i.dataset.target ? String(i.dataset.target).trim() : '';
+        const norm = t.startsWith('#') ? t.slice(1) : t;
+        return norm === id;
+      });
+      if (match) match.classList.add('active');
+    }
+
+    // 清除高亮
+    function clearActive() {
+      items.forEach((i) => i.classList.remove('active'));
+    }
+
+    // 基于距离视口“中心线”（考虑 sticky）计算最近的 target，并设置 active
+    function updateActiveByDistance() {
+      if (!targetEls.length) {
+        clearActive();
+        return;
+      }
+      const stickyHeight = getStickyHeight();
+      // 参考点为视口中间，但下移一点以避开 sticky 的区域
+      const viewportCenter = window.scrollY + stickyHeight + (window.innerHeight - stickyHeight) / 2;
+
+      let bestEl = null;
+      let bestDist = Infinity;
+      targetEls.forEach((el) => {
+        const elRect = el.getBoundingClientRect();
+        const elCenter = window.scrollY + elRect.top + elRect.height / 2;
+        const dist = Math.abs(elCenter - viewportCenter);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestEl = el;
+        }
+      });
+
+      // 阈值：当最近元素距离视口中心过远时，不激活任何项
+      // 这里用窗口高度的 0.45 作为阈值（可按需调整）
+      const threshold = window.innerHeight * 0.45;
+
+      if (bestEl && bestDist <= threshold) {
+        setActive(bestEl.id);
+      } else {
+        clearActive();
+      }
+    }
+
+    // 高性能滚动监听：用 requestAnimationFrame 节流
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActiveByDistance();
+        ticking = false;
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      // 重新计算一次
+      updateActiveByDistance();
+    });
+
+    // 页面加载时先运行一次，并在 load 后再运行一次（处理图片延迟加载）
+    updateActiveByDistance();
+    window.addEventListener('load', () => {
+      setTimeout(updateActiveByDistance, 300);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Sticky Navigation",
+  "class": "sticky-subnav",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "nav_item",
+      "name": "Navigation Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题"
+        },
+        {
+          "type": "text",
+          "id": "target_id",
+          "label": "目标 section 的 ID",
+          "info": "填写页面中目标 section 的 HTML id"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Navigation"
+    }
+  ]
+}
+{% endschema %}
