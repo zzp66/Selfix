@@ -64,8 +64,39 @@
   .image-with-swiper {
     margin: 40px 0 0;
   }
+  .iws-slide-img-box {
+    position: relative;
+  }
+
+  .iws-slide-btn {
+    position: absolute;
+    top: 7%;
+    right: 4%;
+    cursor: pointer;
+  }
+
+  @keyframes spin-btn {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .iws-slide-btn img {
+    animation: spin-btn 3s linear infinite;
+    transform-origin: center center;
+  }
+  .iws-slide-btn img {
+    max-width: 70px;
+  }
   .iws-slide-img {
     margin: 0 0 40px 0;
+  }
+
+  .iws-slide-img .image-2 {
+    display: none;
   }
   .iws-slide-info {
     margin: 0 auto;
@@ -97,14 +128,23 @@
     </div>
   </div>
   <div class="image-with-swiper-wrapper">
-    <p class="image-with-swiper-info regular-text text-center">{{ section.settings.swiper_info }}</p>
+    <p class="image-with-swiper-info regular-text text-center fw-600">{{ section.settings.swiper_info }}</p>
     <div class="swiper image-with-swiper">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           <div class="swiper-slide">
             <div class="iws-slide">
-              <div class="iws-slide-img">
-                <img src="{{ block.settings.img | image_url: width: master }}" alt="">
+              <div class="iws-slide-img-box">
+                <div class="iws-slide-img">
+                  <img class="image-1" src="{{ block.settings.img_1 | image_url: width: master }}" alt="">
+                  <img class="image-2" src="{{ block.settings.img_2 | image_url: width: master }}" alt="">
+                </div>
+                <div class="iws-slide-btn">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0986/4842/4742/files/Toggle_button.svg?v=1764916606"
+                    alt=""
+                  >
+                </div>
               </div>
               <div class="iws-slide-info text-center">
                 <p class="iws-title">{{ block.settings.title }}</p>
@@ -122,14 +162,34 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.image-with-swiper', {
+      initialSlide: 0,
       centeredSlides: true,
       slidesPerView: 'auto',
-      spaceBetween: 40,
+      // spaceBetween: 40,
       loop: true,
+      grabCursor: true,
       pagination: {
         el: '.iws-pagination',
         clickable: true,
       },
+    });
+
+    document.querySelectorAll('.iws-slide-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation(); // 避免触发 Swiper 滑动
+
+        const slide = btn.closest('.swiper-slide');
+        const img1 = slide.querySelector('.image-1');
+        const img2 = slide.querySelector('.image-2');
+
+        if (img1.style.display === 'none') {
+          img1.style.display = 'block';
+          img2.style.display = 'none';
+        } else {
+          img1.style.display = 'none';
+          img2.style.display = 'block';
+        }
+      });
     });
   });
 </script>
@@ -176,8 +236,13 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "img",
-          "label": "Image"
+          "id": "img_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_2",
+          "label": "Image 2"
         },
         {
           "type": "text",
