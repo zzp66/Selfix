@@ -42,6 +42,79 @@
         "padding-block-end": 8
       }
     },
+    "sticky_nav_qPW9T4": {
+      "type": "sticky-nav",
+      "blocks": {
+        "nav_item_3gAFrb": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Home",
+            "target_id": "shopify-section-template--26322796118310__hero_banner_eLX9KN"
+          }
+        },
+        "nav_item_VgiPD7": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Colors",
+            "target_id": "shopify-section-template--26322796118310__sticky_nav_D49NVf"
+          }
+        },
+        "nav_item_t4PTJE": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Rear Screen",
+            "target_id": "shopify-section-template--26322796118310__text_with_image_jEeYyp"
+          }
+        },
+        "nav_item_bGVJQr": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Expandable Storage",
+            "target_id": "shopify-section-template--26322796118310__scroll_animation_frames_UDmVrw"
+          }
+        },
+        "nav_item_mpaUiY": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Scenes",
+            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+          }
+        },
+        "nav_item_3mNDzf": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Experience",
+            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+          }
+        },
+        "nav_item_QrMFWb": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Why Selfix",
+            "target_id": "shopify-section-template--26322796118310__product_column_FWAfDV"
+          }
+        },
+        "nav_item_EVB8MA": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Specs",
+            "target_id": "shopify-section-template--26322796118310__product_specification_J9wpHL"
+          }
+        }
+      },
+      "block_order": [
+        "nav_item_3gAFrb",
+        "nav_item_VgiPD7",
+        "nav_item_t4PTJE",
+        "nav_item_bGVJQr",
+        "nav_item_mpaUiY",
+        "nav_item_3mNDzf",
+        "nav_item_QrMFWb",
+        "nav_item_EVB8MA"
+      ],
+      "name": "Sticky Navigation",
+      "settings": {}
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -50,7 +123,7 @@
           "static": true,
           "settings": {
             "hide_logo_on_home_page": false,
-            "padding-block-start": 0,
+            "padding-block-start": 20,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -83,7 +156,7 @@
       },
       "settings": {
         "logo_position": "left",
-        "menu_position": "center",
+        "menu_position": "left",
         "menu_row": "top",
         "show_search": false,
         "search_position": "right",
@@ -95,7 +168,7 @@
         "localization_font_size": "0.875rem",
         "localization_position": "right",
         "localization_row": "top",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "section_height": "standard",
         "enable_sticky_header": "scroll-up",
         "divider_width": 0,
@@ -115,6 +188,7 @@
   },
   "order": [
     "header_announcements_WbCTVz",
+    "sticky_nav_qPW9T4",
     "header_section"
   ]
 }
