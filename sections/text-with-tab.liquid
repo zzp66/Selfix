@@ -30,6 +30,9 @@
     pointer-events: none;
   }
   .tab-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     cursor: pointer;
     background: none;
@@ -39,7 +42,6 @@
     font-size: 16px;
     font-weight: 500;
     min-width: 120px;
-    white-space: nowrap;
     transition: color 0.35s ease;
   }
 
@@ -91,6 +93,9 @@
 
   .tab-text {
     margin: 15px 0 0;
+  }
+  .tab-text p {
+    margin: 0;
   }
 
   .tab-content-container {
@@ -145,7 +150,7 @@
 
   .tab-footer-content-container {
     max-width: 800px;
-    margin: 40px auto 0;
+    margin: 40px auto;
     position: relative;
     min-height: 100px;
   }
@@ -184,7 +189,7 @@
       margin: 0 0 10px 0;
     }
     .moving-background {
-      height: calc(100% - 20px);
+      height: calc(100% - 10px);
     }
     .text-with-tab-text p.subtitle {
       font-size: 16px;
@@ -192,7 +197,10 @@
     }
     .tab-footer-content-container {
       min-height: 80px;
-      margin: 20px 0 0;
+      margin: 30px auto;
+    }
+    .tab-title {
+      padding: 10px;
     }
   }
 </style>
@@ -257,7 +265,7 @@
                 <div class="active-icon">!</div>
               {% endif %}
             </div>
-            <p class="tab-text">{{ block_title }}</p>
+            <div class="tab-text">{{ block_title }}</div>
           </div>
         </div>
       {% endfor %}
@@ -433,10 +441,9 @@
       "name": "Tab 项",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "title",
-          "label": "Tab 标题文本",
-          "default": "产品特性"
+          "label": "Tab 标题文本"
         },
         {
           "type": "image_picker",

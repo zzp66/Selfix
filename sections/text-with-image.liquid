@@ -84,6 +84,7 @@
 
   .iws-slide-btn img {
     max-width: 70px;
+    min-width: 70px;
     animation: spin-btn 3s linear infinite;
     transform-origin: center center;
   }
@@ -141,8 +142,8 @@
       max-width: 100%;
     }
     .iws-slide-btn img {
-      max-width: 45px;
-      min-width: 45px;
+      max-width: 65px;
+      min-width: 65px;
     }
     .iws-slide-btn {
       top: auto;
@@ -242,7 +243,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.image-with-swiper', {
+    const swiper = new Swiper('.image-with-swiper', {
       initialSlide: 0,
       centeredSlides: true,
       slidesPerView: 1,
@@ -259,28 +260,77 @@
       },
     });
 
+    // 追踪自动切换和延迟恢复的 ID
+    let autoToggleIntervalId;
+    let resumeTimeoutId;
+    const AUTO_SWITCH_INTERVAL = 2000; // 2 秒自动切换
+    const RESUME_DELAY = 3000; // 3 秒后恢复自动切换
+
+    // 封装图片切换逻辑
+    function toggleImageState(slide) {
+      const wrapper1 = slide.querySelector('.state-wrapper-1');
+      const wrapper2 = slide.querySelector('.state-wrapper-2');
+
+      const style1 = window.getComputedStyle(wrapper1).display;
+
+      if (style1 === 'none') {
+        wrapper1.style.display = 'block';
+        wrapper2.style.display = 'none';
+      } else {
+        wrapper1.style.display = 'none';
+        wrapper2.style.display = 'block';
+      }
+    }
+
+    // 自动切换所有 Slide 的图片状态
+    const autoToggleSlides = document.querySelectorAll('.image-with-swiper .swiper-slide');
+
+    function autoToggleImages() {
+      autoToggleSlides.forEach((slide) => {
+        toggleImageState(slide);
+      });
+    }
+
+    // 启动自动切换
+    function startAutoToggle() {
+      if (!autoToggleIntervalId) {
+        autoToggleIntervalId = setInterval(autoToggleImages, AUTO_SWITCH_INTERVAL);
+      }
+    }
+
+    // 停止自动切换，并清除所有待处理的延迟恢复计时器
+    function stopAutoToggle() {
+      clearInterval(autoToggleIntervalId);
+      autoToggleIntervalId = null;
+      clearTimeout(resumeTimeoutId);
+    }
+
+    // 1. 手动切换功能：点击时停止自动切换，并延迟 3 秒后恢复
     document.querySelectorAll('.iws-slide-btn').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
-        e.stopPropagation(); // 避免触发 Swiper 滑动
-
+        e.stopPropagation();
         const slide = btn.closest('.swiper-slide');
-        // 获取两个状态的包裹容器
-        const wrapper1 = slide.querySelector('.state-wrapper-1');
-        const wrapper2 = slide.querySelector('.state-wrapper-2');
 
-        // 通过判断 wrapper 的 display 属性来切换
-        // 这里使用 getComputedStyle 以确保获取准确的初始状态
-        const style1 = window.getComputedStyle(wrapper1).display;
+        // 执行切换
+        toggleImageState(slide);
 
-        if (style1 === 'none') {
-          wrapper1.style.display = 'block';
-          wrapper2.style.display = 'none';
-        } else {
-          wrapper1.style.display = 'none';
-          wrapper2.style.display = 'block';
-        }
+        // 停止自动切换
+        stopAutoToggle();
+
+        // 3 秒后重新启动自动切换
+        resumeTimeoutId = setTimeout(startAutoToggle, RESUME_DELAY);
       });
     });
+
+    // 2. 初始化时启动自动切换
+    startAutoToggle();
+
+    // 3. 悬停暂停/恢复功能（防止干扰）
+    const swiperContainer = document.querySelector('.image-with-swiper');
+
+    swiperContainer.addEventListener('mouseenter', stopAutoToggle);
+
+    swiperContainer.addEventListener('mouseleave', startAutoToggle);
   });
 </script>
 

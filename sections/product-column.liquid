@@ -94,6 +94,9 @@
     font-size: 16px;
     line-height: 20px;
   }
+  .info_text p {
+    margin: 0;
+  }
   .product-1-swiper .swiper-slide {
     width: 100%;
   }
@@ -210,21 +213,21 @@
               {% if block.settings.p1_info_1_img != blank %}
                 <img src="{{ block.settings.p1_info_1_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p1_info_1_text }}</p>
+              <div class="info_text">{{ block.settings.p1_info_1_text }}</div>
             </div>
 
             <div class="info-2 grid-item" style="grid-row: info-{{ row_index }}-2;">
               {% if block.settings.p1_info_2_img != blank %}
                 <img src="{{ block.settings.p1_info_2_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p1_info_2_text }}</p>
+              <div class="info_text">{{ block.settings.p1_info_2_text }}</div>
             </div>
 
             <div class="info-3 grid-item" style="grid-row: info-{{ row_index }}-3;">
               {% if block.settings.p1_info_3_img != blank %}
                 <img src="{{ block.settings.p1_info_3_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p1_info_3_text }}</p>
+              <div class="info_text">{{ block.settings.p1_info_3_text }}</div>
             </div>
 
             {% comment %} 新增第 4 行 {% endcomment %}
@@ -232,7 +235,7 @@
               {% if block.settings.p1_info_4_img != blank %}
                 <img src="{{ block.settings.p1_info_4_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p1_info_4_text }}</p>
+              <div class="info_text">{{ block.settings.p1_info_4_text }}</div>
             </div>
           {% endfor %}
         </div>
@@ -252,21 +255,21 @@
               {% if block.settings.p2_info_1_img != blank %}
                 <img src="{{ block.settings.p2_info_1_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p2_info_1_text }}</p>
+              <div class="info_text">{{ block.settings.p2_info_1_text }}</div>
             </div>
 
             <div class="info-2 grid-item" style="grid-row: info-{{ row_index }}-2;">
               {% if block.settings.p2_info_2_img != blank %}
                 <img src="{{ block.settings.p2_info_2_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p2_info_2_text }}</p>
+              <div class="info_text">{{ block.settings.p2_info_2_text }}</div>
             </div>
 
             <div class="info-3 grid-item" style="grid-row: info-{{ row_index }}-3;">
               {% if block.settings.p2_info_3_img != blank %}
                 <img src="{{ block.settings.p2_info_3_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p2_info_3_text }}</p>
+              <div class="info_text">{{ block.settings.p2_info_3_text }}</div>
             </div>
 
             {% comment %} 新增第 4 行 {% endcomment %}
@@ -274,7 +277,7 @@
               {% if block.settings.p2_info_4_img != blank %}
                 <img src="{{ block.settings.p2_info_4_img | image_url: width: master }}" alt="" class="info-icon">
               {% endif %}
-              <p class="info_text">{{ block.settings.p2_info_4_text }}</p>
+              <div class="info_text">{{ block.settings.p2_info_4_text }}</div>
             </div>
           {% endfor %}
         </div>
@@ -334,29 +337,29 @@
       "settings": [
         { "type": "header", "content": "--- Product 1 (左侧) ---" },
         { "type": "image_picker", "id": "p1_info_1_img", "label": "P1 Info 1 Icon" },
-        { "type": "textarea", "id": "p1_info_1_text", "label": "P1 Info 1 Text" },
+        { "type": "richtext", "id": "p1_info_1_text", "label": "P1 Info 1 Text" },
 
         { "type": "image_picker", "id": "p1_info_2_img", "label": "P1 Info 2 Icon" },
-        { "type": "textarea", "id": "p1_info_2_text", "label": "P1 Info 2 Text" },
+        { "type": "richtext", "id": "p1_info_2_text", "label": "P1 Info 2 Text" },
 
         { "type": "image_picker", "id": "p1_info_3_img", "label": "P1 Info 3 Icon" },
-        { "type": "textarea", "id": "p1_info_3_text", "label": "P1 Info 3 Text" },
+        { "type": "richtext", "id": "p1_info_3_text", "label": "P1 Info 3 Text" },
 
         { "type": "image_picker", "id": "p1_info_4_img", "label": "P1 Info 4 Icon" },
-        { "type": "textarea", "id": "p1_info_4_text", "label": "P1 Info 4 Text" },
+        { "type": "richtext", "id": "p1_info_4_text", "label": "P1 Info 4 Text" },
 
         { "type": "header", "content": "--- Product 2 (右侧) ---" },
         { "type": "image_picker", "id": "p2_info_1_img", "label": "P2 Info 1 Icon" },
-        { "type": "textarea", "id": "p2_info_1_text", "label": "P2 Info 1 Text" },
+        { "type": "richtext", "id": "p2_info_1_text", "label": "P2 Info 1 Text" },
 
         { "type": "image_picker", "id": "p2_info_2_img", "label": "P2 Info 2 Icon" },
-        { "type": "textarea", "id": "p2_info_2_text", "label": "P2 Info 2 Text" },
+        { "type": "richtext", "id": "p2_info_2_text", "label": "P2 Info 2 Text" },
 
         { "type": "image_picker", "id": "p2_info_3_img", "label": "P2 Info 3 Icon" },
-        { "type": "textarea", "id": "p2_info_3_text", "label": "P2 Info 3 Text" },
+        { "type": "richtext", "id": "p2_info_3_text", "label": "P2 Info 3 Text" },
 
         { "type": "image_picker", "id": "p2_info_4_img", "label": "P2 Info 4 Icon" },
-        { "type": "textarea", "id": "p2_info_4_text", "label": "P2 Info 4 Text" }
+        { "type": "richtext", "id": "p2_info_4_text", "label": "P2 Info 4 Text" }
       ]
     }
   ],

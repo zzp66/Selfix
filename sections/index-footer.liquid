@@ -199,6 +199,13 @@
               </div>
             </a>
           {% endif %}
+          {% if section.settings.linkedin != blank %}
+            <a href="{{ section.settings.linkedin }}">
+              <div class="social-media-icon">
+                {% render 'social-media-icon', icon: 'linkedin' %}
+              </div>
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -257,6 +264,11 @@
       "type": "url",
       "id": "youtube",
       "label": "YouTube"
+    },
+    {
+      "type": "url",
+      "id": "linkedin",
+      "label": "Linkedin"
     }
   ],
   "presets": [
