@@ -56,7 +56,7 @@
           "type": "nav_item",
           "settings": {
             "title": "Colors",
-            "target_id": "shopify-section-template--26322796118310__sticky_nav_D49NVf"
+            "target_id": "shopify-section-template--26322796118310__text_with_video_qXwe8g"
           }
         },
         "nav_item_t4PTJE": {
@@ -84,7 +84,7 @@
           "type": "nav_item",
           "settings": {
             "title": "Experience",
-            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+            "target_id": "shopify-section-template--26322796118310__video_with_grid_GbQUgD"
           }
         },
         "nav_item_QrMFWb": {
@@ -113,7 +113,9 @@
         "nav_item_EVB8MA"
       ],
       "name": "Sticky Navigation",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/seleix01.png"
+      }
     },
     "header_section": {
       "type": "header",
