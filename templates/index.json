@@ -96,21 +96,13 @@
         "text_color_bottom_left": "#000000"
       }
     },
-    "text_with_video_RDjKfa": {
-      "type": "text-with-video",
-      "name": "Text With Video",
-      "settings": {
-        "heading": "",
-        "subheading": ""
-      }
-    },
     "text_with_video_qXwe8g": {
       "type": "text-with-video",
       "name": "Text With Video",
       "settings": {
         "heading": "Your Style, Your Hue.",
         "subheading": "For iPhone 17 Pro Series",
-        "video": "shopify://files/videos/02-2_398ca696-bc80-4d6b-b57a-d2cfff05686f.mp4"
+        "video": "shopify://files/videos/02-5.mp4"
       }
     },
     "index_newsletter_KTrL7L": {
@@ -120,14 +112,6 @@
         "heading": "Unlock Exclusive Offers!",
         "subheading": "We're launching soon on Kickstarter. Subscribe now to receive launch updates and secure your best possible price.",
         "bg_color": "#ffffff"
-      }
-    },
-    "text_with_video_K8HBBn": {
-      "type": "text-with-video",
-      "name": "Text With Video",
-      "settings": {
-        "heading": "",
-        "subheading": ""
       }
     },
     "text_with_image_jEeYyp": {
@@ -175,9 +159,9 @@
       "name": "Text With Image",
       "settings": {
         "heading": "The Rear Screen. Your Window to Pro-Level Selfies.",
-        "subheading": "Zero Lag, Full Control. Command the powerful lenses of your iPhone 17 Pro Max from the palm of your hand. See your composition with stunning HD clarity and tap to focus with precision.",
-        "img_pc": "shopify://shop_images/04_bbceed9c-0d04-468a-ab96-06b9a2e63a33.png",
-        "img_mb": "shopify://shop_images/04-1.png",
+        "subheading": "",
+        "img_pc": "shopify://shop_images/04-1_e0bbcf0d-65cd-4ff4-ac7d-0dc4b8bc94ca.png",
+        "img_mb": "shopify://shop_images/04-1_7692d69c-a5bc-432d-9e24-489ae5101baa.png",
         "swiper_info": "Tap the button to transform. See the difference in real-time."
       }
     },
@@ -192,7 +176,7 @@
         "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-PC1208-2027_",
         "frame_count": 198,
         "canvas_height": 900,
-        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1208-2137-",
+        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1209-1947_",
         "frame_count_mobile": 198,
         "canvas_height_mobile": 500
       }
@@ -200,45 +184,45 @@
     "text_with_tab_U36rHh": {
       "type": "text-with-tab",
       "blocks": {
-        "tab_item_c4HzeG": {
+        "tab_item_nDi3ej": {
           "type": "tab_item",
           "settings": {
-            "title": "Shine Bright.",
-            "icon_image_normal": "shopify://shop_images/01-Low_Light_Right_Light_-02.png",
-            "icon_image_active": "shopify://shop_images/01-Low_Light_Right_Light_-01.png",
+            "title": "<p>Low Light? </p><p>Right Light!</p>",
+            "icon_image_normal": "shopify://shop_images/01-Low_Light_Right_Light_-02_9e1abfc6-7628-48cf-b247-560289fada50.png",
+            "icon_image_active": "shopify://shop_images/01-Low_Light_Right_Light_-01_0b393eba-49f9-461b-bb65-8645d2c65d39.png",
             "image": "shopify://shop_images/Four_shooting_modes01.png",
             "title_content": "Low Light? Right Light!",
             "text_content": "Turn any glow into your spotlight. With enhanced Night Mode and a powerful rear camera, you're always the brightest part of the scene."
           }
         },
-        "tab_item_kVQ8B9": {
+        "tab_item_8pWLfh": {
           "type": "tab_item",
           "settings": {
-            "title": "All In, One Shot.",
-            "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02.png",
-            "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01.png",
+            "title": "<p>All In, </p><p>One Shot.</p>",
+            "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02_874bdff1-ee1b-41d6-b584-c24d8fab28df.png",
+            "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01_1330bfed-2dc4-4432-919e-08cf63c7e4ad.png",
             "image": "shopify://shop_images/Four_shooting_modes02.png",
             "title_content": "All In, One Shot.",
             "text_content": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
           }
         },
-        "tab_item_wTKbfd": {
+        "tab_item_i6fKfY": {
           "type": "tab_item",
           "settings": {
-            "title": "Preview Perfection.",
-            "icon_image_normal": "shopify://shop_images/03-All_In_One_Shot.-02.png",
-            "icon_image_active": "shopify://shop_images/03-All_In_One_Shot.-01.png",
+            "title": "<p>Preview </p><p>Perfection. </p>",
+            "icon_image_normal": "shopify://shop_images/03-All_In_One_Shot.-02_66c98e9b-07e8-4b82-8e91-c3d4998140bb.png",
+            "icon_image_active": "shopify://shop_images/03-All_In_One_Shot.-01_73e934d1-b8bc-43e1-93f4-5e2c014ba0aa.png",
             "image": "shopify://shop_images/Four_shooting_modes03.png",
             "title_content": "Preview Perfection.",
             "text_content": "See it. Perfect it. Capture it. Use the rear screen to frame your shot and fine-tune your expression like a pro. Post-worthy results, guaranteed."
           }
         },
-        "tab_item_TLiYz9": {
+        "tab_item_CmcExQ": {
           "type": "tab_item",
           "settings": {
-            "title": "Shoot Now. Store Now.",
-            "icon_image_normal": "shopify://shop_images/04-Shoot_Now._Store_Now.-02.png",
-            "icon_image_active": "shopify://shop_images/04-Shoot_Now._Store_Now.-01.png",
+            "title": "<p>Shoot Now. </p><p>Store Now.</p>",
+            "icon_image_normal": "shopify://shop_images/04-Shoot_Now._Store_Now.-02_60f6c6c6-53b1-4740-ba18-db5d575649f7.png",
+            "icon_image_active": "shopify://shop_images/04-Shoot_Now._Store_Now.-01_c8eb4a09-64d6-4bcb-b360-f82dd139a3db.png",
             "image": "shopify://shop_images/Four_shooting_modes04.png",
             "title_content": "Shoot Now. Store Now.",
             "text_content": "Document freely, remember everything. With massive expandable storage, the memory is all that matters."
@@ -246,15 +230,15 @@
         }
       },
       "block_order": [
-        "tab_item_c4HzeG",
-        "tab_item_kVQ8B9",
-        "tab_item_wTKbfd",
-        "tab_item_TLiYz9"
+        "tab_item_nDi3ej",
+        "tab_item_8pWLfh",
+        "tab_item_i6fKfY",
+        "tab_item_CmcExQ"
       ],
       "name": "Text With Tab",
       "settings": {
         "title_1": "Your Best Shot, In Any Shot.",
-        "text_1": "Confidence in every condition, freedom in every frame."
+        "text_1": "Your Best Shot, In Any Shot."
       }
     },
     "video_with_grid_GbQUgD": {
@@ -291,33 +275,36 @@
           "type": "item",
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Camera_comparison01.png",
-            "p1_info_1_text": "Pro Studio \n(48MP x3)",
-            "p1_info_2_img": "shopify://shop_images/Camera_comparison02.png",
-            "p1_info_2_text": "Massive \n(1/1.28\" Main)",
-            "p1_info_3_img": "shopify://shop_images/Camera_comparison03.png",
-            "p1_info_3_text": "4x to 8x Optical Zoom",
-            "p1_info_4_img": "shopify://shop_images/Camera_comparison04.png",
-            "p1_info_4_text": "13mm to 200mm + Dynamic (85-120mm)",
+            "p1_info_1_text": "<p>Pro Studio Photo</p><p>(48MP x3)</p>",
+            "p1_info_2_img": "shopify://shop_images/Camera_comparison09.png",
+            "p1_info_2_text": "<p>Clear, Bright </p><p>Image with </p><p>Night Mode</p>",
+            "p1_info_3_img": "shopify://shop_images/Camera_comparison11.png",
+            "p1_info_3_text": "<p>Precise Control </p><p>with </p><p>Rear Screen</p>",
+            "p1_info_4_img": "shopify://shop_images/Camera_comparison02.png",
+            "p1_info_4_text": "<p>Massive Main </p><p>Sensor</p><p> (1/1.28\")</p>",
             "p2_info_1_img": "shopify://shop_images/Camera_comparison05.png",
-            "p2_info_1_text": "Good \n(18MP)",
-            "p2_info_2_img": "shopify://shop_images/Camera_comparison06.png",
-            "p2_info_2_text": "Small \n(for video calls)",
-            "p2_info_3_img": "shopify://shop_images/Camera_comparison07.png",
-            "p2_info_3_text": "None \n(Digital Crop)",
-            "p2_info_4_img": "shopify://shop_images/Camera_comparison08.png",
-            "p2_info_4_text": "Single Fixed Lens"
+            "p2_info_1_text": "<p>Standard Photo</p><p>(18MP)</p>",
+            "p2_info_2_img": "shopify://shop_images/Camera_comparison10.png",
+            "p2_info_2_text": "<p>Blurry, </p><p>Noisy </p><p>Image</p>",
+            "p2_info_3_img": "shopify://shop_images/Camera_comparison12.png",
+            "p2_info_3_text": "<p>Guesswork </p><p>& </p><p>Cropped View</p>",
+            "p2_info_4_img": "shopify://shop_images/Camera_comparison06.png",
+            "p2_info_4_text": "<p>Small Video </p><p>Call </p><p>Sensor</p>"
           }
         },
         "item_6knzib": {
           "type": "item",
-          "disabled": true,
           "settings": {
-            "p1_info_1_text": "",
-            "p1_info_2_text": "",
+            "p1_info_1_img": "shopify://shop_images/Camera_comparison03.png",
+            "p1_info_1_text": "<p>Up to 8x Optical Zoom</p>",
+            "p1_info_2_img": "shopify://shop_images/Camera_comparison04.png",
+            "p1_info_2_text": "<p>13mm to 200mm+ Range</p>",
             "p1_info_3_text": "",
             "p1_info_4_text": "",
-            "p2_info_1_text": "",
-            "p2_info_2_text": "",
+            "p2_info_1_img": "shopify://shop_images/Camera_comparison07.png",
+            "p2_info_1_text": "<p>None \n(Digital Crop)</p>",
+            "p2_info_2_img": "shopify://shop_images/Camera_comparison08.png",
+            "p2_info_2_text": "<p>Single Fixed Lens</p>",
             "p2_info_3_text": "",
             "p2_info_4_text": ""
           }
@@ -342,21 +329,21 @@
           "type": "item",
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Memory_Comparison01.png",
-            "p1_info_1_text": "Extremely Low\n (~$50 for 512GB SD Card)",
+            "p1_info_1_text": "<p>Extremely Low</p><p>( ~$50 for 512GB SD Card )</p>",
             "p1_info_2_img": "shopify://shop_images/Memory_Comparison02.png",
-            "p1_info_2_text": "Fully Removable & Swappable",
+            "p1_info_2_text": "<p>Fully Removable </p><p>& </p><p>Swappable</p>",
             "p1_info_3_img": "shopify://shop_images/Memory_Comparison03.png",
-            "p1_info_3_text": "Swappable,\nVirtually Unlimited",
+            "p1_info_3_text": "<p>Swappable,<br/>Virtually </p><p>Unlimited</p>",
             "p1_info_4_img": "shopify://shop_images/Memory_Comparison04.png",
-            "p1_info_4_text": "Portable & Universal",
+            "p1_info_4_text": "<p>Portable & Universal</p>",
             "p2_info_1_img": "shopify://shop_images/Memory_Comparison05.png",
-            "p2_info_1_text": "Extremely High \n(+$200 for 512GB)",
+            "p2_info_1_text": "<p>Extremely High <br/>( +$200 for 512GB )</p>",
             "p2_info_2_img": "shopify://shop_images/Memory_Comparison06.png",
-            "p2_info_2_text": "Permanent & Locked-In",
+            "p2_info_2_text": "<p>Permanent                               </p><p> & </p><p>Locked-In</p>",
             "p2_info_3_img": "shopify://shop_images/Memory_Comparison07.png",
-            "p2_info_3_text": "Capped at 2TB",
+            "p2_info_3_text": "<p>Capped </p><p>at </p><p>2TB</p>",
             "p2_info_4_img": "shopify://shop_images/Memory_Comparison08.png",
-            "p2_info_4_text": "Trapped in Ecosystem"
+            "p2_info_4_text": "<p>Trapped in Ecosystem</p>"
           }
         },
         "item_9xJGgD": {
@@ -364,12 +351,12 @@
           "disabled": true,
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Memory_Comparison_2.svg",
-            "p1_info_1_text": "Fully Removable &",
+            "p1_info_1_text": "<p>Fully Removable &</p>",
             "p1_info_2_text": "",
             "p1_info_3_text": "",
             "p1_info_4_text": "",
             "p2_info_1_img": "shopify://shop_images/Memory_Comparison_6.svg",
-            "p2_info_1_text": "Permanent &",
+            "p2_info_1_text": "<p>Permanent &</p>",
             "p2_info_2_text": "",
             "p2_info_3_text": "",
             "p2_info_4_text": ""
@@ -382,7 +369,7 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "Your Storage, Your Rules. Ditch the Upgrade Tax.",
+        "heading": "Your Storage, Your Rules.                       Ditch the Upgrade Tax.",
         "subheading": "A Smarter, More Flexible Way to Never Run Out of Space.",
         "product_1_handle": "with-selfix-using-rear-camera-1",
         "product_2_handle": "standard-iphone-selfie-front-camera"
@@ -396,7 +383,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification01.png",
             "info_title": "1.60-inch AMOLED Touchscreen",
-            "info_text": "<p>Resolution: 480 x 480 pixels<br/><br/><br/></p>"
+            "info_text": "<p>Resolution: <strong>480 x 480 </strong>pixels<br/><br/><br/></p>"
           }
         },
         "spec_6ayrL7": {
@@ -404,7 +391,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification02.png",
             "info_title": "Slot:",
-            "info_text": "<p>Micro SD (TF) Card</p><p>Max. Supported Capacity: <strong>2TB</strong></p><p>Transfer Speeds: Supports UHS-I, up to 5 Gbps</p>"
+            "info_text": "<p>Micro SD (TF) Card</p><p>Max. Supported Capacity: <strong>2TB</strong></p><p>Transfer Standard: Supports UHS-I, Class 10 (C10), Class 3 (U3), and Class 90 (V90) standards.<br/><br/></p>"
           }
         },
         "spec_DfhmrG": {
@@ -412,7 +399,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification03.png",
             "info_title": "Power Delivery:",
-            "info_text": "<p>PD 2.0, up to <strong>100W</strong> input</p><p>Max. Power Consumption:</p><p>&lt; 2.2W ( with all features active)</p>"
+            "info_text": "<p>PD 3.0, up to <strong>100W</strong> input</p><p>Max. Power Consumption:</p><p>&lt; 2.2W ( with all features active)</p>"
           }
         },
         "spec_ti4TN8": {
@@ -436,7 +423,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification06.png",
             "info_title": "For iPhone 17 Pro Max:",
-            "info_text": "<p>169 mm (H) × 81 mm (W) × 16 mm (D)</p><p><strong>For iPhone 17 Pro :</strong></p><p>156mm (H) × 76 mm (W) × 16mm (D)<br/><br/><br/><br/></p><p></p>"
+            "info_text": "<p>169 mm (H) × 81 mm (W) × 17 mm (D)</p><p><strong>For iPhone 17 Pro :</strong></p><p>156mm (H) × 76 mm (W) × 17 mm (D)<br/><br/><br/><br/></p><p></p>"
           }
         }
       },
@@ -457,10 +444,8 @@
   "order": [
     "sticky_nav_D49NVf",
     "hero_banner_eLX9KN",
-    "text_with_video_RDjKfa",
     "text_with_video_qXwe8g",
     "index_newsletter_KTrL7L",
-    "text_with_video_K8HBBn",
     "text_with_image_jEeYyp",
     "scroll_animation_frames_UDmVrw",
     "text_with_tab_U36rHh",
