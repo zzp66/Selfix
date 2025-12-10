@@ -43,7 +43,18 @@
     position: relative;
   }
 
+  .sticky-subnav-logo {
+    display: none;
+  }
+
   @media screen and (max-width: 767px) {
+    header-component#header-component {
+      display: none;
+    }
+    .sticky-subnav-logo {
+      display: flex;
+      min-width: 120px;
+    }
     .sticky-subnav-container {
       flex-wrap: nowrap;
       white-space: nowrap;
@@ -57,6 +68,12 @@
 </style>
 <div class="sticky-subnav-box" id="sticky-subnav-{{ section.id }}">
   <div class="sticky-subnav-container regular-width-1600">
+    <a href="/">
+      <div class="sticky-subnav-logo">
+        <img src="{{ section.settings.logo |  image_url: width: master }}" alt="">
+      </div>
+    </a>
+
     {% for block in section.blocks %}
       <div
         class="sticky-subnav-item"
@@ -196,7 +213,14 @@
 {
   "name": "Sticky Navigation",
   "class": "sticky-subnav",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "只在移动端显示"
+    }
+  ],
   "blocks": [
     {
       "type": "nav_item",

@@ -40,11 +40,8 @@
     opacity: 1;
   }
 
-  .iws-pagination {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    margin: 40px 0 0;
+  .image-with-swiper .iws-pagination {
+    bottom: 11%;
   }
   .image-with-swiper .swiper-pagination-bullet {
     width: 25px;
@@ -56,6 +53,7 @@
   }
   .image-with-swiper .swiper-pagination-bullet-active {
     opacity: 1;
+    width: 50px;
   }
 
   .image-with-swiper {
@@ -120,6 +118,34 @@
     margin: 0 0 10px 0;
   }
 
+  .iws-btns {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .iws-btns .iws-next,
+  .iws-btns .iws-prev {
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: #000;
+    color: #fff;
+  }
+  .iws-btns .iws-next::after,
+  .iws-btns .iws-prev::after {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1600px) {
+    .image-with-swiper .iws-pagination {
+      bottom: 18%;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     .text-with-image {
       padding: 30px 15px;
@@ -149,7 +175,7 @@
       top: auto;
       right: auto;
       bottom: 4%;
-      right: 8%;
+      right: 6%;
     }
     .iws-slide-img {
       margin: 0 0 20px 0;
@@ -158,8 +184,16 @@
       font-size: 20px;
       line-height: 24px;
     }
-    .iws-pagination {
+
+    .image-with-swiper .iws-pagination {
+      position: relative;
+      top: auto;
+      bottom: auto;
       margin: 20px 0 0;
+    }
+
+    .iws-btns {
+      width: 100%;
     }
   }
 </style>
@@ -237,6 +271,11 @@
         {% endfor %}
       </div>
       <div class="swiper-pagination iws-pagination"></div>
+      <!-- 如果需要导航按钮 -->
+      <div class="iws-btns">
+        <div class="swiper-button-prev iws-prev"></div>
+        <div class="swiper-button-next iws-next"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -244,7 +283,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.image-with-swiper', {
-      initialSlide: 0,
       centeredSlides: true,
       slidesPerView: 1,
       loop: true,
@@ -252,6 +290,11 @@
       pagination: {
         el: '.iws-pagination',
         clickable: true,
+      },
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.iws-next',
+        prevEl: '.iws-prev',
       },
       breakpoints: {
         768: {
