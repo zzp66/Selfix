@@ -1,4 +1,12 @@
 <style>
+  @keyframes spin-btn {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
   .text-with-image p {
     margin: 0;
   }
@@ -27,16 +35,10 @@
 
   .image-with-swiper .swiper-slide {
     width: 80%;
+    opacity: 0.6;
   }
 
-  .image-with-swiper .swiper-slide {
-    transition: transform 300ms ease, opacity 300ms ease;
-    transform: scale(0.85);
-    opacity: 0.7;
-  }
-
-  .image-with-swiper .swiper-slide-active {
-    transform: scale(1);
+  .image-with-swiper .swiper-slide.swiper-slide-active {
     opacity: 1;
   }
 
@@ -61,6 +63,18 @@
   }
   .iws-slide-img-box {
     position: relative;
+    margin: 0 0 40px 0;
+  }
+
+  .iws-slide-img {
+    position: relative;
+  }
+
+  /* 图片通用样式 */
+  .iws-slide-img img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .iws-slide-btn {
@@ -70,33 +84,11 @@
     cursor: pointer;
     z-index: 2; /* 确保按钮在图片之上 */
   }
-
-  @keyframes spin-btn {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
   .iws-slide-btn img {
     max-width: 65px;
     min-width: 65px;
     animation: spin-btn 3s linear infinite;
     transform-origin: center center;
-  }
-
-  .iws-slide-img {
-    margin: 0 0 40px 0;
-    position: relative;
-  }
-
-  /* 图片通用样式 */
-  .iws-slide-img img {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 
   /* 状态控制 */
@@ -118,17 +110,11 @@
     margin: 0 0 10px 0;
   }
 
-  .iws-btns {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
   .iws-btns .iws-next,
   .iws-btns .iws-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 45px;
     height: 45px;
     border-radius: 45px;
@@ -177,7 +163,7 @@
       bottom: 4%;
       right: 6%;
     }
-    .iws-slide-img {
+    .iws-slide-img-box {
       margin: 0 0 20px 0;
     }
     p.iws-title {
@@ -283,10 +269,12 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.image-with-swiper', {
+      initialSlide: 1,
       centeredSlides: true,
       slidesPerView: 1,
-      loop: true,
+      spaceBetween: 40,
       grabCursor: true,
+      rewind: true,
       pagination: {
         el: '.iws-pagination',
         clickable: true,
