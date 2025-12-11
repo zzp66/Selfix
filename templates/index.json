@@ -169,14 +169,14 @@
       "type": "scroll-animation-frames",
       "name": "Scroll Animation Frames",
       "settings": {
-        "heading": "Expandable Storage",
+        "heading": "Expandable Storage. Beyond Limits.",
         "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
         "extension": "jpg",
         "scroll_length": 200,
-        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-PC1208-2027_",
+        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-PC1210-1847_",
         "frame_count": 198,
         "canvas_height": 900,
-        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1209-1947_",
+        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1210-1852_",
         "frame_count_mobile": 198,
         "canvas_height_mobile": 500
       }
@@ -187,23 +187,23 @@
         "tab_item_nDi3ej": {
           "type": "tab_item",
           "settings": {
+            "title": "<p>All In,</p><p>One Shot.</p>",
+            "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02_874bdff1-ee1b-41d6-b584-c24d8fab28df.png",
+            "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01_1330bfed-2dc4-4432-919e-08cf63c7e4ad.png",
+            "image": "shopify://shop_images/Four_shooting_modes02.png",
+            "title_content": "All In, One Shot.",
+            "text_content": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
+          }
+        },
+        "tab_item_8pWLfh": {
+          "type": "tab_item",
+          "settings": {
             "title": "<p>Low Light? </p><p>Right Light!</p>",
             "icon_image_normal": "shopify://shop_images/01-Low_Light_Right_Light_-02_9e1abfc6-7628-48cf-b247-560289fada50.png",
             "icon_image_active": "shopify://shop_images/01-Low_Light_Right_Light_-01_0b393eba-49f9-461b-bb65-8645d2c65d39.png",
             "image": "shopify://shop_images/Four_shooting_modes01.png",
             "title_content": "Low Light? Right Light!",
             "text_content": "Turn any glow into your spotlight. With enhanced Night Mode and a powerful rear camera, you're always the brightest part of the scene."
-          }
-        },
-        "tab_item_8pWLfh": {
-          "type": "tab_item",
-          "settings": {
-            "title": "<p>All In, </p><p>One Shot.</p>",
-            "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02_874bdff1-ee1b-41d6-b584-c24d8fab28df.png",
-            "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01_1330bfed-2dc4-4432-919e-08cf63c7e4ad.png",
-            "image": "shopify://shop_images/Four_shooting_modes02.png",
-            "title_content": "All In, One Shot.",
-            "text_content": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
           }
         },
         "tab_item_i6fKfY": {
@@ -238,7 +238,7 @@
       "name": "Text With Tab",
       "settings": {
         "title_1": "Your Best Shot, In Any Shot.",
-        "text_1": "Your Best Shot, In Any Shot."
+        "text_1": "Confidence in every condition, freedom in every frame."
       }
     },
     "video_with_grid_GbQUgD": {
@@ -246,17 +246,17 @@
       "name": "Video With Grid",
       "settings": {
         "heading": "Snap",
-        "subheading": "Snap on your case. No apps, no setup. It just works.",
+        "subheading": "on your case. No apps, no setup. It just works.",
         "video": "shopify://files/videos/07-2 (1).mp4",
         "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
         "row1_heading": "Shoot",
-        "row1_text": "Shoot in stunning 48MP clarity. Your best selfies are now behind you.",
+        "row1_text": "in stunning 48MP clarity. Your best selfies are now behind you.",
         "row2_heading": "Store",
-        "row2_text": "Store endlessly. Pop in a microSD card and capture without limits.",
+        "row2_text": "endlessly. Pop in a microSD card and capture without limits.",
         "row2_img": "shopify://shop_images/07-3.png",
         "row3_img": "shopify://shop_images/07-4.png",
         "row3_heading": "Carry",
-        "row3_text": "Carry the ultimate all-in-one tool. Sleek, light, always ready."
+        "row3_text": "the ultimate all-in-one tool. Sleek, light, always ready."
       }
     },
     "index_newsletter_9bQB4h": {
@@ -382,48 +382,48 @@
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification01.png",
-            "info_title": "1.60-inch AMOLED Touchscreen",
-            "info_text": "<p>Resolution: <strong>480 x 480 </strong>pixels<br/><br/><br/></p>"
+            "info_title": "Integrated Rear Screen",
+            "info_text": "<p>1.60-inch AMOLED Touchscreen<br/>Resolution: <strong>480 x 480 </strong>pixels<br/><br/><br/></p>"
           }
         },
         "spec_6ayrL7": {
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification02.png",
-            "info_title": "Slot:",
-            "info_text": "<p>Micro SD (TF) Card</p><p>Max. Supported Capacity: <strong>2TB</strong></p><p>Transfer Standard: Supports UHS-I, Class 10 (C10), Class 3 (U3), and Class 90 (V90) standards.<br/><br/></p>"
+            "info_title": "Expandable Storage",
+            "info_text": "<p>Slot: Micro SD (TF) Card<br/><br/>Max. Supported Capacity: <strong>2TB</strong><br/><br/>Transfer Standard: Supports UHS-I, Class 10 (C10), Class 3 (U3), and Class 90 (V90) standards.<br/><br/></p>"
           }
         },
         "spec_DfhmrG": {
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification03.png",
-            "info_title": "Power Delivery:",
-            "info_text": "<p>PD 3.0, up to <strong>100W</strong> input</p><p>Max. Power Consumption:</p><p>&lt; 2.2W ( with all features active)</p>"
+            "info_title": "Power & Connectivity",
+            "info_text": "<p>Power Delivery:</p><p>PD 3.0, up to <strong>100W</strong> input</p><p></p>"
           }
         },
         "spec_ti4TN8": {
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification04.png",
-            "info_title": "Power Button:",
-            "info_text": "<p>Dedicated mechanical</p><p>button for system on/off</p>"
+            "info_title": "Controls & Buttons",
+            "info_text": "<p>Power Button:<br/>Dedicated mechanical button for </p><p>system on/off</p>"
           }
         },
         "spec_MXMX9G": {
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification05.png",
-            "info_title": "Available Colors:",
-            "info_text": "<p>- Oat White</p><p>- Blush Pink</p><p>- Midnight Black</p><p><strong>Material:</strong></p><p>Hight-quality TPU</p>"
+            "info_title": "Design & Colors",
+            "info_text": "<p>Available Colors:<br/>- Oat White</p><p>- Blush Pink</p><p>- Midnight Black</p><p><br/>Material:<br/>Hight-quality TPU</p>"
           }
         },
         "spec_zQRHtB": {
           "type": "spec",
           "settings": {
             "icon": "shopify://shop_images/Specification06.png",
-            "info_title": "For iPhone 17 Pro Max:",
-            "info_text": "<p>169 mm (H) × 81 mm (W) × 17 mm (D)</p><p><strong>For iPhone 17 Pro :</strong></p><p>156mm (H) × 76 mm (W) × 17 mm (D)<br/><br/><br/><br/></p><p></p>"
+            "info_title": "Dimensions",
+            "info_text": "<p>For iPhone 17 Pro Max:<br/>169 mm (H) × 81 mm (W) × 17 mm (D)</p><p><br/>For iPhone 17 Pro:</p><p>156mm (H) × 76 mm (W) × 17 mm (D)<br/><br/><br/></p><p></p>"
           }
         }
       },
