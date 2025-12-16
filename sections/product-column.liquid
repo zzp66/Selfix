@@ -9,7 +9,6 @@
   }
 
   .product-column-title {
-    max-width: 880px;
     margin: 0 auto;
     margin-bottom: 40px;
   }
@@ -19,6 +18,9 @@
     line-height: 56px;
     font-weight: 600;
     margin: 0 0 20px 0;
+  }
+  .product-column-title .title p {
+    margin: 0;
   }
   .product-column-title p.subtitle {
     font-size: 20px;
@@ -81,6 +83,10 @@
     line-height: 30px;
     font-weight: 600;
     height: 100px;
+  }
+
+  .product-title p {
+    margin: 0;
   }
 
   .info-icon {
@@ -204,7 +210,7 @@
           {% for block in section.blocks %}
             {% assign row_index = forloop.index %}
             {% if forloop.first %}
-              <div class="product-title grid-item" style="grid-row: title;">{{ product_1.title }}</div>
+              <div class="product-title grid-item" style="grid-row: title;">{{ section.settings.product_1_title }}</div>
             {% endif %}
 
             {% comment %} P1 列引用 P1 数据 {% endcomment %}
@@ -246,7 +252,7 @@
           {% for block in section.blocks %}
             {% assign row_index = forloop.index %}
             {% if forloop.first %}
-              <div class="product-title grid-item" style="grid-row: title;">{{ product_2.title }}</div>
+              <div class="product-title grid-item" style="grid-row: title;">{{ section.settings.product_2_title }}</div>
             {% endif %}
 
             {% comment %} P2 列引用 P2 数据 {% endcomment %}
@@ -327,6 +333,16 @@
       "type": "product",
       "id": "product_2_handle",
       "label": "选择产品 2"
+    },
+    {
+      "type": "richtext",
+      "id": "product_1_title",
+      "label": "Product 1 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "product_2_title",
+      "label": "Product 2 Title"
     }
   ],
   "blocks": [
