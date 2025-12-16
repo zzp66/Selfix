@@ -100,7 +100,7 @@
       "type": "text-with-video",
       "name": "Text With Video",
       "settings": {
-        "heading": "Your Style, Your Hue.",
+        "heading": "<p>Your Style, Your Hue.</p>",
         "subheading": "For iPhone 17 Pro Series",
         "video": "shopify://files/videos/02-5.mp4"
       }
@@ -158,7 +158,7 @@
       ],
       "name": "Text With Image",
       "settings": {
-        "heading": "The Rear Screen. Your Window to Pro-Level Selfies.",
+        "heading": "<p>The Rear Screen. </p><p>Your Window to Pro-Level Selfies.</p>",
         "subheading": "",
         "img_pc": "shopify://shop_images/04-1_e0bbcf0d-65cd-4ff4-ac7d-0dc4b8bc94ca.png",
         "img_mb": "shopify://shop_images/04-1_5c94cfe0-eb18-464e-87b1-55ba5a85f143.png",
@@ -169,7 +169,7 @@
       "type": "scroll-animation-frames",
       "name": "Scroll Animation Frames",
       "settings": {
-        "heading": "Expandable Storage. Beyond Limits.",
+        "heading": "<p>Expandable Storage. Beyond Limits.</p>",
         "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
         "extension": "jpg",
         "scroll_length": 350,
@@ -237,7 +237,7 @@
       ],
       "name": "Text With Tab",
       "settings": {
-        "title_1": "Your Best Shot, In Any Shot.",
+        "title_1": "<p>Your Best Shot, In Any Shot.</p>",
         "text_1": "Confidence in every condition, freedom in every frame."
       }
     },
@@ -245,7 +245,7 @@
       "type": "video-with-grid",
       "name": "Video With Grid",
       "settings": {
-        "heading": "Snap",
+        "heading": "<p>Snap</p>",
         "subheading": "on your case. No apps, no setup. It just works.",
         "video": "shopify://files/videos/07-2 (1).mp4",
         "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
@@ -316,10 +316,12 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "The Selfix Advantage: Don't Just Take Selfies, Create Masterpieces.",
+        "heading": "<p>The Selfix Advantage:  </p><p>Don't Just Take Selfies, Create Masterpieces.</p>",
         "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
         "product_1_handle": "with-selfix-using-rear-camera",
-        "product_2_handle": "standard-iphone-selfie-front-camera-1"
+        "product_2_handle": "standard-iphone-selfie-front-camera-1",
+        "product_1_title": "<p>With Selfix</p><p>(Using Rear Camera)</p>",
+        "product_2_title": "<p>Standard iPhone Selfie</p><p>(Front Camera)</p>"
       }
     },
     "product_column_KpPnAF": {
@@ -369,10 +371,12 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "Your Storage, Your Rules.                       Ditch the Upgrade Tax.",
+        "heading": "<p>Your Storage, Your Rules.</p><p>Ditch the Upgrade Tax.</p>",
         "subheading": "A Smarter, More Flexible Way to Never Run Out of Space.",
         "product_1_handle": "with-selfix-using-rear-camera-1",
-        "product_2_handle": "standard-iphone-selfie-front-camera"
+        "product_2_handle": "standard-iphone-selfie-front-camera",
+        "product_1_title": "<p>With Selfix </p><p>Expandable Slot</p>",
+        "product_2_title": "<p>Standard iPhone </p><p>Storage</p>"
       }
     },
     "product_specification_J9wpHL": {
