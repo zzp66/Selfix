@@ -11,7 +11,7 @@
     margin: 0 auto;
     text-align: center;
   }
-  .text-with-video-title p.title {
+  .text-with-video-title .title {
     margin: 0 0 30px 0;
   }
   .video-box video {
@@ -65,7 +65,7 @@
 </style>
 <div class="video-with-grid">
   <div class="text-with-video-title">
-    <p class="title title-h1 fw-600">{{ section.settings.heading }}</p>
+    <div class="title title-h1 fw-600">{{ section.settings.heading }}</div>
     {% if section.settings.subheading != blank %}
       <p class="subtitle regular-text">{{ section.settings.subheading }}</p>
     {% endif %}
@@ -123,10 +123,9 @@
   "name": "Video With Grid",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
-      "label": "Heading",
-      "default": "Snap"
+      "label": "Heading"
     },
     {
       "type": "textarea",

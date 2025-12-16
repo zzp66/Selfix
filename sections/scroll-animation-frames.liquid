@@ -31,7 +31,7 @@
     background: #f3f3f3;
     padding: 60px 0 0;
   }
-  .scroll-sequence-title p.title{
+  .scroll-sequence-title .title{
     font-size: 48px;
     line-height: 1.2;
     font-weight: 600;
@@ -50,7 +50,7 @@
     .scroll-sequence-title{
       padding: 30px 0 0;
     }
-    .scroll-sequence-title p.title{
+    .scroll-sequence-title .title{
       font-size: 28px;
     }
     .scroll-sequence-title p.subtitle{
@@ -61,7 +61,7 @@
 
 <div class="scroll-sequence-title text-center">
   {% if section.settings.heading != blank %}
-    <p class="title">{{ section.settings.heading }}</p>
+    <div class="title">{{ section.settings.heading }}</div>
   {% endif %}
   {% if section.settings.subheading != blank %}
     <p class="subtitle">{{ section.settings.subheading }}</p>
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "content": "文本内容"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "标题"
     },
