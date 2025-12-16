@@ -1,12 +1,6 @@
 <style>
-  @keyframes spin-btn {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  /* 移除：@keyframes spin-btn */
+
   .text-with-image p {
     margin: 0;
   }
@@ -84,12 +78,24 @@
     cursor: pointer;
     z-index: 2; /* 确保按钮在图片之上 */
   }
+
+  /* --- 优化部分 (纯缩放) --- */
   .iws-slide-btn img {
     max-width: 65px;
     min-width: 65px;
-    animation: spin-btn 3s linear infinite;
     transform-origin: center center;
+    /* 定义平滑过渡效果，时间缩短至 0.2s */
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    transform: scale(1); /* 初始状态 */
+    opacity: 1;
   }
+
+  /* 按钮点击时的瞬时动效（纯缩放反馈）*/
+  .iws-slide-btn img.active {
+    transform: scale(0.85); /* 瞬间缩小到 85% */
+    opacity: 0.8;
+  }
+  /* --- 优化部分结束 --- */
 
   /* 状态控制 */
   .state-wrapper-1 {
@@ -257,7 +263,6 @@
         {% endfor %}
       </div>
       <div class="swiper-pagination iws-pagination"></div>
-      <!-- 如果需要导航按钮 -->
       <div class="iws-btns">
         <div class="swiper-button-prev iws-prev"></div>
         <div class="swiper-button-next iws-next"></div>
@@ -296,6 +301,7 @@
     let resumeTimeoutId;
     const AUTO_SWITCH_INTERVAL = 2000; // 2 秒自动切换
     const RESUME_DELAY = 3000; // 3 秒后恢复自动切换
+    const ANIMATION_DURATION = 200; // 对应 CSS 中 0.2s 的过渡时间
 
     // 封装图片切换逻辑
     function toggleImageState(slide) {
@@ -313,11 +319,27 @@
       }
     }
 
-    // 自动切换所有 Slide 的图片状态
+    // 封装按钮动效逻辑
+    function triggerButtonAnimation(btnImage) {
+      btnImage.classList.add('active'); // 触发缩小
+      setTimeout(() => {
+        btnImage.classList.remove('active'); // 恢复原状
+      }, ANIMATION_DURATION);
+    }
+
+    // 自动切换所有 Slide 的图片状态 (新增按钮动效)
     const autoToggleSlides = document.querySelectorAll('.image-with-swiper .swiper-slide');
 
     function autoToggleImages() {
       autoToggleSlides.forEach((slide) => {
+        const btnImage = slide.querySelector('.iws-slide-btn img');
+
+        // 1. 触发按钮动效
+        if (btnImage) {
+          triggerButtonAnimation(btnImage);
+        }
+
+        // 2. 切换图片
         toggleImageState(slide);
       });
     }
@@ -341,15 +363,23 @@
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         const slide = btn.closest('.swiper-slide');
+        const btnImage = btn.querySelector('img');
 
-        // 执行切换
-        toggleImageState(slide);
-
-        // 停止自动切换
+        // 1. 停止自动切换
         stopAutoToggle();
 
-        // 3 秒后重新启动自动切换
-        resumeTimeoutId = setTimeout(startAutoToggle, RESUME_DELAY);
+        // 2. 触发动效：使用封装函数
+        triggerButtonAnimation(btnImage);
+
+        // 3. 执行图片切换
+        toggleImageState(slide);
+
+        // 4. 延迟恢复自动切换（注意：这里必须在动画恢复后启动计时器，所以放在 triggerButtonAnimation 内部的 setTimeout 之后）
+        // 我们将恢复逻辑移到 triggerButtonAnimation 之后的 setTimeout 块中，以确保它不会覆盖按钮的恢复动画。
+        // 由于 triggerButtonAnimation 内部已经有一个 200ms 的 setTimeout，我们直接在外部等待 200ms 后启动 RESUME_DELAY 计时器。
+        setTimeout(function () {
+          resumeTimeoutId = setTimeout(startAutoToggle, RESUME_DELAY);
+        }, ANIMATION_DURATION);
       });
     });
 

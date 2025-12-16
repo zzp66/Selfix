@@ -120,10 +120,10 @@
         "image_slide_fHzicL": {
           "type": "image_slide",
           "settings": {
-            "img_1_pc": "shopify://shop_images/PC05-1-1_f7ebb6fa-681e-4616-927a-75c1cb373c27.png",
-            "img_1_mb": "shopify://shop_images/M05-1-1_ac0a5876-4e45-4ad4-8c05-64567d7d0a5c.png",
-            "img_2_pc": "shopify://shop_images/PC05-1-2_0f2011cd-28aa-444f-9be3-f882baf65e4e.png",
-            "img_2_mb": "shopify://shop_images/M05-1-2_c4e79e71-af27-491d-8289-21b4ae706dfb.png",
+            "img_1_pc": "shopify://shop_images/PC05-1-1_af6137ab-72ce-44ac-975c-cfc6a368b949.png",
+            "img_1_mb": "shopify://shop_images/M05-1-1_35a769fc-cae2-4bd5-846c-57bbe3ce6b85.png",
+            "img_2_pc": "shopify://shop_images/PC05-1-2_00dcfb55-5277-4a17-b9d4-c905f5a29807.png",
+            "img_2_mb": "shopify://shop_images/M05-1-2_428b6016-b46f-408e-8b6c-ae0e1eb369f8.png",
             "title": "Brilliant, Even in Low Light.",
             "text": "Larger sensor and advanced Night Mode deliver clear, detailed, and noise-free selfies after dark."
           }
@@ -131,10 +131,10 @@
         "image_slide_r49jmm": {
           "type": "image_slide",
           "settings": {
-            "img_1_pc": "shopify://shop_images/PC05-2-1.png",
-            "img_1_mb": "shopify://shop_images/M05-2-1.png",
-            "img_2_pc": "shopify://shop_images/PC05-2-2.png",
-            "img_2_mb": "shopify://shop_images/M05-2-2.png",
+            "img_1_pc": "shopify://shop_images/PC05-2-1_fb856fae-e9c6-4643-a3b3-f9b82818b8ea.png",
+            "img_1_mb": "shopify://shop_images/M05-2-1_57410b11-5f9f-4cc1-b8ca-648aebb0ac99.png",
+            "img_2_pc": "shopify://shop_images/PC05-2-2_2f86a294-a4c8-43c5-9798-d14c3f80415a.png",
+            "img_2_mb": "shopify://shop_images/M05-2-2_39da1677-f8df-4f07-be98-a2fadec8c730.png",
             "title": "The Prefect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
@@ -142,10 +142,10 @@
         "image_slide_6dADAk": {
           "type": "image_slide",
           "settings": {
-            "img_1_pc": "shopify://shop_images/PC05-3-1.png",
-            "img_1_mb": "shopify://shop_images/M05-3-1.png",
-            "img_2_pc": "shopify://shop_images/PC05-3-2.png",
-            "img_2_mb": "shopify://shop_images/M05-3-2.png",
+            "img_1_pc": "shopify://shop_images/PC05-3-1_a3fb2574-023c-45c6-9b93-5138684f0acf.png",
+            "img_1_mb": "shopify://shop_images/M05-3-1_edc646d4-b457-47cc-aa18-5773824f4948.png",
+            "img_2_pc": "shopify://shop_images/PC05-3-2_f3e44e09-c3de-4472-9b3d-3b2c1c159f44.png",
+            "img_2_mb": "shopify://shop_images/M05-3-2_4b994b2a-b9a0-4a1b-9b55-cb23326f272f.png",
             "title": "Go From Groupies to Close-Up. Instantly.",
             "text": "Seamlessly switch between the 0.5x Ultra Wide and 8x zoom. One moment for the whole scene, the next for the perfect portrait."
           }
@@ -161,7 +161,7 @@
         "heading": "The Rear Screen. Your Window to Pro-Level Selfies.",
         "subheading": "",
         "img_pc": "shopify://shop_images/04-1_e0bbcf0d-65cd-4ff4-ac7d-0dc4b8bc94ca.png",
-        "img_mb": "shopify://shop_images/04-1_7692d69c-a5bc-432d-9e24-489ae5101baa.png",
+        "img_mb": "shopify://shop_images/04-1_5c94cfe0-eb18-464e-87b1-55ba5a85f143.png",
         "swiper_info": "Tap the button to transform. See the difference in real-time."
       }
     },
@@ -172,12 +172,12 @@
         "heading": "Expandable Storage. Beyond Limits.",
         "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
         "extension": "jpg",
-        "scroll_length": 200,
-        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-PC1210-1847_",
-        "frame_count": 198,
+        "scroll_length": 350,
+        "base_url": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-PC1212-1401_",
+        "frame_count": 192,
         "canvas_height": 900,
-        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1210-1852_",
-        "frame_count_mobile": 198,
+        "base_url_mobile": "https://cdn.shopify.com/s/files/1/0986/4842/4742/files/xiaoyun-M1212-1521_",
+        "frame_count_mobile": 192,
         "canvas_height_mobile": 500
       }
     },
@@ -302,7 +302,7 @@
             "p1_info_3_text": "",
             "p1_info_4_text": "",
             "p2_info_1_img": "shopify://shop_images/Camera_comparison07.png",
-            "p2_info_1_text": "<p>None \n(Digital Crop)</p>",
+            "p2_info_1_text": "<p>Digital Crop Only</p>",
             "p2_info_2_img": "shopify://shop_images/Camera_comparison08.png",
             "p2_info_2_text": "<p>Single Fixed Lens</p>",
             "p2_info_3_text": "",
@@ -415,7 +415,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification05.png",
             "info_title": "Design & Colors",
-            "info_text": "<p>Available Colors:<br/>- Oat White</p><p>- Blush Pink</p><p>- Midnight Black</p><p><br/>Material:<br/>Hight-quality TPU</p>"
+            "info_text": "<p>Available Colors:</p><ul><li>Oat White</li><li>Blush Pink</li><li>Midnight Black</li></ul><p><br/>Material:<br/>Hight-quality TPU</p>"
           }
         },
         "spec_zQRHtB": {
