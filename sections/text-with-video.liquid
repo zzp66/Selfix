@@ -14,6 +14,18 @@
     width: 100%;
     height: auto;
   }
+
+  .video-box.mb {
+    display: none;
+  }
+  @media screen and (max-width: 767px) {
+    .video-box.pc {
+      display: none;
+    }
+    .video-box.mb {
+      display: block;
+    }
+  }
 </style>
 <div class="text-with-video regular-padding">
   <div class="text-with-video-title">
@@ -24,9 +36,15 @@
   </div>
   <div class="text-with-video-wrapper regular-width">
     <div class="text-with-video-content">
-      <div class="video-box">
+      <div class="video-box pc">
         {{
           section.settings.video
+          | video_tag: class: 'twv-video', playsinline: true, muted: true, loop: true, autoplay: true
+        }}
+      </div>
+      <div class="video-box mb">
+        {{
+          section.settings.video_mb
           | video_tag: class: 'twv-video', playsinline: true, muted: true, loop: true, autoplay: true
         }}
       </div>
@@ -51,7 +69,12 @@
     {
       "type": "video",
       "id": "video",
-      "label": "Video"
+      "label": "Video PC端"
+    },
+    {
+      "type": "video",
+      "id": "video_mb",
+      "label": "Video 移动端"
     }
   ],
   "presets": [
