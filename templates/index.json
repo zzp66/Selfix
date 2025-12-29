@@ -87,8 +87,8 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/01-2_d6878f44-4bf8-4ff8-9256-9e05c57340f0.png",
-        "image_mobile": "shopify://shop_images/01-1_c204aebe-f01f-4408-8149-354efc887d29.png",
+        "image_desktop": "shopify://shop_images/01-5_46915ef2-ed03-49ed-ad83-48f620f51d68.png",
+        "image_mobile": "shopify://shop_images/01-4_2670270f-957f-45a9-bbc3-6e6332477639.png",
         "subtitle": "Better Selfies, More Space",
         "title": "<p>Selfix: The Ultimate </p><p>Selfie Case for iPhone<br/><br/></p>",
         "text_color": "#000000",
@@ -102,7 +102,8 @@
       "settings": {
         "heading": "<p>Your Style, Your Hue.</p>",
         "subheading": "For iPhone 17 Pro Series",
-        "video": "shopify://files/videos/02-5.mp4"
+        "video": "shopify://files/videos/02-5.mp4",
+        "video_mb": "shopify://files/videos/02_ad5aa9e3-c2d5-462c-86bb-5a9981ff04bb.mp4"
       }
     },
     "index_newsletter_KTrL7L": {
@@ -169,7 +170,7 @@
       "type": "scroll-animation-frames",
       "name": "Scroll Animation Frames",
       "settings": {
-        "heading": "<p>Expandable Storage. Beyond Limits.</p>",
+        "heading": "<p>Expandable Storage. <br/>Beyond Limits.</p>",
         "subheading": "Seamless expansion, removable convenience, and the freedom to capture life without limits.",
         "extension": "jpg",
         "scroll_length": 350,
@@ -237,7 +238,7 @@
       ],
       "name": "Text With Tab",
       "settings": {
-        "title_1": "<p>Your Best Shot, In Any Shot.</p>",
+        "title_1": "<p>Your Best Shot, <br/>In Any Shot.</p>",
         "text_1": "Confidence in every condition, freedom in every frame."
       }
     },
@@ -248,6 +249,7 @@
         "heading": "<p>Snap</p>",
         "subheading": "on your case. No apps, no setup. It just works.",
         "video": "shopify://files/videos/07-2 (1).mp4",
+        "video_mb": "shopify://files/videos/07-2 (2).mp4",
         "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
         "row1_heading": "Shoot",
         "row1_text": "in stunning 48MP clarity. Your best selfies are now behind you.",
@@ -296,15 +298,15 @@
           "type": "item",
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Camera_comparison03.png",
-            "p1_info_1_text": "<p>Up to 8x Optical Zoom</p>",
+            "p1_info_1_text": "<p>Up to </p><p>8x Optical Zoom</p>",
             "p1_info_2_img": "shopify://shop_images/Camera_comparison04.png",
-            "p1_info_2_text": "<p>13mm to 200mm+ Range</p>",
+            "p1_info_2_text": "<p>13mm to </p><p>200mm+ Range</p>",
             "p1_info_3_text": "",
             "p1_info_4_text": "",
             "p2_info_1_img": "shopify://shop_images/Camera_comparison07.png",
-            "p2_info_1_text": "<p>Digital Crop Only</p>",
+            "p2_info_1_text": "<p>Digital Crop </p><p>Only</p>",
             "p2_info_2_img": "shopify://shop_images/Camera_comparison08.png",
-            "p2_info_2_text": "<p>Single Fixed Lens</p>",
+            "p2_info_2_text": "<p>Single </p><p>Fixed Lens</p>",
             "p2_info_3_text": "",
             "p2_info_4_text": ""
           }
@@ -316,7 +318,7 @@
       ],
       "name": "Product Column",
       "settings": {
-        "heading": "<p>The Selfix Advantage:  </p><p>Don't Just Take Selfies, Create Masterpieces.</p>",
+        "heading": "<p>Don't Just Take Selfies, </p><p>Create Masterpieces.</p>",
         "subheading": "Why Settle for Less? Unleash the True Power of Your iPhone.",
         "product_1_handle": "with-selfix-using-rear-camera",
         "product_2_handle": "standard-iphone-selfie-front-camera-1",
@@ -331,7 +333,7 @@
           "type": "item",
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Memory_Comparison01.png",
-            "p1_info_1_text": "<p>Extremely Low</p><p>( ~$50 for 512GB SD Card )</p>",
+            "p1_info_1_text": "<p>Extremely Low</p><p>( ~$50 for </p><p>512GB SD Card )</p>",
             "p1_info_2_img": "shopify://shop_images/Memory_Comparison02.png",
             "p1_info_2_text": "<p>Fully Removable </p><p>& </p><p>Swappable</p>",
             "p1_info_3_img": "shopify://shop_images/Memory_Comparison03.png",
@@ -339,8 +341,8 @@
             "p1_info_4_img": "shopify://shop_images/Memory_Comparison04.png",
             "p1_info_4_text": "<p>Portable & Universal</p>",
             "p2_info_1_img": "shopify://shop_images/Memory_Comparison05.png",
-            "p2_info_1_text": "<p>Extremely High <br/>( +$200 for 512GB )</p>",
-            "p2_info_2_img": "shopify://shop_images/Memory_Comparison06.png",
+            "p2_info_1_text": "<p>Extremely High <br/> ( + $200 for </p><p>512GB ) </p>",
+            "p2_info_2_img": "shopify://shop_images/Memory_Comparison06_bc9372ed-6277-453b-92b4-fb08bd65390f.png",
             "p2_info_2_text": "<p>Permanent                               </p><p> & </p><p>Locked-In</p>",
             "p2_info_3_img": "shopify://shop_images/Memory_Comparison07.png",
             "p2_info_3_text": "<p>Capped </p><p>at </p><p>2TB</p>",
@@ -409,7 +411,7 @@
         "spec_ti4TN8": {
           "type": "spec",
           "settings": {
-            "icon": "shopify://shop_images/Specification04.png",
+            "icon": "shopify://shop_images/Specification04_bbf3ea23-892f-4977-bd50-37847fb506b2.png",
             "info_title": "Controls & Buttons",
             "info_text": "<p>Power Button:<br/>Dedicated mechanical button for </p><p>system on/off</p>"
           }
