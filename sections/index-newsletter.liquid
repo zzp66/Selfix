@@ -6,26 +6,35 @@
     padding: 60px 40px;
   }
   .index-newsletter-wrapper {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
-    background-color: #f3f3f3;
     border-radius: 16px;
   }
-  .index-newsletter-content {
+  .index-newsletter-content{
     width: 100%;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    padding: 40px 60px;
+    align-items: stretch;
   }
-  .index-newsletter-l p.title {
+  .index-newsletter-box,.index-buy-box {
+    display: grid;
+    align-content: space-between;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background-color: #f3f3f3;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+  }
+  .index-newsletter-content .title {
     margin: 0 0 10px;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 32px;
+    line-height: 40px;
     font-weight: 600;
   }
-  .index-newsletter-l p.subtitle {
+  .index-newsletter-content .subtitle {
     font-size: 16px;
     line-height: 20px;
     margin: 0;
@@ -45,6 +54,9 @@
     text-align: center;
   }
 
+  .index-email-signup__input::placeholder{
+    color: #ccc;
+  }
   .index-email-signup__button {
     padding: 10px 40px;
     outline: none;
@@ -69,6 +81,28 @@
     line-height: 20px;
   }
 
+  .index-buy-r{
+    display: flex;
+    justify-content: center;
+  }
+  .index-buy-button{
+    width: 100%;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 10px 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .index-buy-button:hover{
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+  }
+
   @media screen and (max-width: 767px) {
     .index-newsletter{
       padding: 30px 15px;
@@ -76,88 +110,117 @@
     .index-newsletter-content{
       grid-template-columns: 100%;
       gap: 20px;
-      padding: 20px;
+      padding: 0px;
       text-align: center;
+    }
+    .index-newsletter-content .title{
+      font-size: 26px;
+      line-height: 30px;
+    }
+    .index-newsletter-box,.index-buy-box{
+      grid-template-columns: 1fr;
+      padding: 40px 20px;
+      gap: 20px;
+      border-radius: 8px;
     }
   }
 </style>
 <div class="index-newsletter newsletter-{{ section.id }}">
   <div class="index-newsletter-wrapper">
     <div class="index-newsletter-content">
-      <div class="index-newsletter-l">
-        <p class="title">{{ section.settings.heading }}</p>
-        <p class="subtitle">{{ section.settings.subheading }}</p>
-      </div>
-      <div class="index-newsletter-r">
-        {%- form 'customer', class: 'index-email-signup__form' %}
-          <div
-            class="index-email-signup__input-group"
-          >
-            <label
-              for="EmailInput-{{ section.id }}"
-              class="visually-hidden"
-            >
-              {{ 'blocks.email_signup.label' | t }}
-            </label>
-            <input
-              id="EmailInput-{{ section.id }}"
-              class="index-email-signup__input"
-              type="email"
-              name="contact[email]"
-              autocorrect="off"
-              autocapitalize="off"
-              autocomplete="email"
-              placeholder=""
-              required
-              {% if form.errors %}
-                autofocus
-                aria-invalid="true"
-                aria-describedby="Email-signup__message-error-{{ section.id }}"
-              {% elsif form.posted_successfully? %}
-                aria-describedby="Email-signup__message-success-{{ section.id }}"
-              {% endif %}
-            >
-            <button
-              class="index-email-signup__button"
-              aria-label="{{ 'actions.sign_up' | t }}"
-            >
-              Reserve launch invite
-            </button>
-          </div>
-
-          {%- if form.errors -%}
+      <div class="index-newsletter-box">
+        <div class="index-newsletter-l">
+          <div class="title">{{ section.settings.heading }}</div>
+          <div class="subtitle">{{ section.settings.subheading }}</div>
+        </div>
+        <div class="index-newsletter-r">
+          {%- form 'customer', class: 'index-email-signup__form' %}
             <div
-              id="Email-signup__message-error-{{ section.id }}"
-              class="email-signup__message email-signup__message--error"
-              tabindex="-1"
+              class="index-email-signup__input-group"
             >
-              <svg
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                focusable="false"
-                aria-hidden="true"
-                class="icon-error"
+              <label
+                for="EmailInput-{{ section.id }}"
+                class="visually-hidden"
               >
-                {%- render 'icon', icon: 'error'  -%}
-              </svg>
-              {{- form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email -}}
+                {{ 'blocks.email_signup.label' | t }}
+              </label>
+              <input
+                id="EmailInput-{{ section.id }}"
+                class="index-email-signup__input"
+                type="email"
+                name="contact[email]"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                placeholder="Enter your email address"
+                required
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="Email-signup__message-error-{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="Email-signup__message-success-{{ section.id }}"
+                {% endif %}
+              >
+              <button
+                class="index-email-signup__button"
+                aria-label="{{ 'actions.sign_up' | t }}"
+              >
+                Reserve launch invite
+              </button>
             </div>
-          {%- endif -%}
 
-          {%- if form.posted_successfully? -%}
-            <div
-              id="Email-signup__message-success-{{ section.id }}"
-              class="email-signup__message email-signup__message--success"
-              tabindex="-1"
-            >
-              <span class="svg-wrapper icon-success">
-                {{ 'icon-checkmark.svg' | inline_asset_content }}
-              </span>
-              <p class="email-signup__message-text">{{ 'blocks.email_signup.success' | t }}</p>
-            </div>
+            {%- if form.errors -%}
+              <div
+                id="Email-signup__message-error-{{ section.id }}"
+                class="email-signup__message email-signup__message--error"
+                tabindex="-1"
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  focusable="false"
+                  aria-hidden="true"
+                  class="icon-error"
+                >
+                  {%- render 'icon', icon: 'error'  -%}
+                </svg>
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </div>
+            {%- endif -%}
+
+            {%- if form.posted_successfully? -%}
+              <div
+                id="Email-signup__message-success-{{ section.id }}"
+                class="email-signup__message email-signup__message--success"
+                tabindex="-1"
+              >
+                <span class="svg-wrapper icon-success">
+                  {{ 'icon-checkmark.svg' | inline_asset_content }}
+                </span>
+                <p class="email-signup__message-text">{{ 'blocks.email_signup.success' | t }}</p>
+              </div>
+            {%- endif -%}
+          {% endform %}
+        </div>
+      </div>
+      <div class="index-buy-box">
+        <div class="index-buy-l">
+          <div class="title">{{ section.settings.buy_text }}</div>
+          {% if section.settings.buy_info != blank %}
+            <div class="subtitle">{{ section.settings.buy_info }}</div>
+          {% endif %}
+        </div>
+        <div class="index-buy-r">
+          {%- if section.settings.buy_product != blank -%}
+            {%- assign buy_product = section.settings.buy_product -%}
+            {%- comment -%}获取产品的第一个变体 ID{%- endcomment -%}
+            {%- assign variant_id = buy_product.first_available_variant.id -%}
+
+            <a href="/cart/{{ variant_id }}:1" class="index-buy-button"> Pay Now </a>
           {%- endif -%}
-        {% endform %}
+        </div>
       </div>
     </div>
   </div>
@@ -168,15 +231,45 @@
   "name": "Index Newsletter",
   "settings": [
     {
+      "type": "header",
+      "content": "邮件订阅相关设置"
+    },
+    {
       "type": "text",
       "id": "heading",
-      "label": "标题",
+      "label": "订阅标题",
       "default": "Get An Exclusive Discount!"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "文案"
+      "label": "订阅文案"
+    },
+    {
+      "type": "header",
+      "content": "预付款相关设置"
+    },
+    {
+      "type": "text",
+      "id": "buy_text",
+      "label": "预付款标题",
+      "default": "Pay $1 now."
+    },
+    {
+      "type": "textarea",
+      "id": "buy_info",
+      "label": "预付款文案"
+    },
+    {
+      "type": "product",
+      "id": "buy_product",
+      "label": "产品选择"
+    },
+    {
+      "type": "text",
+      "id": "buy_btn_text",
+      "label": "购买按钮文案",
+      "default": "Pay Now"
     },
     {
       "type": "color",
