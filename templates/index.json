@@ -16,56 +16,56 @@
           "type": "nav_item",
           "settings": {
             "title": "Home",
-            "target_id": "shopify-section-template--26322796118310__hero_banner_eLX9KN"
+            "target_id": "shopify-section-template--26486325543206__hero_banner_eLX9KN"
           }
         },
         "nav_item_ALt4tE": {
           "type": "nav_item",
           "settings": {
             "title": "Colors",
-            "target_id": "shopify-section-template--26322796118310__sticky_nav_D49NVf"
+            "target_id": "shopify-section-template--26486325543206__text_with_video_qXwe8g"
           }
         },
         "nav_item_EFV99Y": {
           "type": "nav_item",
           "settings": {
             "title": "Rear Screen",
-            "target_id": "shopify-section-template--26322796118310__text_with_image_jEeYyp"
+            "target_id": "shopify-section-template--26486325543206__text_with_image_jEeYyp"
           }
         },
         "nav_item_M6tiRD": {
           "type": "nav_item",
           "settings": {
             "title": "Expandable Storage",
-            "target_id": "shopify-section-template--26322796118310__scroll_animation_frames_UDmVrw"
+            "target_id": "shopify-section-template--26486325543206__scroll_animation_frames_UDmVrw"
           }
         },
         "nav_item_jLLPNq": {
           "type": "nav_item",
           "settings": {
             "title": "Scenes",
-            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+            "target_id": "shopify-section-template--26486325543206__text_with_tab_U36rHh"
           }
         },
         "nav_item_UWqaXM": {
           "type": "nav_item",
           "settings": {
             "title": "Experience",
-            "target_id": "shopify-section-template--26322796118310__text_with_tab_U36rHh"
+            "target_id": "shopify-section-template--26486325543206__video_with_grid_GbQUgD"
           }
         },
         "nav_item_aJwTLK": {
           "type": "nav_item",
           "settings": {
             "title": "Why Selfix",
-            "target_id": "shopify-section-template--26322796118310__product_column_FWAfDV"
+            "target_id": "shopify-section-template--26486325543206__product_column_FWAfDV"
           }
         },
         "nav_item_CdAHRL": {
           "type": "nav_item",
           "settings": {
             "title": "Specs",
-            "target_id": "shopify-section-template--26322796118310__product_specification_J9wpHL"
+            "target_id": "shopify-section-template--26486325543206__product_specification_J9wpHL"
           }
         }
       },
@@ -79,16 +79,17 @@
         "nav_item_aJwTLK",
         "nav_item_CdAHRL"
       ],
-      "disabled": true,
       "name": "Sticky Navigation",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/seleix01.png"
+      }
     },
     "hero_banner_eLX9KN": {
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/01-5_46915ef2-ed03-49ed-ad83-48f620f51d68.png",
-        "image_mobile": "shopify://shop_images/01-4_2670270f-957f-45a9-bbc3-6e6332477639.png",
+        "image_desktop": "shopify://shop_images/01-6_82c39276-caac-4e3d-9c73-855adbdce85a.png",
+        "image_mobile": "shopify://shop_images/01-6_7f0d60e4-c80a-45da-b45a-456e2ed263ae.png",
         "subtitle": "Better Selfies, More Space",
         "title": "<p>Selfix: The Ultimate </p><p>Selfie Case for iPhone<br/><br/></p>",
         "text_color": "#000000",
@@ -102,8 +103,8 @@
       "settings": {
         "heading": "<p>Your Style, Your Hue.</p>",
         "subheading": "For iPhone 17 Pro Series",
-        "video": "shopify://files/videos/02-5.mp4",
-        "video_mb": "shopify://files/videos/02_ad5aa9e3-c2d5-462c-86bb-5a9981ff04bb.mp4"
+        "video": "shopify://files/videos/02-6.mp4",
+        "video_mb": "shopify://files/videos/02-1.mp4"
       }
     },
     "index_newsletter_KTrL7L": {
@@ -161,8 +162,8 @@
       "settings": {
         "heading": "<p>The Rear Screen. </p><p>Your Window to Pro-Level Selfies.</p>",
         "subheading": "",
-        "img_pc": "shopify://shop_images/04-1_e0bbcf0d-65cd-4ff4-ac7d-0dc4b8bc94ca.png",
-        "img_mb": "shopify://shop_images/04-1_5c94cfe0-eb18-464e-87b1-55ba5a85f143.png",
+        "img_pc": "shopify://shop_images/04-2_73404002-57bb-489f-98be-e4eb9d5fae46.png",
+        "img_mb": "shopify://shop_images/04-2_989ddfa2-45a0-46b1-a435-3cfe9c8c1a0f.png",
         "swiper_info": "Tap the button to transform. See the difference in real-time."
       }
     },
@@ -248,8 +249,8 @@
       "settings": {
         "heading": "<p>Snap</p>",
         "subheading": "on your case. No apps, no setup. It just works.",
-        "video": "shopify://files/videos/07-2 (1).mp4",
-        "video_mb": "shopify://files/videos/07-2 (2).mp4",
+        "video": "shopify://files/videos/小韵手机壳-安装_f0ac609f-b390-4b50-9695-c3cd5cc50576.mp4",
+        "video_mb": "shopify://files/videos/合成 4_1.mp4",
         "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
         "row1_heading": "Shoot",
         "row1_text": "in stunning 48MP clarity. Your best selfies are now behind you.",
