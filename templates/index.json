@@ -67,6 +67,13 @@
             "title": "Specs",
             "target_id": "shopify-section-template--26486325543206__product_specification_J9wpHL"
           }
+        },
+        "nav_item_fPqCrU": {
+          "type": "nav_item",
+          "settings": {
+            "title": "",
+            "target_id": ""
+          }
         }
       },
       "block_order": [
@@ -77,7 +84,8 @@
         "nav_item_jLLPNq",
         "nav_item_UWqaXM",
         "nav_item_aJwTLK",
-        "nav_item_CdAHRL"
+        "nav_item_CdAHRL",
+        "nav_item_fPqCrU"
       ],
       "name": "Sticky Navigation",
       "settings": {
@@ -88,8 +96,8 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/01-6_82c39276-caac-4e3d-9c73-855adbdce85a.png",
-        "image_mobile": "shopify://shop_images/01-6_7f0d60e4-c80a-45da-b45a-456e2ed263ae.png",
+        "image_desktop": "shopify://shop_images/01-9.png",
+        "image_mobile": "shopify://shop_images/M-01.png",
         "subtitle": "Better Selfies, More Space",
         "title": "<p>Selfix: The Ultimate </p><p>Selfie Case for iPhone<br/><br/></p>",
         "text_color": "#000000",
@@ -103,16 +111,21 @@
       "settings": {
         "heading": "<p>Your Style, Your Hue.</p>",
         "subheading": "For iPhone 17 Pro Series",
-        "video": "shopify://files/videos/02-6.mp4",
-        "video_mb": "shopify://files/videos/02-1.mp4"
+        "video": "shopify://files/videos/02-7.mp4",
+        "video_mb": "shopify://files/videos/M-02.mp4"
       }
     },
     "index_newsletter_KTrL7L": {
       "type": "index-newsletter",
       "name": "Index Newsletter",
       "settings": {
-        "heading": "Unlock Exclusive Offers!",
-        "subheading": "We're launching soon on Kickstarter. Subscribe now to receive launch updates and secure your best possible price.",
+        "heading": "Subscribe now",
+        "subheading": "to receive launch updates.",
+        "buy_text": "Pay $1 now",
+        "buy_info": "get $14.99 magnetic ring FREE + \nlock your SEB Price!",
+        "buy_product": "prepayment-special",
+        "buy_btn_text": "Pay Now",
+        "buy_img": "shopify://shop_images/liwu1.png",
         "bg_color": "#ffffff"
       }
     },
@@ -162,8 +175,8 @@
       "settings": {
         "heading": "<p>The Rear Screen. </p><p>Your Window to Pro-Level Selfies.</p>",
         "subheading": "",
-        "img_pc": "shopify://shop_images/04-2_73404002-57bb-489f-98be-e4eb9d5fae46.png",
-        "img_mb": "shopify://shop_images/04-2_989ddfa2-45a0-46b1-a435-3cfe9c8c1a0f.png",
+        "img_pc": "shopify://shop_images/04-2_75719dff-c390-4110-aefa-9ad29bfd8f4a.png",
+        "img_mb": "shopify://shop_images/04-2_ad97698a-3337-4e8b-b885-b25f94cf5480.png",
         "swiper_info": "Tap the button to transform. See the difference in real-time."
       }
     },
@@ -192,7 +205,7 @@
             "title": "<p>All In,</p><p>One Shot.</p>",
             "icon_image_normal": "shopify://shop_images/02-Preview_Perfection._-02_874bdff1-ee1b-41d6-b584-c24d8fab28df.png",
             "icon_image_active": "shopify://shop_images/02-Preview_Perfection._-01_1330bfed-2dc4-4432-919e-08cf63c7e4ad.png",
-            "image": "shopify://shop_images/Four_shooting_modes02.png",
+            "image": "shopify://shop_images/Four-shooting-modes01.png",
             "title_content": "All In, One Shot.",
             "text_content": "Wider perspective, bigger impact. The ultra-wide lens make group shots and landscapes effortlessly epic."
           }
@@ -203,7 +216,7 @@
             "title": "<p>Low Light? </p><p>Right Light!</p>",
             "icon_image_normal": "shopify://shop_images/01-Low_Light_Right_Light_-02_9e1abfc6-7628-48cf-b247-560289fada50.png",
             "icon_image_active": "shopify://shop_images/01-Low_Light_Right_Light_-01_0b393eba-49f9-461b-bb65-8645d2c65d39.png",
-            "image": "shopify://shop_images/Four_shooting_modes01.png",
+            "image": "shopify://shop_images/Four-shooting-modes02.png",
             "title_content": "Low Light? Right Light!",
             "text_content": "Turn any glow into your spotlight. With enhanced Night Mode and a powerful rear camera, you're always the brightest part of the scene."
           }
@@ -214,7 +227,7 @@
             "title": "<p>Preview </p><p>Perfection. </p>",
             "icon_image_normal": "shopify://shop_images/03-All_In_One_Shot.-02_66c98e9b-07e8-4b82-8e91-c3d4998140bb.png",
             "icon_image_active": "shopify://shop_images/03-All_In_One_Shot.-01_73e934d1-b8bc-43e1-93f4-5e2c014ba0aa.png",
-            "image": "shopify://shop_images/Four_shooting_modes03.png",
+            "image": "shopify://shop_images/Four-shooting-modes03.png",
             "title_content": "Preview Perfection.",
             "text_content": "See it. Perfect it. Capture it. Use the rear screen to frame your shot and fine-tune your expression like a pro. Post-worthy results, guaranteed."
           }
@@ -225,7 +238,7 @@
             "title": "<p>Shoot Now. </p><p>Store Now.</p>",
             "icon_image_normal": "shopify://shop_images/04-Shoot_Now._Store_Now.-02_60f6c6c6-53b1-4740-ba18-db5d575649f7.png",
             "icon_image_active": "shopify://shop_images/04-Shoot_Now._Store_Now.-01_c8eb4a09-64d6-4bcb-b360-f82dd139a3db.png",
-            "image": "shopify://shop_images/Four_shooting_modes04.png",
+            "image": "shopify://shop_images/Four-shooting-modes04.png",
             "title_content": "Shoot Now. Store Now.",
             "text_content": "Document freely, remember everything. With massive expandable storage, the memory is all that matters."
           }
@@ -249,25 +262,30 @@
       "settings": {
         "heading": "<p>Snap</p>",
         "subheading": "on your case. No apps, no setup. It just works.",
-        "video": "shopify://files/videos/小韵手机壳-安装_f0ac609f-b390-4b50-9695-c3cd5cc50576.mp4",
-        "video_mb": "shopify://files/videos/合成 4_1.mp4",
-        "row1_img": "shopify://shop_images/07-2_99c1ac43-49b1-4975-a2b0-15fb88121717.png",
+        "video": "shopify://files/videos/小韵手机壳-安装-去黄.mp4",
+        "video_mb": "shopify://files/videos/合成 4_2 去黄.mp4",
+        "row1_img": "shopify://shop_images/07-2_e85fa38e-75d4-4c01-95b8-004c540f9f66.png",
         "row1_heading": "Shoot",
         "row1_text": "in stunning 48MP clarity. Your best selfies are now behind you.",
         "row2_heading": "Store",
         "row2_text": "endlessly. Pop in a microSD card and capture without limits.",
-        "row2_img": "shopify://shop_images/07-3.png",
-        "row3_img": "shopify://shop_images/07-4.png",
+        "row2_img": "shopify://shop_images/07-3_33f79940-974e-4abb-806f-daf6f643d349.png",
+        "row3_img": "shopify://shop_images/07-4_ce4e3d3c-001f-450a-83b0-1d9bcb2bd1a2.png",
         "row3_heading": "Carry",
         "row3_text": "the ultimate all-in-one tool. Sleek, light, always ready."
       }
     },
-    "index_newsletter_9bQB4h": {
+    "index_newsletter_mzgdf7": {
       "type": "index-newsletter",
       "name": "Index Newsletter",
       "settings": {
-        "heading": "Unlock Exclusive Offers!",
-        "subheading": "We're launching soon on Kickstarter. Subscribe now to receive launch updates and secure your best possible price.",
+        "heading": "Subscribe now",
+        "subheading": "to receive launch updates.",
+        "buy_text": "Pay $1 now",
+        "buy_info": "get $14.99 magnetic ring FREE + \nlock your SEB Price!",
+        "buy_product": "prepayment-special",
+        "buy_btn_text": "Pay Now",
+        "buy_img": "shopify://shop_images/liwu1.png",
         "bg_color": "#ffffff"
       }
     },
@@ -451,13 +469,13 @@
   "order": [
     "sticky_nav_D49NVf",
     "hero_banner_eLX9KN",
-    "text_with_video_qXwe8g",
     "index_newsletter_KTrL7L",
+    "text_with_video_qXwe8g",
     "text_with_image_jEeYyp",
     "scroll_animation_frames_UDmVrw",
     "text_with_tab_U36rHh",
     "video_with_grid_GbQUgD",
-    "index_newsletter_9bQB4h",
+    "index_newsletter_mzgdf7",
     "product_column_FWAfDV",
     "product_column_KpPnAF",
     "product_specification_J9wpHL"

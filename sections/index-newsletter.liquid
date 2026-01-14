@@ -19,9 +19,8 @@
     align-items: stretch;
   }
   .index-newsletter-box {
-    display: grid;
-    align-content: space-between;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     background-color: #f3f3f3;
     padding: 40px;
@@ -137,7 +136,6 @@
       line-height: 30px;
     }
     .index-newsletter-box{
-      grid-template-columns: 1fr;
       padding: 40px 20px;
       gap: 20px;
       border-radius: 8px;
@@ -151,6 +149,9 @@
       border-radius: 8px;
       max-width: 135px;
       min-width: 135px;
+    }
+    .index-email-signup__input{
+      font-size: 14px;
     }
   }
 </style>
