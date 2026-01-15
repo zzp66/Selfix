@@ -57,22 +57,24 @@
     line-height: 18px;
   }
 
-  .index-email-signup__input-group {
+  .index-footer-signup-box {
     display: flex;
     flex-direction: column;
   }
 
-  .index-email-signup__input {
+  .index-footer-signup-input {
+    width: 100%;
     padding: 10px 40px;
     outline: none;
     border: 1px solid #000;
     border-radius: 50px;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 22px;
     text-align: center;
   }
 
-  .index-email-signup__button {
+  .index-footer-signup-submit {
+    width: 100%;
     padding: 10px 40px;
     outline: none;
     border: 1px solid #000;
@@ -87,7 +89,7 @@
     cursor: pointer;
   }
 
-  .email-signup__message.email-signup__message--success {
+  .index-footer-signup-box .email-signup__message.email-signup__message--success {
     margin: 15px 0 0;
     display: flex;
     justify-content: center;
@@ -129,7 +131,7 @@
           <div class="index-footer-newsletter-form">
             {%- form 'customer', class: 'index-email-signup__form' %}
               <div
-                class="index-email-signup__input-group"
+                class="index-footer-signup-box"
               >
                 <label
                   for="EmailInput-{{ section.id }}"
@@ -139,7 +141,7 @@
                 </label>
                 <input
                   id="EmailInput-{{ section.id }}"
-                  class="index-email-signup__input"
+                  class="index-footer-signup-input"
                   type="email"
                   name="contact[email]"
                   autocorrect="off"
@@ -156,7 +158,7 @@
                   {% endif %}
                 >
                 <button
-                  class="index-email-signup__button"
+                  class="index-footer-signup-submit"
                   aria-label="{{ 'actions.sign_up' | t }}"
                 >
                   Reserve launch invite

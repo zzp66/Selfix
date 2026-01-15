@@ -1,0 +1,165 @@
+<style>
+  .index-banner p {
+    margin: 0;
+  }
+  .index-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
+    max-height: calc(100vh - 50px);
+  }
+  .index-banner-img-box {
+    width: 100%;
+    height: 100%;
+  }
+  .index-banner-img-box picture,
+  .index-banner-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .index-banner-title-box {
+    position: absolute;
+    z-index: 10;
+    color: #000;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+  }
+  .index-banner-coming-box {
+    position: absolute;
+    z-index: 10;
+    color: #000;
+    bottom: 60px;
+    left: 40px;
+  }
+  .index-banner-title-box .index-banner-title-subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+  }
+
+  .index-banner-title-box .index-banner-title-title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+  }
+  p.selfie-case-hero__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  @media screen and (max-width: 767px) {
+    .index-banner-title-box {
+      top: auto;
+      left: 15px;
+      bottom: 70px;
+      transform: none;
+    }
+    .index-banner-coming-box {
+      bottom: 30px;
+      left: 15px;
+    }
+    .index-banner-title-box .index-banner-title-subtitle {
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0 0 10px 0;
+    }
+    .index-banner-title-box .index-banner-title-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    p.selfie-case-hero__subtitle {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+</style>
+<div class="index-banner">
+  <div class="index-banner-wrapper">
+    <div class="index-banner-img-box">
+      <picture>
+        <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: master }}">
+        <img src="{{ section.settings.image_desktop | image_url: width: master }}">
+      </picture>
+    </div>
+    <div class="index-banner-title-box">
+      {%- if section.settings.subtitle != blank -%}
+        <p class="index-banner-title-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <div class="index-banner-title-title">{{ section.settings.title }}</div>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.coming_text != blank -%}
+      <div class="index-banner-coming-box">
+        <p class="selfie-case-hero__subtitle">{{ section.settings.coming_text }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Index Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "背景图片设置"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "PC端背景图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "移动端背景图片"
+    },
+    {
+      "type": "header",
+      "content": "左侧居中文案设置"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "Better Selfies, More Space",
+      "label": "副标题"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "主标题"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#000000",
+      "label": "文案颜色"
+    },
+    {
+      "type": "header",
+      "content": "左下角文案设置"
+    },
+    {
+      "type": "text",
+      "id": "coming_text",
+      "default": "Coming Soon on Kickstarter",
+      "label": "左下角小字文案"
+    },
+    {
+      "type": "color",
+      "id": "text_color_bottom_left",
+      "default": "#000000",
+      "label": "左下角文案颜色"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index Banner"
+    }
+  ]
+}
+{% endschema %}
