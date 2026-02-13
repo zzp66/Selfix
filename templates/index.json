@@ -67,13 +67,6 @@
             "title": "Specs",
             "target_id": "shopify-section-template--26486325543206__product_specification_J9wpHL"
           }
-        },
-        "nav_item_fPqCrU": {
-          "type": "nav_item",
-          "settings": {
-            "title": "",
-            "target_id": ""
-          }
         }
       },
       "block_order": [
@@ -84,8 +77,7 @@
         "nav_item_jLLPNq",
         "nav_item_UWqaXM",
         "nav_item_aJwTLK",
-        "nav_item_CdAHRL",
-        "nav_item_fPqCrU"
+        "nav_item_CdAHRL"
       ],
       "name": "Sticky Navigation",
       "settings": {
@@ -96,23 +88,13 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/01-9.png",
-        "image_mobile": "shopify://shop_images/M-01.png",
-        "subtitle": "Better Selfies, More Space",
-        "title": "<p>Selfix: The Ultimate </p><p>Selfie Case for iPhone<br/><br/></p>",
-        "text_color": "#000000",
-        "subtitle_bottom_left": "Coming Soon on Kickstarter",
-        "text_color_bottom_left": "#000000"
-      }
-    },
-    "text_with_video_qXwe8g": {
-      "type": "text-with-video",
-      "name": "Text With Video",
-      "settings": {
-        "heading": "<p>Your Style, Your Hue.</p>",
-        "subheading": "For iPhone 17 Pro Series",
-        "video": "shopify://files/videos/02-7.mp4",
-        "video_mb": "shopify://files/videos/M-02.mp4"
+        "image_desktop": "shopify://shop_images/666_e688ed1d-2411-4383-bce7-bb615347524b.jpg",
+        "image_mobile": "shopify://shop_images/f7cf735742271192eee1d2f02332a1bf_5b9c3d09-3cf2-4a53-a051-6d67098a8553.jpg",
+        "subtitle": "",
+        "title": "",
+        "text_color": "#ffffff",
+        "subtitle_bottom_left": "",
+        "text_color_bottom_left": "#ffffff"
       }
     },
     "index_newsletter_KTrL7L": {
@@ -122,11 +104,21 @@
         "heading": "Subscribe now",
         "subheading": "to receive launch updates.",
         "buy_text": "Pay $1 now",
-        "buy_info": "get $14.99 magnetic ring FREE + \nlock your SEB Price!",
+        "buy_info": "get $19 magnetic ring holder FREE + \nlock your SEB Price!",
         "buy_product": "prepayment-special",
         "buy_btn_text": "Pay Now",
         "buy_img": "shopify://shop_images/liwu1.png",
         "bg_color": "#ffffff"
+      }
+    },
+    "text_with_video_qXwe8g": {
+      "type": "text-with-video",
+      "name": "Text With Video",
+      "settings": {
+        "heading": "<p>Your Style, Your Hue.</p>",
+        "subheading": "For iPhone 17 Pro Series",
+        "video": "shopify://files/videos/02-8.mp4",
+        "video_mb": "shopify://files/videos/M-02-1.mp4"
       }
     },
     "text_with_image_jEeYyp": {
@@ -150,7 +142,7 @@
             "img_1_mb": "shopify://shop_images/M05-2-1_57410b11-5f9f-4cc1-b8ca-648aebb0ac99.png",
             "img_2_pc": "shopify://shop_images/PC05-2-2_2f86a294-a4c8-43c5-9798-d14c3f80415a.png",
             "img_2_mb": "shopify://shop_images/M05-2-2_39da1677-f8df-4f07-be98-a2fadec8c730.png",
-            "title": "The Prefect Frame, Every Time.",
+            "title": "The Perfect Frame, Every Time.",
             "text": "The rear screen lets you frame yourself and adjust in real time. Pose with confidence-everyone stays in the picture."
           }
         },
@@ -282,7 +274,7 @@
         "heading": "Subscribe now",
         "subheading": "to receive launch updates.",
         "buy_text": "Pay $1 now",
-        "buy_info": "get $14.99 magnetic ring FREE + \nlock your SEB Price!",
+        "buy_info": "get $19 magnetic ring FREE + \nlock your SEB Price!",
         "buy_product": "prepayment-special",
         "buy_btn_text": "Pay Now",
         "buy_img": "shopify://shop_images/liwu1.png",
@@ -352,7 +344,7 @@
           "type": "item",
           "settings": {
             "p1_info_1_img": "shopify://shop_images/Memory_Comparison01.png",
-            "p1_info_1_text": "<p>Extremely Low</p><p>( ~$50 for </p><p>512GB SD Card )</p>",
+            "p1_info_1_text": "<p>Extremely Low</p><p>( ~$188 for </p><p>2TB SD Card )</p>",
             "p1_info_2_img": "shopify://shop_images/Memory_Comparison02.png",
             "p1_info_2_text": "<p>Fully Removable </p><p>& </p><p>Swappable</p>",
             "p1_info_3_img": "shopify://shop_images/Memory_Comparison03.png",
@@ -360,7 +352,7 @@
             "p1_info_4_img": "shopify://shop_images/Memory_Comparison04.png",
             "p1_info_4_text": "<p>Portable & Universal</p>",
             "p2_info_1_img": "shopify://shop_images/Memory_Comparison05.png",
-            "p2_info_1_text": "<p>Extremely High <br/> ( + $200 for </p><p>512GB ) </p>",
+            "p2_info_1_text": "<p>Extremely High <br/> ( + $800 for </p><p>2TB ) </p>",
             "p2_info_2_img": "shopify://shop_images/Memory_Comparison06_bc9372ed-6277-453b-92b4-fb08bd65390f.png",
             "p2_info_2_text": "<p>Permanent                               </p><p> & </p><p>Locked-In</p>",
             "p2_info_3_img": "shopify://shop_images/Memory_Comparison07.png",
