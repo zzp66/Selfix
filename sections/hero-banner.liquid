@@ -5,10 +5,26 @@
     min-height: 100vh;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    padding: 60px;
     box-sizing: border-box;
   }
+
+  /* 新增：链接包装器样式 */
+  .selfie-case-hero__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px;
+    text-decoration: none; /* 防止文字出现下划线 */
+    color: inherit;
+    cursor: default;
+  }
+
+  /* 当存在链接时，鼠标指针变为手型 */
+  a.selfie-case-hero__wrapper {
+    cursor: pointer;
+  }
+
   .selfie-case-hero__image-wrapper {
     position: absolute;
     top: 0;
@@ -25,11 +41,10 @@
   .selfie-case-hero__image--mobile {
     display: none;
   }
-  /* 居中文案容器 */
+
   .selfie-case-hero__content {
     position: relative;
     z-index: 10;
-    color: #000;
   }
 
   .selfie-case-hero__subtitle {
@@ -45,6 +60,7 @@
     line-height: 56px;
     font-weight: 600;
   }
+
   .selfie-case-hero__bottom-left {
     position: absolute;
     bottom: 60px;
@@ -54,8 +70,9 @@
     font-size: 20px;
     line-height: 24px;
   }
+
   @media screen and (max-width: 767px) {
-    .selfie-case-hero {
+    .selfie-case-hero__wrapper {
       padding: 15px 15px 60px;
       align-items: flex-end;
     }
@@ -82,7 +99,16 @@
 </style>
 
 <div class="selfie-case-hero">
-  {% comment %} 1. PC 端图片 {% endcomment %}
+  {%- assign section_link = section.settings.click_link -%}
+
+  {% comment %} 根据是否有链接判断渲染 a 标签还是 div 标签 {% endcomment %}
+  {%- if section_link != blank -%}
+    <a href="{{ section_link }}" class="selfie-case-hero__wrapper">
+  {%- else -%}
+    <div class="selfie-case-hero__wrapper">
+  {%- endif -%}
+
+  {% comment %} 图片渲染部分 {% endcomment %}
   {%- if section.settings.image_desktop != blank -%}
     {{
       section.settings.image_desktop
@@ -95,7 +121,6 @@
     }}
   {%- endif -%}
 
-  {% comment %} 2. 移动端图片 {% endcomment %}
   {%- if section.settings.image_mobile != blank -%}
     {{
       section.settings.image_mobile
@@ -108,11 +133,11 @@
     }}
   {%- endif -%}
 
-  {% comment %} 如果两张图都没设置，则显示占位背景色 {% endcomment %}
   {%- unless section.settings.image_desktop != blank or section.settings.image_mobile != blank -%}
     <div class="selfie-case-hero__image-wrapper" style="background-color: #f2f2f2;"></div>
   {%- endunless -%}
 
+  {% comment %} 文案内容 {% endcomment %}
   <div class="selfie-case-hero__content" style="color: {{ section.settings.text_color }}">
     {%- if section.settings.subtitle != blank -%}
       <p class="selfie-case-hero__subtitle">{{ section.settings.subtitle }}</p>
@@ -127,6 +152,12 @@
       <p class="selfie-case-hero__subtitle">{{ section.settings.subtitle_bottom_left }}</p>
     {%- endif -%}
   </div>
+
+  {%- if section_link != blank -%}
+    </a>
+  {%- else -%}
+    </div>
+  {%- endif -%}
 </div>
 
 {% schema %}
@@ -135,6 +166,16 @@
   "tag": "section",
   "class": "section-hero-selfie",
   "settings": [
+    {
+      "type": "header",
+      "content": "点击链接设置"
+    },
+    {
+      "type": "url",
+      "id": "click_link",
+      "label": "横幅跳转链接",
+      "info": "配置后，点击图片任何位置均可跳转"
+    },
     {
       "type": "header",
       "content": "背景图片设置"
@@ -172,19 +213,19 @@
     },
     {
       "type": "header",
-      "content": "右下角文案设置"
+      "content": "左下角文案设置"
     },
     {
       "type": "text",
       "id": "subtitle_bottom_left",
       "default": "Coming Soon on Kickstarter",
-      "label": "右下角文案"
+      "label": "左下角文案"
     },
     {
       "type": "color",
       "id": "text_color_bottom_left",
       "default": "#000000",
-      "label": "右下角文案颜色"
+      "label": "左下角文案颜色"
     }
   ],
   "presets": [
