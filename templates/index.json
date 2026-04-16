@@ -88,8 +88,9 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/666_e688ed1d-2411-4383-bce7-bb615347524b.jpg",
-        "image_mobile": "shopify://shop_images/f7cf735742271192eee1d2f02332a1bf_5b9c3d09-3cf2-4a53-a051-6d67098a8553.jpg",
+        "click_link": "https://www.kickstarter.com/projects/dockcaseexplorerepro/selfix-worlds-1st-selfie-case-for-iphone-17-pro-max?ref=1s6k6x",
+        "image_desktop": "shopify://shop_images/PC-banner-260316.png",
+        "image_mobile": "shopify://shop_images/M-banner-260316.png",
         "subtitle": "",
         "title": "",
         "text_color": "#ffffff",
@@ -408,7 +409,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification02.png",
             "info_title": "Expandable Storage",
-            "info_text": "<p>Slot: Micro SD (TF) Card<br/><br/>Max. Supported Capacity: <strong>2TB</strong><br/><br/>Transfer Standard: Supports UHS-I, Class 10 (C10), Class 3 (U3), and Class 90 (V90) standards.<br/><br/></p>"
+            "info_text": "<p>Slot: Micro SD Card<br/><br/>Max. Supported Capacity: <strong>2TB</strong><br/><br/>Transfer Standard: Supports UHS-I, Class 10, U3 and V30 Standards<br/><br/><br/></p>"
           }
         },
         "spec_DfhmrG": {
@@ -416,7 +417,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification03.png",
             "info_title": "Power & Connectivity",
-            "info_text": "<p>Power Delivery:</p><p>PD 3.0, up to <strong>100W</strong> input</p><p></p>"
+            "info_text": "<p>Power Delivery:</p><p><strong>PD 3.0</strong>, up to 45W input</p><p></p>"
           }
         },
         "spec_ti4TN8": {
@@ -432,7 +433,7 @@
           "settings": {
             "icon": "shopify://shop_images/Specification05.png",
             "info_title": "Design & Colors",
-            "info_text": "<p>Available Colors:</p><ul><li>Oat White</li><li>Blush Pink</li><li>Midnight Black</li></ul><p><br/>Material:<br/>Hight-quality TPU</p>"
+            "info_text": "<p>Available Colors:</p><ul><li>Satin White</li><li>Morganite Pink</li><li>Onyx Black</li></ul><p><br/>Material:<br/>Hight-quality TPU</p>"
           }
         },
         "spec_zQRHtB": {
